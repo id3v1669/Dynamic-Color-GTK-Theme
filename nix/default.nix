@@ -1,0 +1,43 @@
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
+  gnome,
+  sassc,
+  optipng,
+  inkscape-with-extensions,
+  gnome-themes-extra,
+  gtk-engine-murrine,
+}:
+
+let
+  pname = "dyncmic-color-gtk-theme";
+
+in
+lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants
+
+stdenvNoCC.mkDerivation {
+  inherit pname;
+  version = "unstable-2024-07-25";
+
+  src = lib.cleanSource ../.;
+
+  propagatedUserEnvPkgs = [ gtk-engine-murrine ];
+
+  nativeBuildInputs = [ gnome.gnome-shell sassc optipng inkscape-with-extensions ];
+  buildInputs = [ gnome-themes-extra ];
+
+  dontBuild = true;
+
+  postPatch = ''
+    patchShebangs theme/new_install.sh
+  '';
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out/share/themes
+    cd theme
+    ./new_install.sh -s -Dark -t "$out/share/themes" -d -n
+    runHook postInstall
+  '';
+}

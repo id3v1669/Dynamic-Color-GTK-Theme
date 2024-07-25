@@ -40,12 +40,13 @@ float_panel_flag=false                     # default float panel flag is false
 outline_flag=false                         # default outline flag is false
 debug_flag=false                           # default debug flag is false
 link_gtk4_flag=true                        # default link gtk4 flag is true
+nixos_flag=false                           # default nixos flag is false
 allowed_gs_versions=("3-28" "40-0" "42-0" "44-0" "46-0")
 custom_gs_version=false
 gs_version="46-0"                          # default gnome-shell version
 
 sassc_opt="-M -t expanded"
-dependencies=("sassc" "lutgen")
+dependencies=("sassc" "optipng" "inkscape")
 color_variants=("-Light" "-Dark" "")
 color_sheme=""
 else_dark=""
@@ -58,6 +59,9 @@ png_replacement_colors["base00"]="D2D2DA"
 #----------------------------------------#
 ###############Verifications##############
 yes_no() {
+  if [[ nixos_flag ]]; then
+    return 0;
+  fi
   while true; do
     read -p "" yn
     case $yn in
@@ -452,7 +456,7 @@ install_theme() {
 
 
 echo "start"
-while getopts ":i:t:a:g:s:cbmfodh" flag; do
+while getopts ":i:t:a:g:s:cbmfodnh" flag; do
   case $flag in 
     i) # custom colos palette name
         if [[ "$OPTARG" == *:* ]]; then
@@ -495,6 +499,9 @@ while getopts ":i:t:a:g:s:cbmfodh" flag; do
         ;;
     d) # debug flag
         debug_flag=true
+        ;;
+    n) # flag for nixos installation
+        nixos_flag=true
         ;;
     h)
         print_help

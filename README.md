@@ -1,5 +1,5 @@
 # WIP
-To be released by 08/24
+To be released by 09/24
 
 # About
 GTK theme based on 32 colors sheme from [this repo](https://github.com/id3v1669/32based-color-shemes)
@@ -17,6 +17,7 @@ GTK theme based on 32 colors sheme from [this repo](https://github.com/id3v1669/
 * file picker wrong button color "$suggested"
 * get rid of predeclared accent colors
 * lollypop - fix playlists icon
+* swaync - fix theme(dnd button & background colors)
 * text highlits use darker fg for dark theme
 ## Else:
 * add flake packaging
