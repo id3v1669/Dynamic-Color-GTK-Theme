@@ -9,15 +9,8 @@
   gnome-themes-extra,
   gtk-engine-murrine,
 }:
-
-let
-  pname = "dyncmic-color-gtk-theme";
-
-in
-lib.checkListOfEnum "${pname}: colorVariants" colorVariantList colorVariants
-
 stdenvNoCC.mkDerivation {
-  inherit pname;
+  pname = "dyncmic-color-gtk-theme";
   version = "unstable-2024-07-25";
 
   src = lib.cleanSource ../.;
@@ -37,7 +30,7 @@ stdenvNoCC.mkDerivation {
     runHook preInstall
     mkdir -p $out/share/themes
     cd theme
-    ./new_install.sh -s -Dark -t "$out/share/themes" -d -n
+    ./new_install.sh -s -Dark -t "$out/share/themes" -d -a
     runHook postInstall
   '';
 }
