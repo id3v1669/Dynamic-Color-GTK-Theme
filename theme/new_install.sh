@@ -27,8 +27,6 @@ default_theme_dir=true
 url_colors="https://api.github.com/repos/id3v1669/32based-color-shemes/contents/src?ref=master"
 color_filenames=($(curl -s "$url_colors" | grep -oP '"name": "\K[^"]+' | grep -oP '.*(?=\.)'))
 color_palette=""
-palette_type="dark"
-palette_variants=("dark" "light")
 yml_file="./default.yml"
 
 declare -A baseColors                      # declare an associative array to store the base colors
@@ -47,8 +45,8 @@ gs_version="46-0"                          # default gnome-shell version
 
 sassc_opt="-M -t expanded"
 dependencies=("sassc" "optipng" "inkscape")
-color_variants=("-Light" "-Dark" "")
-color_sheme=""
+color_variants=("-Light" "-Dark")
+color_sheme="-Dark"
 else_dark=""
 else_light=""
 declare -A png_replacement_colors
@@ -86,13 +84,6 @@ verify_palette_name() {
     for i in "${!filenames[@]}"; do
       echo -e "${blue}${filenames[$i]}${defaultColour}"
     done
-    exit 1
-  fi
-}
-verify_palette_type() {
-  if [[ ! " ${palette_variants[@]} " =~ " ${palette_type} " ]]; then
-    echo -e "${red}Invalid palette type: $palette_type."
-    echo -e "${blue}Availible types: ${palette_variants[@]}${defaultColour}"
     exit 1
   fi
 }
@@ -168,21 +159,19 @@ verify_gs_version() {
 	    echo -e "${blue}'gnome-shell' not found, using styles for default version - $gs_version.${defaultColour}"
     fi
 }
-verify_style() {
-    if [[ $theme_style == true ]]; then
-        if [[ ! " ${color_variants[@]} " =~ " $color_sheme " ]]; then
-            echo -e "${red}Invalid style: $color_sheme."
-            echo -e "${blue}Availible styles: ${color_variants[@]}"
-            echo -e "Leave empty to use default style${defaultColour}"
-            exit 1
-        else
-            if [[ $color_sheme == "-Light" ]]; then
-                else_light="-Light"
-            elif [[ $color_sheme == "-Dark" ]]; then
-                else_dark="-Dark"
-            fi
-        fi
+verify_color_sheme() {
+  if [[ ! " ${color_variants[@]} " =~ " $color_sheme " ]]; then
+    echo -e "${red}Invalid style: $color_sheme."
+    echo -e "${blue}Availible styles: ${color_variants[@]}"
+    echo -e "Leave empty to use default style${defaultColour}"
+    exit 1
+  else
+    if [[ $color_sheme == "-Light" ]]; then
+      else_light="-Light"
+    elif [[ $color_sheme == "-Dark" ]]; then
+      else_dark="-Dark"
     fi
+  fi
 }
 #----------------------------------------#
 
@@ -389,7 +378,7 @@ install_theme() {
 
   # Gnome Shell
   cp -r $temp_dir/main/gnome-shell/pad-osd.css                                      $theme_dir/gnome-shell
-	sassc $sassc_opt $temp_dir/main/gnome-shell/gnome-shell.scss		                  $theme_dir/gnome-shell/gnome-shell.css
+	sassc $sassc_opt $temp_dir/main/gnome-shell/gnome-shell$color_sheme.scss		      $theme_dir/gnome-shell/gnome-shell.css
 
 	cp -r $temp_dir/assets/gnome-shell/common-assets              		                $theme_dir/gnome-shell/assets
 	cp -r $temp_dir/assets/gnome-shell/assets${else_dark:-}/*.svg  		                $theme_dir/gnome-shell/assets
@@ -409,21 +398,21 @@ install_theme() {
 	cp -r $temp_dir/assets/gtk/scalable                                               $theme_dir/gtk-3.0/assets
 	cp -r $temp_dir/assets/gtk/thumbnails/thumbnail.png                               $theme_dir/gtk-3.0/thumbnail.png
   cp -r $temp_dir/assets/gtk/thumbnails/thumbnail-Dark.png                          $theme_dir/gtk-3.0/thumbnail-Dark.png
-	sassc $SASSC_OPT $temp_dir/main/gtk-3.0/gtk${color_sheme:-}.scss                  $theme_dir/gtk-3.0/gtk.css
+	sassc $SASSC_OPT $temp_dir/main/gtk-3.0/gtk$color_sheme.scss                      $theme_dir/gtk-3.0/gtk.css
 	sassc $SASSC_OPT $temp_dir/main/gtk-3.0/gtk-Dark.scss                             $theme_dir/gtk-3.0/gtk-dark.css
 
 	# GTK4 Themes
 	cp -r $temp_dir/assets/gtk/scalable                                               $theme_dir/gtk-4.0/assets
 	cp -r $temp_dir/assets/gtk/thumbnails/thumbnail.png                               $theme_dir/gtk-4.0/thumbnail.png
   cp -r $temp_dir/assets/gtk/thumbnails/thumbnail-Dark.png                          $theme_dir/gtk-4.0/thumbnail-Dark.png
-	sassc $SASSC_OPT $temp_dir/main/gtk-4.0/gtk${color_sheme:-}.scss                  $theme_dir/gtk-4.0/gtk.css
+	sassc $SASSC_OPT $temp_dir/main/gtk-4.0/gtk$color_sheme.scss                      $theme_dir/gtk-4.0/gtk.css
 	sassc $SASSC_OPT $temp_dir/main/gtk-4.0/gtk-Dark.scss                             $theme_dir/gtk-4.0/gtk-dark.css
 
 	# Cinnamon Themes
 	cp -r $temp_dir/assets/cinnamon/common-assets                                     $theme_dir/cinnamon/assets
 	cp -r $temp_dir/assets/cinnamon/assets${else_dark:-}/*.svg                        $theme_dir/cinnamon/assets
 	cp -r $temp_dir/assets/cinnamon/theme/*.svg                                       $theme_dir/cinnamon/assets
-	sassc $SASSC_OPT $temp_dir/main/cinnamon/cinnamon${color_sheme:-}.scss            $theme_dir/cinnamon/cinnamon.css
+	sassc $SASSC_OPT $temp_dir/main/cinnamon/cinnamon$color_sheme.scss                $theme_dir/cinnamon/cinnamon.css
 	cp -r $temp_dir/assets/cinnamon/thumbnails/thumbnail.png                          $theme_dir/cinnamon/thumbnail.png
 
 	# Metacity Themes
@@ -432,24 +421,14 @@ install_theme() {
 	cp -r $temp_dir/assets/metacity-1/thumbnail${else_dark:-}.png 		                $theme_dir/metacity-1/thumbnail.png
 
   # XFWM4 Themes
+  mkdir -p                                                                          $theme_dir/xfwm4
 	cp -r $temp_dir/assets/xfwm4/assets${else_light:-}/*.png                          $theme_dir/xfwm4
 	cp -r $temp_dir/main/xfwm4/themerc${else_light:-}                                 $theme_dir/xfwm4/themerc
-  mkdir -p                                                                          $theme_dir-hdpi/xfwm4
-	cp -r $temp_dir/assets/xfwm4/assets${else_light:-}-hdpi/*.png                     $theme_dir-hdpi/xfwm4
-	cp -r $temp_dir/main/xfwm4/themerc${else_light:-}                                 $theme_dir-hdpi/xfwm4/themerc
-	sed -i "s/button_offset=6/button_offset=9/"                                       $theme_dir-hdpi/xfwm4/themerc
-	mkdir -p                                                                          $theme_dir-xhdpi/xfwm4
-	cp -r $temp_dir/assets/xfwm4/assets${else_light:-}-xhdpi/*.png                    $theme_dir-xhdpi/xfwm4
-	cp -r $temp_dir/main/xfwm4/themerc${else_light:-}                                 $theme_dir-xhdpi/xfwm4/themerc
-	sed -i "s/button_offset=6/button_offset=12/"                                      $theme_dir-xhdpi/xfwm4/themerc
 
 	# Plank Themes
 	mkdir -p                                                							            $theme_dir/plank
-	if [[ "$color_sheme" == '-Light' ]]; then
-		cp -r $temp_dir/main/plank/theme-Light/* 							                          $theme_dir/plank
-	else
-		cp -r $temp_dir/main/plank/theme-Dark/*  							                          $theme_dir/plank
-	fi
+  cp -r $temp_dir/main/plank/theme-Dark/*  	  						                          $theme_dir/plank
+
 }
 #----------------------------------------#
 
@@ -459,12 +438,7 @@ echo "start"
 while getopts ":i:t:a:g:s:cbmfodah" flag; do
   case $flag in 
     i) # custom colos palette name
-        if [[ "$OPTARG" == *:* ]]; then
-            color_palette=$(echo $OPTARG | cut -d: -f1)
-            palette_type=$(echo $OPTARG | cut -d: -f2)
-        else
-            color_palette=$OPTARG
-        fi
+        color_palette=$OPTARG
         yml_file="./$color_palette.yml"
         ;;
     t) # custom theme directory
@@ -516,7 +490,7 @@ done
 
 
 if [[ ! $color_palette == "" ]]; then
-  verify_palette_type
+  verify_color_sheme
   verify_palette_name
   download_palette
 fi
@@ -529,7 +503,7 @@ verify_dependencies
 verify_style
 
 read_colors
-if [[ $palette_type == "light" ]]; then
+if [[ $color_sheme == "-Light" ]]; then
   swap_fg_bg
 fi
 set_accent_color

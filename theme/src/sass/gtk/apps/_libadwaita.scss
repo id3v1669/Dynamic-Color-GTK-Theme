@@ -417,7 +417,7 @@ overlay-split-view {
     background-color: if($variant == 'light', $grey-150, $grey-900);
 
     color: on($background);
-    border-radius: none;
+    border-radius: 0;
     margin: 0;
 
     .dim-label {
@@ -428,7 +428,7 @@ overlay-split-view {
 %nautilus_sidebar_style {
     background-color: $background;
     color: on($background);
-    border-radius: none;
+    border-radius: 0;
     margin: 0;
 
     .dim-label {

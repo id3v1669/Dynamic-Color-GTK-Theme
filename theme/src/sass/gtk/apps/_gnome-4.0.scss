@@ -16,6 +16,10 @@
         }
     }
 
+    popover label.dim-label {
+        color: $text;
+    }
+
     placessidebar {
         > scrolledwindow {
             @extend %nautilus_sidebar_style;

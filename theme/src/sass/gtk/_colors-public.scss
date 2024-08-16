@@ -86,8 +86,8 @@ $windows-border: if(
 
 
 
-@define-color wm_button_focused_bg #{"" + if($topbar == 'light', mix($white, $titlebar, 60%), $titlebar-fill)};
-@define-color wm_button_unfocused_bg #{"" + if($topbar == 'light', mix($white, $titlebar, 60%), $titlebar-fill)};
+@define-color wm_button_focused_bg #{"" + $titlebar-fill};
+@define-color wm_button_unfocused_bg #{"" + $titlebar-fill};
 @define-color wm_button_hover_fg #{"" + on($titlebar-indicator)};
 @define-color wm_button_active_fg #{"" + on($titlebar-indicator)};
 @define-color wm_button_hover_bg #{"" + $titlebar-indicator};

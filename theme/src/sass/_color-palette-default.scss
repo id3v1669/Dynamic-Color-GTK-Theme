@@ -72,6 +72,6 @@ $default-light: $accent-light;
 $default-dark: $accent-dark;
 
 // Button
-$button-close: if($topbar == 'light', **base0A**, **base09**);
-$button-max: if($topbar == 'light', **base12**, **base12**);
-$button-min: if($topbar == 'light', **base0D**, **base0C**);
+$button-close: **base09**;
+$button-max: **base12**;
+$button-min: **base0C**;

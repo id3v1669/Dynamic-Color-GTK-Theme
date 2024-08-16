@@ -150,9 +150,9 @@ $scrim-alt:                             mix($primary, background(h), 0%);
 $scrim-inverse:                         rgba($white, 0.1);
 $titlebar:                              if($variant == 'light', background(a), background(f));
 $titlebar-backdrop:                     if($variant == 'light', background(a), background(f));
-$titlebar-indicator:                    if($topbar  == 'dark', 	background(b), background(e));
+$titlebar-indicator:                    background(b);
 $popover:                               if($variant == 'light', background(a), background(g));
-$panel-solid:                           if($topbar  == 'dark', 	background(f), background(d)); // for Unity panel which doesn't allow translucent colors
+$panel-solid:                           background(f); // for Unity panel which doesn't allow translucent colors
 $panel:                                 rgba($panel-solid, $panel_opacity);
 
 $button:                                if($variant == 'dark', on($background, secondary-fill), on($background, fill));
