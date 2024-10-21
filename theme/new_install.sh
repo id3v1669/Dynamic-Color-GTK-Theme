@@ -57,7 +57,7 @@ png_replacement_colors["base00"]="D2D2DA"
 #----------------------------------------#
 ###############Verifications##############
 yes_no() {
-  if [[ autoconfirm_flag ]]; then
+  if $autoconfirm_flag; then
     return 0;
   fi
   while true; do
@@ -427,7 +427,7 @@ install_theme() {
 
 	# Plank Themes
 	mkdir -p                                                							            $theme_dir/plank
-  cp -r $temp_dir/main/plank/theme-Dark/*  	  						                          $theme_dir/plank
+  cp -r $temp_dir/main/plank/*  	  						                                    $theme_dir/plank
 
 }
 #----------------------------------------#
@@ -435,7 +435,7 @@ install_theme() {
 
 
 echo "start"
-while getopts ":i:t:a:g:s:cbmfodah" flag; do
+while getopts ":i:t:a:g:s:cbmfodxh" flag; do
   case $flag in 
     i) # custom colos palette name
         color_palette=$OPTARG
@@ -474,7 +474,7 @@ while getopts ":i:t:a:g:s:cbmfodah" flag; do
     d) # debug flag
         debug_flag=true
         ;;
-    a) # flag to autoconfirm during installation(flag created mostly for nixos and doesn't link gtk4) 
+    x) # flag to autoconfirm during installation(flag created mostly for nixos and doesn't link gtk4) 
         autoconfirm_flag=true
         ;;
     h)
@@ -488,7 +488,6 @@ while getopts ":i:t:a:g:s:cbmfodah" flag; do
   esac
 done
 
-
 if [[ ! $color_palette == "" ]]; then
   verify_color_sheme
   verify_palette_name
@@ -500,7 +499,7 @@ verify_or_create_theme_dir $theme_dir
 verify_accent_color $accentColorName
 verify_gs_version
 verify_dependencies
-verify_style
+#verify_style
 
 read_colors
 if [[ $color_sheme == "-Light" ]]; then
@@ -508,8 +507,6 @@ if [[ $color_sheme == "-Light" ]]; then
 fi
 set_accent_color
 write
-#generate_gtk_assets
-#generate_cinnamon_thumbnails
 
 if [[ $compat_flag == true ]]; then
     compact_size

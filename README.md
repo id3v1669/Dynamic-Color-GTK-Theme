@@ -16,7 +16,7 @@ GTK theme based on 32 colors sheme from [this repo](https://github.com/id3v1669/
 * gtk2 fix new asset sizes
 * file picker wrong button color "$suggested"
 * get rid of predeclared accent colors
-* lollypop - fix playlists icon
+* lollypop - fix playlists icon "scrolledwindow image.rounded-icon-large" for some reason doesn't respect background-color
 * swaync - fix theme(dnd button & background colors)
 * text highlits use darker fg for dark theme
 ## Else:

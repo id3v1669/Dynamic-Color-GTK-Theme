@@ -3,3 +3,4 @@ theme/src-colored
 theme/tests
 result
 .direnv
+test.sh

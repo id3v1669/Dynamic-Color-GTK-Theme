@@ -11,7 +11,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "dyncmic-color-gtk-theme";
-  version = "unstable-2024-07-25";
+  version = "unstable-git";
 
   src = lib.cleanSource ../.;
 
