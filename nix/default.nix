@@ -17,7 +17,7 @@ stdenvNoCC.mkDerivation {
 
   propagatedUserEnvPkgs = [ gtk-engine-murrine ];
 
-  nativeBuildInputs = [ gnome.gnome-shell sassc optipng inkscape-with-extensions ];
+  nativeBuildInputs = [ gnome-shell sassc optipng inkscape-with-extensions ];
   buildInputs = [ gnome-themes-extra ];
 
   dontBuild = true;
@@ -30,7 +30,7 @@ stdenvNoCC.mkDerivation {
     runHook preInstall
     mkdir -p $out/share/themes
     cd theme
-    ./new_install.sh -s -Dark -t "$out/share/themes" -d -a
+    ./new_install.sh -s -Dark -t "$out/share/themes" -d -x
     runHook postInstall
   '';
 }
