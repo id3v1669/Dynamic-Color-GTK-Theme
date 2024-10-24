@@ -2,7 +2,7 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  gnome,
+  gnome-shell,
   sassc,
   optipng,
   inkscape-with-extensions,
