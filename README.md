@@ -1,5 +1,4 @@
 # WIP
-To be released by 09/24
 
 # About
 GTK theme based on 32 colors sheme from [this repo](https://github.com/id3v1669/32based-color-shemes)
