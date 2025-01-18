@@ -1,0 +1,96 @@
+// Red
+$red-light: **base0A**;
+$red-default: **base08**;
+$red-dark: **base09**;
+
+// Pink
+$pink-light: **base1F**;
+$pink-default: **base1D**;
+$pink-dark: **base1E**;
+
+// Purple
+$purple-light: **base1C**;
+$purple-default: **base1A**;
+$purple-dark: **base1B**;
+
+// Blue
+$blue-light: **base19**;
+$blue-default: **base17**;
+$blue-dark: **base18**;
+
+// Teal
+$teal-light: mix(**base17**, **base11**,60%);
+$teal-default: darken(mix(**base17**, **base11**,60%), 10%);
+$teal-dark: lighten(mix(**base17**, **base11**,60%), 10%);
+
+// Cyan
+$cyan-light: **base16**;
+$cyan-default: **base14**;
+$cyan-dark: **base15**;
+
+// Green
+$green-light: **base13**;
+$green-default: **base11**;
+$green-dark: **base12**;
+
+// Yellow
+$yellow-light: **base10**;
+$yellow-default: **base0E**;
+$yellow-dark: **base0F**;
+
+// Orange
+$orange-light: **base0D**;
+$orange-default: **base0B**;
+$orange-dark: **base0C**;
+
+// Accent Color
+$accent-light: **accent02**;
+$accent-default: **accent00**;
+$accent-dark: **accent01**;
+
+// Grey
+$fg-050: **base01**;
+$fg-100: darken(**base01**, 5%);
+$fg-150: **base00**;
+$fg-200: darken(**base00**, 5%);
+$fg-250: lighten(**base02**, 5%);
+$fg-300: **base02**;
+$fg-350: darken(**base02**, 5%);
+$fg-400: lighten(**base03**, 5%);
+$fg-450: **base03**;
+
+$bg-050: **base05**;
+$bg-100: darken(**base05**, 5%);
+$bg-150: lighten(**base04**, 5%);
+$bg-200: **base04**;
+$bg-250: darken(**base04**, 5%);
+$bg-300: lighten(**base06**, 5%);
+$bg-350: **base06**;
+$bg-400: lighten(**base07**, 5%);
+$bg-450: **base07**;
+
+
+@function bw($return_white: true) {
+    $brightnessfg: (red($fg-050) * 299 + green($fg-050) * 587 + blue($fg-050) * 114) / 1000;
+	$brightnessbg: (red($bg-350) * 299 + green($bg-350) * 587 + blue($bg-350) * 114) / 1000;
+    @if ($brightnessfg >= $brightnessbg) {
+        @if $return_white {
+            @return $fg-050;
+        } @else {
+            @return $bg-350;
+        }
+    } @else {
+        @if $return_white {
+            @return $bg-350;
+        } @else {
+            @return $fg-050;
+        }
+    }
+}
+
+// White
+$white: bw(true);
+
+// Black
+$black: bw(false);
+

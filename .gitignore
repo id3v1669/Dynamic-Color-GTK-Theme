@@ -1,0 +1,6 @@
+theme/Dynamic-Color-GTK-Theme
+theme/src-colored
+theme/tests
+result
+.direnv
+test.sh

@@ -1,0 +1,924 @@
+/*********
+ * Tilix *
+ *********/
+overlay > revealer {
+    &.left > scrolledwindow.frame,
+    &.right > scrolledwindow.frame {
+        border-style: none;
+        box-shadow: $shadow-z16;
+    }
+
+    &.left > scrolledwindow.frame {
+        margin-right: 32px;
+    }
+
+    &.right > scrolledwindow.frame {
+        margin-left: 32px;
+    }
+}
+
+.terminix-session-sidebar, // for backward compatibility
+.tilix-session-sidebar {
+    background-image: image($surface);
+}
+
+.terminal-titlebar button {
+    border-radius: 0;
+}
+
+button.image-button.session-new-button {
+    min-width: $medium-size - 4px;
+}
+
+// Remove extra padding
+notebook.tilix-background tab > box > stack {
+    margin: -6px;
+}
+
+button.flat.tilix-small-button {
+    // NOTE: padding is hard-coded with:
+    // padding: 2px 4px;
+    min-height: $small-size - 2px * 2;
+    min-width: $small-size - 4px * 2;
+}
+
+/**************
+ * Terminator *
+ **************/
+.terminator-terminal-window {
+    paned > separator {
+        background-color: $background;
+    }
+
+    // this should be fixed by the upstream
+    notebook.frame {
+        border-style: none;
+    }
+}
+
+/*************
+ * Ubitquity *
+ *************/
+#live_installer .menubar progressbar trough {
+    border-radius: 4px; // Adjust to hard-coded progress border-radius
+    background-color: $titlebar-track-disabled;
+}
+
+/*********
+ * Meld *
+ ********/
+.meld-notebook {
+    &,
+    > stack {
+        background: none;
+        border-radius: 0 0 $window-radius $window-radius;
+    }
+}
+
+.meld-notebook-child {
+    background-color: $base-alt;
+    border-radius: 0 0 $window-radius $window-radius;
+}
+
+statusbar.meld-status-bar {
+    background: none;
+}
+
+/***********
+ * Eclipse *
+ ***********/
+window.background > box.vertical > scrolledwindow > widget toolbar {
+    padding: 2px;
+
+    separator,
+    button {
+        margin: 2px;
+    }
+
+    button {
+        border-radius: $corner-radius;
+    }
+}
+
+/************
+ * Chromium *
+ ************/
+window.background.chromium {
+    background-color: $chromium-tabs;
+
+    // FIXME: There is no way to change the color of the toolbar buttons
+    // toolbar button { color: $text-secondary; }
+
+    // toolbar's border-bottom refers to button's border
+    // FIXME: Chrome's button border ignores theme's alpha value :(
+    entry,
+    > button {
+        border: 1px solid $solid-border;
+    }
+
+    > button {
+        color: $primary;
+
+        &:disabled {
+            color: $text-secondary-disabled;
+        }
+    }
+
+    menubar,
+    headerbar {
+        color: $titlebar-text-secondary;
+    }
+
+    headerbar.titlebar {
+        padding: 0 $space-size * 2;
+
+        button:active {
+            background-color: $overlay-active;
+        } // Workaround for non-animatable buttons in headerbar
+    }
+
+    spinner {
+        color: $primary;
+    }
+
+    // For text field
+    textview.view {
+        background-color: transparent;
+    }
+
+    // For prominent button, starred icon, etc.
+    treeview.view.cell:selected:focus {
+        background-color: $primary;
+        color: on($primary);
+    }
+
+    // For table header
+    treeview.view button {
+        border: 1px solid $track;
+        background-color: $base; // FIXME: This should not be necessary
+        // color: $text-secondary;
+    }
+
+    menu {
+        border-color: lighten($background, 16%); // fix??
+
+        menuitem {
+            border-radius: 0;
+        }
+    }
+}
+
+tooltip.background.chromium {
+    background-color: rgba($tooltip, 1);
+}
+
+/***********
+ * Firefox *
+ ***********/
+#MozillaGtkWidget {
+    decoration {
+        border: none;
+    }
+
+    > widget {
+        // For popover, entry in toolbar, etc.
+        text {
+            background-color: $background;
+        }
+
+        // For selection, active tab indicator, etc.
+        text:selected {
+            // Use traditional selection style as workaround
+            background-color: $primary;
+            color: on($primary);
+        }
+
+        // For separators in bookmark toolbar
+        > separator {
+            color: $solid-border;
+        }
+
+        // avoid black border
+        > scrollbar {
+            background-clip: border-box;
+        }
+
+        // Emphasize toolbar's border-bottom
+        > frame > border {
+            border-color: $solid-border;
+        }
+
+        > entry,
+        > button > button {
+            border: 1px solid $solid-border;
+            border-radius: $corner-radius;
+            box-shadow: none;
+
+            &:disabled {
+                border-color: $track-disabled;
+            }
+        }
+
+        > entry {
+            min-height: 32px - 2px;
+            background-color: $base;
+
+            &:focus {
+                border-color: $primary;
+                box-shadow: inset 0 0 0 1px $primary;
+            }
+
+            &:disabled {
+                background-color: $base-alt;
+            }
+        }
+
+        > button > button {
+            padding: 4px 8px;
+            background-size: auto;
+
+            &:hover {
+                box-shadow: inset 0 0 0 9999px $overlay-hover;
+            }
+
+            &:active {
+                background-image: image($overlay-active);
+            }
+        }
+
+        // use 16px assets for hard-coded sizing
+        > checkbutton > check {
+            @extend %small_check;
+        }
+
+        > radiobutton > radio {
+            @extend %small_radio;
+        }
+
+        > checkbutton > check,
+        > radiobutton > radio {
+            margin: 0;
+            padding: 0;
+        }
+
+        // make check/radio visible regardless of whether the background is bright or dark
+        > checkbutton > check:not(:checked):not(:indeterminate),
+        > radiobutton > radio:not(:checked):not(:indeterminate) {
+            color: $bg-150;
+
+            &:hover,
+            &:active {
+                color: $bg-050;
+            }
+
+            &:disabled {
+                color: rgba($bg-150, 0.5);
+            }
+        }
+    }
+
+    // remove ugly border around the menus
+    menu {
+        border: none;
+    }
+}
+
+// for backward compatibility
+#MozillaGtkWidget {
+    > widget {
+        > menubar {
+            color: $titlebar-text-secondary;
+
+            &:hover {
+                color: $titlebar-text;
+            }
+
+            &:disabled {
+                color: $titlebar-text-secondary-disabled;
+            }
+        }
+
+        > frame {
+            color: $solid-border;
+        }
+    }
+
+    menu > separator {
+        color: $solid-border;
+    }
+}
+
+//
+// plank
+//
+
+window.background:not(.csd) {
+    > window > menu {
+        menuitem {
+            transition: none; // Fixed plank menu background issue
+        }
+    }
+}
+
+/************
+ * Inkscape *
+ ************/
+#ToolboxCommon {
+    > #AuxToolbox {
+        #StyleSwatch {
+            font-size: smaller;
+        }
+
+        #Kludge {
+            padding: 0;
+        }
+
+        spinbutton,
+        entry {
+            min-height: 32px;
+        }
+
+        button:not(.up):not(.down) {
+            min-height: 24px;
+            min-width: 16px;
+            padding: 4px 8px;
+            // border-radius: $corner-radius;
+        }
+
+        spinbutton button {
+            border-width: 4px;
+        }
+    }
+
+    > toolbar.vertical {
+        margin-top: -4px;
+
+        button {
+            min-height: 24px;
+            min-width: 24px;
+            padding: 4px;
+            // border-radius: $corner-radius;
+        }
+    }
+}
+
+#CanvasTable {
+    button {
+        min-height: 16px;
+        min-width: 16px;
+        padding: 0;
+    }
+
+    #HorizontalScrollbar {
+        border-top: 1px solid $divider;
+    }
+
+    #VerticalScrollbar {
+        &:dir(ltr) {
+            border-left: 1px solid $divider;
+        }
+
+        &:dir(rtl) {
+            border-right: 1px solid $divider;
+        }
+    }
+}
+
+#Canvas_and_Dock {
+    frame > border {
+        border: none;
+    }
+
+    // each canvases' titlebar
+    widget > widget {
+        > button.flat {
+            min-height: 16px;
+            min-width: 16px;
+            padding: 4px;
+        }
+
+        > box.horizontal image {
+            padding: 4px;
+        }
+    }
+
+    // vertical dock buttons
+    box.horizontal > box.vertical > button.flat {
+        min-height: 16px;
+        min-width: 24px;
+        padding: 8px 4px;
+    }
+}
+
+scrolledwindow#DialogNotebook {
+    > viewport.frame > notebook.frame {
+        button.close-button {
+            image {
+                padding: 4px;
+            }
+        }
+    }
+}
+
+#InKscapeCanvas {
+    // Not use ?
+    background-color: $card;
+    border-radius: $corner-radius;
+}
+
+/***********
+ * Synapse *
+ ***********/
+box.vertical > widget > widget:selected {
+    @extend %selected_items;
+}
+
+/***************
+ * Libreoffice *
+ ***************/
+window.background {
+    > grid
+        > widget
+        > widget
+        > scrolledwindow
+        > viewport
+        > grid
+        > box
+        > box
+        > frame
+        > box {
+        background-color: $base;
+    }
+}
+
+/*********
+ * Pamac *
+ *********/
+window.background.csd {
+    > box.vertical > overlay > stack > box.vertical > box.horizontal {
+        > revealer > stack {
+            &, // Search left side
+      > scrolledwindow > viewport.frame, // Installed left side
+      > box.vertical > stack > scrolledwindow > viewport.frame {
+                // Browse left side
+                > list {
+                    border: none;
+                    border-radius: 0;
+
+                    > row.activatable {
+                        border-radius: $corner-radius;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**********
+ * swaync *
+ **********/
+
+ %block-set-swaync {
+    background-color: $bg-200; // fix??
+    padding: 8px;
+    margin: 8px;
+    border-radius: $menu-radius;
+  }
+  
+  .notification-row {
+    outline: none;
+
+    .notification-background {
+      margin: 3px;
+      border: none;
+  
+      .close-button {
+        background: shade($titlebutton-close, 0.4);
+        color: $text;
+        text-shadow: none;
+        padding: 0;
+        border-radius: 100%;
+        $margin: 5px;
+        margin-top: $margin;
+        margin-right: $margin;
+        box-shadow: none;
+        border: none;
+        min-width: 24px;
+        min-height: 24px;
+  
+        &:hover {
+          box-shadow: none;
+          background: shade($titlebutton-close, 0.6);
+          transition: $transition-hover;
+          border: none;
+        }
+      }
+  
+      .notification {
+        border-radius: $menu-radius;
+        border: 1px solid $solid-border;
+        padding: 0;
+        transition: $transition-hover;
+        background: $bg-200; // fix??
+  
+        %action {
+          padding: 4px;
+          margin: 0;
+          box-shadow: none;
+          background: transparent;
+          border: none;
+          color: $text;
+          transition: $transition-hover;
+        }
+        %action-hover {
+          -gtk-icon-effect: none;
+          background: $bg-100; // fix??
+        }
+  
+        .notification-default-action {
+          @extend %action;
+          border-radius: $menu-radius;
+  
+          &:hover {
+            @extend %action-hover;
+          }
+  
+          &:not(:only-child) {
+            /* When alternative actions are visible */
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+  
+          .notification-content {
+            background: transparent;
+            border-radius: $menu-radius;
+            $margin: 4px;
+            padding: $margin;
+  
+            .image {
+              /* Notification Primary Image */
+              -gtk-icon-effect: none;
+              border-radius: 100px; /* Size in px */
+              margin: $margin;
+            }
+            .app-icon {
+              /* Notification app icon (only visible when the primary image is set) */
+              -gtk-icon-effect: none;
+              -gtk-icon-shadow: 0 1px 4px black;
+              margin: 6px;
+            }
+  
+            .text-box {
+              .summary {
+                /* Notification summary/title */
+                font-size: $font-size-summary;
+                font-weight: bold;
+                background: transparent;
+                color: $text;
+                text-shadow: none;
+              }
+              .time {
+                /* Notification time-ago */
+                font-size: $font-size-summary;
+                font-weight: bold;
+                background: transparent;
+                color: $text;
+                text-shadow: none;
+                margin-right: 30px;
+              }
+              .body {
+                /* Notification body */
+                font-size: $root-font-size;
+                font-weight: normal;
+                background: transparent;
+                color: $text;
+                text-shadow: none;
+              }
+            }
+  
+            progressbar {
+              /* The optional notification progress bar */
+              margin-top: $margin;
+            }
+  
+            .body-image {
+              /* The "extra" optional bottom notification image */
+              margin-top: $margin;
+              background-color: white;
+              border-radius: $menu-radius;
+              -gtk-icon-effect: none;
+            }
+  
+            .inline-reply {
+              /* The inline reply section */
+              margin-top: $margin;
+  
+              .inline-reply-entry {
+                background: $bg-200; // fix??
+                color: $text;
+                caret-color: $text;
+                border: 1px solid $solid-border;
+                border-radius: $menu-radius;
+              }
+              .inline-reply-button {
+                margin-left: 4px;
+                background: $fg-400; // fix??
+                border: 1px solid $solid-border;
+                border-radius: $menu-radius;
+                color: $text;
+  
+                &:disabled {
+                  background: initial;
+                  color: $text-disabled;
+                  border: 1px solid $solid-border;
+                  border-color: transparent;
+                }
+                &:hover {
+                  background: $bg-100; // fix??
+                }
+              }
+            }
+          }
+        }
+  
+        .notification-action {
+          @extend %action;
+          border-top: 1px solid $solid-border;
+          border-radius: 0px;
+          border-right: 1px solid $solid-border;
+  
+          &:first-child {
+            /* add bottom border radius to eliminate clipping */
+            border-bottom-left-radius: $menu-radius;
+          }
+          &:last-child {
+            border-bottom-right-radius: $menu-radius;
+            border-right: none;
+          }
+  
+          &:hover {
+            @extend %action-hover;
+          }
+        }
+      }
+    }
+  }
+  
+  .notification-group {
+    @extend %block-set-swaync;
+  
+    %header {
+      margin: 0 16px;
+      color: $text;
+    }
+  
+    .notification-group-headers {
+      @extend %header;
+  
+      .notification-group-icon {
+        color: $text;
+      }
+      .notification-group-header {
+        color: $text;
+      }
+    }
+    .notification-group-buttons {
+      /* Notification Group Buttons */
+      @extend %header;
+    }
+  
+    &.collapsed {
+      .notification-row {
+        .notification {
+          background-color: $bg-200; // fix??
+        }
+  
+        &:not(:last-child) {
+          /* Top notification in stack */
+          /* Set lower stacked notifications opacity to 0 */
+          .notification-action,
+          .notification-default-action {
+            opacity: 0;
+          }
+        }
+      }
+  
+      &:hover {
+        .notification-row:not(:only-child) {
+          .notification {
+            background-color: $bg-100; // fix??
+          }
+        }
+      }
+    }
+  }
+  
+  .control-center {
+    /* The Control Center which contains the old notifications + widgets */
+    background: $background;
+    color: $text;
+    border-radius: 10px;
+    border: 1px solid $solid-border;
+  
+    .control-center-list-placeholder {
+      /* The placeholder when there are no notifications */
+      opacity: 0.5;
+    }
+  
+    .control-center-list {
+      background: transparent;
+  
+      .notification {
+        background: $bg-100; // fix??
+      }
+    }
+  }
+  
+  .blank-window {
+    background: transparent;
+  }
+  
+  .floating-notifications {
+    background: transparent;
+  
+    .notification {
+      margin: 15px;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+
+  .widget-volume {
+    background-color: $bg-200; // fix??
+    padding: 8px;
+    margin: 8px;
+    border-radius: $menu-radius;
+  }
+  
+  .widget-volume > box > button {
+    background: transparent;
+    border: none;
+  }
+  
+  .per-app-volume {
+    background-color: $bg-100; // fix??
+    padding: 4px 8px 8px 8px;
+    margin: 8px;
+    border-radius: $menu-radius;
+    .activatable:hover {
+      background: none;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  }
+
+  .widget-title {
+    @extend %block-set-swaync;
+    font-size: 1.5rem;
+  }
+  .widget-title > button {
+    font-size: initial;
+    color: $text;
+    text-shadow: none;
+    background: $base;
+    border: 1px solid $solid-border;
+    box-shadow: none;
+    border-radius: $menu-radius;
+  }
+  .widget-title > button:hover {
+    background: $bg-100; // fix??
+  }
+
+  $mpris-album-art-overlay: rgba($bg-400, 0.55); // fix??
+$mpris-button-hover: rgba($bg-400, 0.5); // fix??
+$mpris-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+
+.widget-mpris {
+  .widget-mpris-player {
+    padding: 8px;
+    padding: 16px;
+    margin: 16px 20px;
+    background-color: $mpris-album-art-overlay;
+    border-radius: $menu-radius;
+    box-shadow: $mpris-shadow;
+
+    button:hover {
+      background: $bg-100
+    }
+
+    .widget-mpris-album-art {
+      border-radius: $menu-radius;
+      box-shadow: $mpris-shadow;
+    }
+    .widget-mpris-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+    .widget-mpris-subtitle {
+      font-size: 1.1rem;
+    }
+
+    & > box > button {
+      &:hover {
+        background-color: $mpris-button-hover;
+      }
+    }
+  }
+
+  & > box > button {
+    color: transparent;
+    background: transparent;
+  }
+  & > box > button:hover {
+    color: $text;
+    background: $mpris-button-hover;
+  }
+  & > box > button:disabled {
+    color: transparent;
+    background: transparent;
+  }
+}
+
+.widget-menubar > box > .menu-button-bar {
+    @extend %block-set-swaync;
+  }
+  
+  .widget-menubar > box > .menu-button-bar > button {
+    border: none;
+    background: $bg-100; // fix??
+  }
+  
+  .widget-menubar > box > revealer > box {
+    @extend %block-set-swaync;
+  }
+  
+  .widget-menubar > box > revealer > box > button {
+    margin: 3px;
+    background: $bg-100; // fix??
+    border: none;
+  }
+  
+  .topbar-buttons > button {
+    border: none;
+    background: transparent;
+  }
+  
+  .widget-label {
+    margin: 8px;
+  }
+  .widget-label > label {
+    font-size: 1.1rem;
+  }
+
+  .widget-inhibitors {
+  
+    margin: 8px;
+    font-size: 1.5rem;
+  }
+  .widget-inhibitors > button {
+    font-size: initial;
+    color: $text;
+    text-shadow: none;
+    background: $fg-400; // fix??
+    border: 1px solid $solid-border;
+    box-shadow: none;
+    border-radius: $menu-radius;
+  }
+  .widget-inhibitors > button:hover {
+    background: $bg-100; // fix??
+  }
+
+  .widget-dnd {
+    @extend %block-set-swaync;
+    color: $text;
+    font-size: 1.1rem;
+  }
+  .widget-dnd > switch {
+    font-size: initial;
+    border-radius: $menu-radius;
+    background: $fg-400; // fix??
+    border: 1px solid $solid-border;
+    box-shadow: none;
+  }
+  .widget-dnd > switch:checked {
+    background: $primary;
+  }
+  .widget-dnd > switch slider {
+    background: $base;
+    border-radius: $menu-radius;
+  }
+
+  .widget-buttons-grid {
+    @extend %block-set-swaync;
+  }
+  
+  .widget-buttons-grid > flowbox > flowboxchild > button {
+    background: $bg-100; // fix??
+    border-radius: $menu-radius;
+  }
+
+  .widget-backlight {
+    @extend %block-set-swaync;
+  }
+  
