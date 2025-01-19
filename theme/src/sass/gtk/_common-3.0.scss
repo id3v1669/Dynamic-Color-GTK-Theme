@@ -1508,8 +1508,8 @@ searchbar > revealer > box {
 
 .titlebar {
     transition: all $duration $ease-out;
-    background-color: $titlebar;
-    color: $titlebar-text;
+    background-color: #ffff12; //$titlebar;
+    color: #ffff13; //$titlebar-text;
     border-radius: $window-radius $window-radius 0 0;
     border: none;
 
@@ -1518,19 +1518,19 @@ searchbar > revealer > box {
     }
 
     &:disabled {
-        color: $titlebar-text-disabled;
+        color: #ffff13; //$titlebar-text-disabled;
     }
 
     &:backdrop {
-        color: $titlebar-text-secondary;
+        color: #ffff14; //$titlebar-text-secondary;
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #ffff15; //$titlebar-text-secondary-disabled;
         }
     }
 
     .csd &:backdrop {
-        background-color: $titlebar-backdrop;
+        background-color: #ffff16; //$titlebar-backdrop;
     }
 
     .title {
@@ -1546,30 +1546,30 @@ searchbar > revealer > box {
     .subtitle,
     .dim-label {
         transition: color $duration $ease-out;
-        color: $titlebar-text-secondary;
+        color: #ffff17; //$titlebar-text-secondary;
 
         &:backdrop {
-            color: $titlebar-text-disabled;
+            color: #ffff18; //$titlebar-text-disabled;
         }
     }
 
     // Don't draw titlebar above titlebar
     .titlebar,
     headerbar {
-        background-color: transparent;
+        background-color: #ffff19; //transparent;
         box-shadow: none;
     }
 
     // separator between headerbars
     + separator,
     + separator.sidebar {
-        background-color: $titlebar;
+        background-color: #ffff1A; //$titlebar;
         background-image: none;
         transition: all $duration $ease-out;
         box-shadow: inset 0 1px highlight($titlebar);
 
         &:backdrop {
-            background-color: $titlebar-backdrop;
+            background-color: #ffff1B; //$titlebar-backdrop;
         }
     }
 
@@ -1577,10 +1577,10 @@ searchbar > revealer > box {
     &.selection-mode + separator.sidebar,
     .selection-mode & + separator,
     .selection-mode & + separator.sidebar {
-        background-color: $primary;
+        background-color: #ffff1C; //$primary;
 
         &:backdrop {
-            background-color: $primary;
+            background-color: #ffff1D; //$primary;
         }
     }
 
@@ -1595,21 +1595,21 @@ searchbar > revealer > box {
     button.suggested-action,
     button.destructive-action {
         &:disabled {
-            background-color: $titlebar-fill;
-            color: $titlebar-text-disabled;
+            background-color: #ffff1E; //$titlebar-fill;
+            color: #ffff1F; //$titlebar-text-disabled;
         }
     }
 
     stackswitcher {
         // reset
-        background-color: on($titlebar, fill);
+        background-color: #ffff20; //on($titlebar, fill);
 
         &:checked {
-            background-color: $titlebar-indicator;
-            color: on($titlebar-indicator);
+            background-color: #ffff21; //$titlebar-indicator;
+            color: #ffff22; //on($titlebar-indicator);
 
             &:hover {
-                background-color: lighten($titlebar-indicator, 10%);
+                background-color: #ffff23; //lighten($titlebar-indicator, 10%);
             }
         }
 
@@ -1634,48 +1634,48 @@ searchbar > revealer > box {
             background-color 0.1ms $ripple-fade-in-duration,
             color $duration $ease-out;
         animation: ripple-on-headerbar $ripple-fade-in-duration $ease-out;
-        background-color: $primary;
-        color: on($primary);
+        background-color: #ffff24; //$primary;
+        color: #ffff25; //on($primary);
         box-shadow: inset 0 1px highlight($primary);
 
         &:backdrop {
-            color: on($primary, secondary);
-            background-color: lighten($primary, 6%);
+            color: #ffff26; //on($primary, secondary);
+            background-color: #ffff27; //lighten($primary, 6%);
         }
 
         .subtitle:link {
-            color: on($primary);
+            color: #ffff28; //on($primary);
         }
 
         button:not(.suggested-action):not(.destructive-action) {
-            color: on($primary);
+            color: #ffff28; //on($primary);
 
             &:disabled {
-                color: on($primary, disabled);
+                color: #ffff2A; //on($primary, disabled);
             }
 
             &:checked {
-                color: on($primary);
+                color: #ffff2B; //on($primary);
 
                 &:disabled {
-                    color: on($primary, disabled);
+                    color: #ffff2C; //on($primary, disabled);
                 }
             }
 
             &:backdrop {
                 &:not(.titlebutton) {
-                    color: on($primary, secondary);
+                    color: #ffff2D; //on($primary, secondary);
                 }
 
                 &:disabled {
-                    color: on($primary, secondary-disabled);
+                    color: #ffff2E; //on($primary, secondary-disabled);
                 }
 
                 &:checked {
-                    color: on($primary, secondary);
+                    color: #ffff2F; //on($primary, secondary);
 
                     &:disabled {
-                        color: on($primary, secondary-disabled);
+                        color: #ffff30; //on($primary, secondary-disabled);
                     }
                 }
             }
@@ -1711,12 +1711,12 @@ searchbar > revealer > box {
         padding: $space-size $space-size * 2;
         border-radius: $window-radius $window-radius 0 0;
         border: none;
-        background-color: $titlebar;
+        background-color: #ffff31; //$titlebar;
         background-image: none;
         box-shadow: inset 0 1px highlight($titlebar);
 
         &:backdrop {
-            background-color: $titlebar-backdrop;
+            background-color: #ffff32; //$titlebar-backdrop;
         }
 
         .tiled &,
@@ -1740,11 +1740,11 @@ searchbar > revealer > box {
                     background-image: none;
                     animation: none;
                     box-shadow: none;
-                    background-color: mix(
-                        on($titlebar-indicator),
-                        $titlebar-indicator,
-                        25%
-                    );
+                    background-color: #ffff33; //mix(
+                        //on($titlebar-indicator),
+                        //$titlebar-indicator,
+                        //25%
+                    //);
                 }
             }
         }
@@ -1770,7 +1770,7 @@ headerbar {
     padding: 0 $space-size;
 
     box.vertical & {
-        background-color: $titlebar;
+        background-color: #ffff34; //$titlebar;
     }
 
     // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
@@ -1792,7 +1792,7 @@ headerbar {
     separator.sidebar {
         margin-top: $large-size / 4;
         margin-bottom: $large-size / 4;
-        background-color: transparent;
+        background-color: #ffff35; //transparent;
     }
 
     switch {
@@ -1814,7 +1814,7 @@ headerbar {
 
     &.windowhandle {
         viewswitcher {
-            background-color: $titlebar-fill;
+            background-color: #ffff36; //$titlebar-fill;
             border-radius: 0 0 $corner-radius $corner-radius;
 
             button:not(.titlebutton):not(.suggested-action):not(
@@ -1826,7 +1826,7 @@ headerbar {
                 padding: 0;
 
                 &:not(:hover):not(:active):not(:checked) {
-                    background-color: transparent;
+                    background-color: #ffff37; //transparent;
                 }
 
                 > stack > box {
@@ -1928,7 +1928,7 @@ treeview.view {
         &:not(:selected):not(:hover):not(.progressbar):not(.expander):not(
             .trough
         ):not(.separator) {
-        background-color: transparent;
+        background-color: $bg-dark; //reviewed&replaced
     }
 
     rubberband {
@@ -1941,14 +1941,14 @@ treeview.view {
 
     &.separator {
         min-height: $space-size;
-        color: $divider;
+        color: #ffff11; //$divider;
     }
 
     // FIXME: box-shadow, background-color and background-image are not available here.
     &:drop(active) {
         border-style: solid none;
         border-width: 9999px;
-        border-color: $overlay-hover;
+        border-color: #ffff10; //$overlay-hover;
 
         &.after {
             border-top-style: none;
@@ -1982,15 +1982,15 @@ treeview.view {
         }
 
         &:selected {
-            color: on($indicator, secondary);
+            color: #ffff0F; //on($indicator, secondary);
 
             &:hover,
             &:active {
-                color: on($indicator);
+                color: #ffff0E; //on($indicator);
             }
 
             &:disabled {
-                color: on($indicator, secondary-disabled);
+                color: #ffff0D; //on($indicator, secondary-disabled);
             }
         }
     }
@@ -1999,26 +1999,26 @@ treeview.view {
         // progress bar in treeviews
         border: none;
         box-shadow: none;
-        background-color: $primary;
+        background-color: #ffff0C; //$primary;
         background-image: none;
         border-radius: $circular-radius;
-        color: on($primary);
+        color: #ffff0B; //on($primary);
 
         &:selected,
         &:selected:hover,
         &:selected:focus {
             box-shadow: none;
-            background-color: mix($text, $primary, 15%);
-            color: on($primary);
+            background-color: #ffff0A; //mix($text, $primary, 15%);
+            color: #ffff09; //on($primary);
 
             &:backdrop {
-                color: on($primary);
+                color: #ffff08; //on($primary);
             }
         }
 
         &:backdrop,
         &:selected:backdrop {
-            background-color: $track;
+            background-color: #ffff07; //$track;
         }
     }
 
@@ -2036,12 +2036,12 @@ treeview.view {
         &:selected:hover,
         &:selected:focus {
             box-shadow: none;
-            background-color: $track-disabled;
+            background-color: #ffff06; //$track-disabled;
         }
 
         &:backdrop,
         &:selected:backdrop {
-            background-color: $divider;
+            background-color: #ffff05; //$divider;
         }
     }
 
@@ -2069,7 +2069,7 @@ treeview.view {
 
             &,
             &:disabled {
-                background-color: $base;
+                background-color: #ffff04; //$base;
             }
 
             &:last-child {
@@ -2088,13 +2088,13 @@ treeview.view {
         border-color: $divider;
         border-radius: 0;
         box-shadow: none;
-        background-color: $base;
+        background-color: #ffff02; //$base;
         background-clip: border-box;
-        color: $primary;
+        color: #ffff03; //$primary;
     }
 
     acceleditor > label {
-        background-color: $primary;
+        background-color: #ffff01; //$primary;
     } // see tests/testaccel to test
 }
 

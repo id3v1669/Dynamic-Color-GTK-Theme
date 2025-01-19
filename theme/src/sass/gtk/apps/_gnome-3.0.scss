@@ -1857,19 +1857,6 @@ window.background.csd {
     }
 }
 
-// /**************
-//  * Gnome Disk *
-//  **************/
-// window.background.csd {
-//   > box.vertical > paned.horizontal {
-//     > scrolledwindow {
-//       treeview.view:not(:selected):not(:hover) {
-//         background-color: transparent;
-//       }
-//     }
-//   }
-// }
-
 /************
  * Terminal *
  ************/

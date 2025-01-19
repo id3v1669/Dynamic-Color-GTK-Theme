@@ -29,3 +29,4 @@ Originaly forked from [Tokyonight-GTK-Theme](https://github.com/Fausto-Korpsvart
 * swaync - fix theme(dnd button & background colors)
 * text highlits use darker fg for dark theme
 * gnome-system-monitor - add color change on process hover
+* objects with "tobechecked" need to be moved/edited
