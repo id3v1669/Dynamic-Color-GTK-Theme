@@ -112,6 +112,9 @@ $base-alt:                              $bg-100;
 $card:                                  $bg-050;
 $menu:                                  $bg-250;
 
+$bg-main:                               $bg-200;
+$bg-dark:                               $bg-350;
+
 $tooltip:                               rgba(darken($bg-400, 3%), 0.9);
 $osd:                                   mix($primary, $bg-400, 0%);
 $scrim:                                 mix($primary, $bg-300, 0%);
@@ -143,7 +146,6 @@ $destructive:                           $error;
 $assets-color:                          $primary;
 
 $frame:                                 rgba($black, 0.20);
-$border:                                rgba($white, 0.12);
 $window-border:                         rgba($black, 0.75);
 $solid-border:                          mix(white, $base, 12%);
 $border-alt:                            rgba($black, 0.16); // darker border color for Chrome and Firefox
@@ -158,10 +160,10 @@ $overlay-checked:                       gtkalpha(currentColor, 0.10);
 $overlay-selected:                      gtkalpha(currentColor, 0.06);
 
 // Text and derivative colors
-$text:                                  on($background);
-$text-secondary:                        on($background, secondary);
-$text-disabled:                         on($background, disabled);
-$text-secondary-disabled:               on($background, secondary-disabled);
+$text:                                  $fg-default; 			//reviewed&replaced
+$text-secondary:                        rgba($fg-default, 0.7); //reviewed&replaced
+$text-disabled:                         rgba($fg-dark, 0.3);    //reviewed&replaced
+$text-secondary-disabled:               rgba($fg-dark, 0.2);    //reviewed&replaced
 $track:                                 on($background, track);
 $track-disabled:                        on($background, track-disabled);
 $divider:                               on($background, divider);

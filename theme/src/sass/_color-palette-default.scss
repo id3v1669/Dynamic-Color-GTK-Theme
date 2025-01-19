@@ -48,8 +48,14 @@ $accent-light: **accent02**;
 $accent-default: **accent00**;
 $accent-dark: **accent01**;
 
-// Grey
-$fg-050: **base01**;
+
+$fg-light: **base01**;
+$fg-default: **base00**;
+$fg-dark: **base02**;
+$fg-dark-alt: **base03**;
+
+
+
 $fg-100: darken(**base01**, 5%);
 $fg-150: **base00**;
 $fg-200: darken(**base00**, 5%);
@@ -58,6 +64,14 @@ $fg-300: **base02**;
 $fg-350: darken(**base02**, 5%);
 $fg-400: lighten(**base03**, 5%);
 $fg-450: **base03**;
+
+$bg-light: **base05**;
+$bg-default: **base04**;
+$bg-dark: **base06**;
+$bg-dark-alt: **base07**;
+$bg-default-inactive: rgba($bg-default, 0.7);
+
+
 
 $bg-050: **base05**;
 $bg-100: darken(**base05**, 5%);
@@ -71,11 +85,11 @@ $bg-450: **base07**;
 
 
 @function bw($return_white: true) {
-    $brightnessfg: (red($fg-050) * 299 + green($fg-050) * 587 + blue($fg-050) * 114) / 1000;
+    $brightnessfg: (red($fg-light) * 299 + green($fg-light) * 587 + blue($fg-light) * 114) / 1000;
 	$brightnessbg: (red($bg-350) * 299 + green($bg-350) * 587 + blue($bg-350) * 114) / 1000;
     @if ($brightnessfg >= $brightnessbg) {
         @if $return_white {
-            @return $fg-050;
+            @return $fg-light;
         } @else {
             @return $bg-350;
         }
@@ -83,7 +97,7 @@ $bg-450: **base07**;
         @if $return_white {
             @return $bg-350;
         } @else {
-            @return $fg-050;
+            @return $fg-light;
         }
     }
 }
@@ -93,4 +107,8 @@ $white: bw(true);
 
 // Black
 $black: bw(false);
+
+
+$border: rgba($fg-dark-alt, 0.12); 
+$border-light: rgba($fg-dark, 0.08);
 

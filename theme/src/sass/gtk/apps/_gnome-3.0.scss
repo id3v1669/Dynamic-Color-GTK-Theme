@@ -6,15 +6,15 @@
 // hard-coded css:
 // https://gitlab.gnome.org/GNOME/nautilus/blob/master/src/resources/css/nautilus.css
 
-$nautilus: $base-alt;
+$nautilus: #ff0000; //$base-alt;
 
 .nautilus-window {
     &.background.csd {
         border-radius: 0 0 $window-radius $window-radius;
-        background-color: $nautilus;
+        background-color: #ff001A; //$nautilus;
 
         &:backdrop {
-            background-color: $base;
+            background-color: #ff001B; //$base;
         }
 
         > grid.horizontal > paned.horizontal > separator,
@@ -53,7 +53,7 @@ $nautilus: $base-alt;
             }
 
             notebook {
-                background-color: $base;
+                background-color: #ff001C; //$base;
                 border-radius: 0 0 $window-radius $window-radius;
 
                 > stack {
@@ -84,7 +84,7 @@ $nautilus: $base-alt;
                 // Use paned separator to hide stack border-bottom-left-radius
                 min-width: $window-radius;
                 box-shadow: $window-radius 0 $base;
-                background-color: $base;
+                background-color: #ff001D; //$base;
                 background-image: image(mix(white, $nautilus, 12%)); // fix??
             }
         }
@@ -105,13 +105,13 @@ $nautilus: $base-alt;
         margin: $space-size;
         border: none;
         border-radius: $corner-radius;
-        background-color: $primary;
-        color: on($primary);
+        background-color: #ff001E; //$primary;
+        color: #ff001F; //on($primary);
         box-shadow: $shadow-z3;
 
         button {
             margin: (32px - $small-size) / 2;
-            color: on($primary);
+            color: #ff0020; //on($primary);
 
             @extend %small-button;
         }
@@ -130,14 +130,14 @@ $nautilus: $base-alt;
 %desktop-canvas-item,
 .nautilus-desktop.nautilus-canvas-item {
     // background-color: $scrim;
-    color: on(dark);
+    color: #ff0021; //on(dark);
 }
 
 // Toolbar
 
 @keyframes nautilus-operations-button-needs-attention {
     to {
-        background-color: $overlay-focus;
+        background-color: #ff0021; //$overlay-focus;
     }
 }
 
@@ -162,13 +162,13 @@ $nautilus: $base-alt;
     } // reset the margin
 
     &.width-maximized {
-        background-color: $titlebar-fill;
+        background-color: #ff0022; //$titlebar-fill;
     }
 
     // workaround for 3.30.1
     &.background.frame {
         border-style: none;
-        background-color: $titlebar-fill;
+        background-color: #ff0023; //$titlebar-fill;
     }
 
     // for 3.30

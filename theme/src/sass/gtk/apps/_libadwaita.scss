@@ -714,6 +714,7 @@ overlay-split-view {
     box-shadow: none;
     background: none;
     border: none;
+    background-color: $bg-dark; //reviewed&replaced
 
     headerbar {
         &,
@@ -752,13 +753,13 @@ panelthemeselector {
         &.follow {
             background-image: linear-gradient(
                 to bottom right,
-                $fg-050 50%,
+                $fg-light 50%,
                 $bg-350 50%
             );
         }
 
         &.light {
-            background-color: $fg-050;
+            background-color: $fg-light;
         }
 
         &.dark {

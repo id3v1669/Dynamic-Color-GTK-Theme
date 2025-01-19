@@ -15,15 +15,15 @@ pkgs.mkShell {
     inkscape-with-extensions
 
     # testing
-    swaynotificationcenter
-    gnome-themes-extra
-    geary
-    totem
-    evince
-    gedit
-    gnome-terminal
-    lollypop
-    gnome-calendar
-    gnome-system-monitor
+    #swaynotificationcenter
+    #gnome-themes-extra
+    #geary
+    #totem
+    #evince
+    #gedit
+    #gnome-terminal
+    #lollypop
+    #gnome-calendar
+    #gnome-system-monitor
   ];
 }

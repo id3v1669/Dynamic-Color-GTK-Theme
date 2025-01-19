@@ -1,17 +1,20 @@
 //
 // Nautilus
 //
+
 .nautilus-window {
+    //main bg when shrinked
     &.view {
-        background-color: $background;
+        background-color: $bg-dark; //reviewed&replaced
     }
 
+    //top left corner
     .sidebar-pane {
-        background-color: $background;
+        background-color: $bg-dark; //reviewed&replaced
         color: $text;
 
         &:backdrop {
-            background-color: $background;
+            background-color: $bg-dark; //reviewed&replaced
             transition: none;
         }
     }
@@ -104,7 +107,7 @@
                 color: $titlebar-text-secondary;
 
                 &:hover {
-                    background-color: $titlebar-fill;
+                    background-color: #ff0009; //$titlebar-fill;
                     color: $titlebar-text;
                 }
 
@@ -115,11 +118,11 @@
                 &:checked,
                 &:selected {
                     background-color: $fill; // fix??
-                    color: $primary;
+                    color: #ff0004; //$primary;
                     box-shadow: none;
 
                     &:disabled {
-                        color: $titlebar-text-disabled;
+                        color: #ff000A; //$titlebar-text-disabled;
                     }
                 }
 
@@ -139,41 +142,43 @@
         }
     }
 
+    // popup on folder select
     .floating-bar {
         min-height: 32px;
         padding: 0;
         margin: $space-size;
         border-style: none;
         border-radius: $modal-radius;
-        background-color: $background;
-        color: $primary;
+        background-color: $bg-dark; //$background;
+        color: $accent-default; //$primary;
         box-shadow: $shadow-z3;
 
         button {
             margin: (32px - $small-size) / 2;
-            color: on($primary);
+            color: on(#ff000D); //$primary);
 
             @extend %small-button;
         }
     }
 
     banner > revealer > widget {
-        color: on($base);
-        background-color: rgba($base, 0.5);
+        color: #ff000E; //on($base);
+        background-color: $bg-default-inactive; //reviewed&replaced
         border-radius: $modal-radius;
         margin: $modal-radius;
 
         &:hover {
-            background-color: $base;
+            background-color: $bg-default; //reviewed&replaced
             border-radius: $modal-radius;
             margin: $modal-radius;
         }
 
+        // buttof can be found in trash
         button {
-            color: on($base);
-            background-color: rgba($primary, 0.3);
+            color: $text; //reviewed&replaced
+            background-color: $accent-default; //reviewed&replaced
             &:hover {
-                background-color: rgba($primary, 0.6);
+                background-color: rgba($accent-default, 0.7); //reviewed&replaced
             }
         }
     }
@@ -188,7 +193,7 @@
         margin-right: $space-size / 2 - 8px;
 
         &:checked image {
-            color: on($indicator);
+            color: #ff0014; //on($indicator);
         }
     }
 
@@ -200,7 +205,7 @@
 }
 
 #NautilusQueryEditorTag {
-    background-color: $divider;
+    background-color: #ff0015; //$divider;
 
     > button.image-button {
         margin: 0;
@@ -208,8 +213,9 @@
     }
 }
 
+// search bar in nautilus
 #NautilusPathBar {
-    background-color: $fill; // fix??
+    background-color: $bg-default; //reviewed&replaced
     border-radius: $circular-radius;
     margin: $space-size 0;
 }
@@ -220,7 +226,7 @@
     @extend %button-flat;
 
     &.current-dir {
-        color: $primary;
+        color: $accent-default; //reviewed&replaced
 
         &:hover,
         &:active {
@@ -260,7 +266,7 @@ window.dialog {
 
 .display-container {
     &.card {
-        background-color: $card;
+        background-color: #ff0016; //$card;
     }
 
     .small &.card {
@@ -292,14 +298,14 @@ window.dialog {
 
 leaflet {
     button.number-button {
-        background-color: rgba($text, 0.1);
+        background-color: #ff0017; //rgba($text, 0.1);
 
         &:hover {
-            background-color: rgba($text, 0.2);
+            background-color: #ff0018; //rgba($text, 0.2);
         }
 
         &:active {
-            background-color: rgba($text, 0.3);
+            background-color: #ff0019; //rgba($text, 0.3);
         }
     }
 }
@@ -320,7 +326,7 @@ label {
 
     &.primary-label,
     &.month-name {
-        color: $primary;
+        color: $accent-default; //reviewed&replaced
     }
 
     &.secondary-label {
@@ -342,7 +348,7 @@ calendar-view {
     @extend %content_style;
 
     &:selected {
-        color: $primary;
+        color: #ff0003; //$primary;
         font-weight: bold;
     }
 }
@@ -356,7 +362,7 @@ label.header {
 
 calendar-view.current,
 weekgrid.current {
-    background-color: gtkalpha($primary, 0.3);
+    background-color: #ff0035; //gtkalpha($primary, 0.3);
 }
 
 popover.events {
@@ -369,7 +375,7 @@ popover.events {
     }
 
     list {
-        background-color: $base;
+        background-color: #ff0036; //$base;
         border-radius: $corner-radius;
     }
 
@@ -418,14 +424,14 @@ event {
     }
 
     &:not(.timed).color-dark {
-        color: **base01**;
-        outline-color: rgba(0, 0, 0, 0.3);
+        color: #ff0030; //**base01**;
+        outline-color: #ff0031; //rgba(0, 0, 0, 0.3);
     }
 
     &.timed,
     &:not(.timed).color-light {
-        color: gtkalpha(black, 0.75);
-        outline-color: rgba(255, 255, 255, 0.5);
+        color: #ff0032; //gtkalpha(black, 0.75);
+        outline-color: #ff0033; //rgba(255, 255, 255, 0.5);
     }
 }
 
@@ -436,7 +442,7 @@ popover.event-popover > contents {
 }
 
 .search-viewport {
-    background-color: $base;
+    background-color: #ff0034; //$base;
 }
 
 // calendar popover
@@ -488,8 +494,8 @@ datechooser {
     padding: $space-size;
 
     .current-week {
-        background-color: $fill;
-        color: $text;
+        background-color: $bg-default; //reviewed&replaced
+        color: #ff0038; //$text;
         border-radius: $corner-radius;
     }
 
@@ -539,20 +545,20 @@ datechooser {
 
         &:selected,
         &.today:selected {
-            background-color: $primary;
-            color: on($primary);
+            background-color: $accent-default; //reviewed&replaced
+            color: $text;
             font-weight: bold;
 
             dot {
-                background-color: on($primary);
+                background-color: #ff008C; //on($primary);
             }
         }
 
         &.today {
-            color: $primary;
+            color: #ff008B; //$primary;
 
             dot {
-                background-color: $primary;
+                background-color: #ff008A; //$primary;
             }
         }
 
@@ -589,7 +595,7 @@ datechooser {
         font-size: 16pt;
         font-weight: bold;
         padding: $space-size * 2 $space-size * 2 $space-size * 3 $space-size * 2;
-        color: $track;
+        color: #ff0089; //$track;
     }
 
     &.week-temperature {
@@ -599,7 +605,7 @@ datechooser {
     }
 
     &.lines {
-        color: $border;
+        color: $border; //reviewed&replaced
     }
 }
 
@@ -609,11 +615,11 @@ weekhourbar > label {
 }
 
 .week-view .lines {
-    color: $border;
+    color: $border; //reviewed&replaced
 }
 
 weekgrid > widget.now-strip {
-    background-color: gtkalpha($primary, 0.8);
+    background-color: $accent-dark; //reviewed&replaced
     margin: 0 0 0 1px;
     min-height: 3px;
 }
@@ -622,7 +628,7 @@ weekgrid,
 .week-header {
     &:selected,
     &.dnd {
-        background-color: gtkalpha($primary, 0.25);
+        background-color: rgba($accent-light, 0.2); //reviewed&replaced
     }
 }
 
@@ -634,16 +640,16 @@ monthcell {
     transition: background-color 200ms;
 
     &:hover:not(.out-of-month):not(.today) {
-        background-color: $base-alt;
+        background-color: $bg-light; //reviewed&replaced
         transition: background-color 200ms;
         color: $text;
     }
 
     &:selected {
-        background-color: gtkalpha($primary, 0.1);
+        background-color: rgba($accent-light, 0.2); //reviewed&replaced
 
         &:hover {
-            background-color: gtkalpha($primary, 0.2);
+            background-color: rgba($accent-dark, 0.2); //reviewed&replaced
         }
 
         label.day-label {
@@ -656,18 +662,18 @@ monthcell {
     }
 
     &.today {
-        background-color: gtkalpha($primary, 0.2);
+        background-color: gtkalpha($accent-default, 0.2); //reviewed&replaced
 
         &:hover {
-            background-color: gtkalpha($primary, 0.3);
-            color: $primary;
+            background-color: gtkalpha($accent-dark, 0.3); //reviewed&replaced
+            color: #ff007F; //$primary;
         }
 
         &:selected {
-            background-color: gtkalpha($primary, 0.25);
+            background-color: #ff007E; //gtkalpha($primary, 0.25);
 
             &:hover {
-                background-color: gtkalpha($primary, 0.35);
+                background-color: #ff007D; //gtkalpha($primary, 0.35);
             }
         }
     }
@@ -682,7 +688,7 @@ monthcell {
     }
 
     &.out-of-month {
-        background-color: $fill;
+        background-color: $bg-default-inactive; //reviewed&replaced
 
         label {
             color: $text-secondary;
@@ -798,7 +804,7 @@ leaflet.unfolded .contacts-contact-list {
         @extend %sidebar_style;
 
         .dim-label {
-            color: on($indicator, disabled);
+            color: #ff007B; //on($indicator, disabled);
         }
 
         > scrollbar {
@@ -822,9 +828,9 @@ leaflet.unfolded .contacts-contact-list {
 
 .installed-overlay-box {
     font-size: smaller;
-    background-color: $primary;
+    background-color: #ff0079; //$primary;
     border-radius: 0;
-    color: on($primary);
+    color: #ff007A; //on($primary);
     text-shadow: 0 1px 0 rgba(black, 0.2);
 }
 
@@ -840,7 +846,7 @@ screenshot-carousel button,
 
 carousel.card {
     border: none;
-    background-color: $fill;
+    background-color: #ff0077; //$fill;
 }
 
 .smaller {
@@ -860,7 +866,7 @@ carousel.card {
 }
 
 gs-summary-tile image.loading-icon {
-    background-color: $border;
+    background-color: #ff0076; //$border;
     border-radius: $corner-radius;
 }
 
@@ -884,13 +890,13 @@ gs-summary-tile image.loading-icon {
 }
 
 .origin-rounded-box {
-    background-color: $divider;
+    background-color: #ff0074; //$divider;
     border-radius: $circular_radius;
     padding: $space-size - 2px;
 }
 
 .origin-beta {
-    color: $warning;
+    color: #ff0075; //$warning;
 }
 
 .origin-button > button {
@@ -1005,7 +1011,7 @@ flowboxchild.card:not(.category-tile) {
             **base1E** 50%,
             **base1B** 100%
         );
-        color: #393484;
+        color: #ff0070; //#393484;
 
         &:hover {
             background: linear-gradient(
@@ -1014,7 +1020,7 @@ flowboxchild.card:not(.category-tile) {
                 shade(**base1E**, 1.07) 50%,
                 shade(**base1B**, 1.07) 100%
             );
-            color: #393484;
+            color: #ff0071; //#393484;
         }
 
         &:active {
@@ -1024,7 +1030,7 @@ flowboxchild.card:not(.category-tile) {
                 shade(**base1E**, 0.95) 50%,
                 shade(**base1B**, 1.07) 100%
             );
-            color: #393484;
+            color: #ff0072; //#393484;
         }
     }
 
@@ -1072,7 +1078,7 @@ flowboxchild.card:not(.category-tile) {
 
         &:active {
             color: #ff0000;
-            background-color: darken(**base01**, 5%);
+            background-color: #ff006D; //darken(**base01**, 5%);
             background-image: linear-gradient($border 1px, transparent 1px),
                 linear-gradient(90deg, $border 1px, transparent 1px);
             background-size:
@@ -1105,25 +1111,25 @@ flowboxchild.card:not(.category-tile) {
 .application-details-infobar {
     &,
     &.info {
-        background-color: $fill;
+        background-color: #ff006C; //$fill;
         color: $text;
         border: 1px solid $border;
     }
 
     &.warning {
-        background-color: $warning;
-        color: on($warning);
+        background-color: #ff006B; //$warning;
+        color: #ff006A; //on($warning);
         border: 1px solid on($warning, divider);
     }
 }
 
 .card.info {
-    background-color: mix($primary, $background, 0.7);
+    background-color: #ff0069; //mix($primary, $background, 0.7);
     color: $text;
 }
 
 .card.warning {
-    background-color: mix($warning, $background, 0.7);
+    background-color: #ff0068; //mix($warning, $background, 0.7);
     color: $text;
 }
 
@@ -1193,7 +1199,7 @@ flowboxchild.card:not(.category-tile) {
 review-bar {
     color: $text-disabled;
     background-image: none;
-    background-color: $track;
+    background-color: #ff0067; //$track;
 }
 
 .review-histogram star-image {
@@ -1245,12 +1251,12 @@ flowboxchild {
 }
 
 star-image > image.starred {
-    color: $yellow-dark;
+    color: #ff0066; //$yellow-dark;
     transition-duration: 200ms;
 }
 
 star-image > image.starred:hover {
-    color: $yellow-light;
+    color: #ff0065; //$yellow-light;
 }
 
 star-image > image.non-starred {
@@ -1259,7 +1265,7 @@ star-image > image.non-starred {
 }
 
 star-image > image.non-starred:hover {
-    color: $yellow-dark;
+    color: #ff0064; //$yellow-dark;
     opacity: 0.7;
 }
 
@@ -1280,8 +1286,8 @@ star-image > image.non-starred:hover {
 }
 
 .upgrade-banner-background {
-    background: linear-gradient(to bottom, $green-light, $blue-light);
-    color: **base01**;
+    background: #ff0063; //linear-gradient(to bottom, $green-light, $blue-light);
+    color: #ff0062; //**base01**;
 }
 
 .upgrade-buttons #button_upgrades_install,
@@ -1344,12 +1350,12 @@ app-context-bar {
 
         &:hover {
             background-image: none;
-            background-color: $overlay-hover;
+            background-color: #ff0061; //$overlay-hover;
         }
 
         &.keyboard-activating,
         &:active {
-            background-color: $overlay-active;
+            background-color: #ff0060; //$overlay-active;
         }
 
         &:focus:focus-visible {
@@ -1414,42 +1420,42 @@ app-context-bar {
 
     &.grey {
         color: $text;
-        background-color: $divider;
+        background-color: #ff005F; //$divider;
     }
 
     &.green,
     &.details-rating-0 {
-        color: darken($success, 15%);
-        background-color: rgba($success, 0.15);
+        color: #ff005E; //darken($success, 15%);
+        background-color: #ff005D; //rgba($success, 0.15);
     }
 
     &.blue,
     &.details-rating-5 {
-        color: $blue-light;
-        background-color: rgba($blue-light, 0.15);
+        color: #ff005C; //$blue-light;
+        background-color: #ff005B; //rgba($blue-light, 0.15);
     }
 
     &.yellow,
     &.details-rating-12 {
-        color: darken($warning, 15%);
-        background-color: rgba($warning, 0.15);
+        color: #ff005A; //darken($warning, 15%);
+        background-color: #ff0059; //rgba($warning, 0.15);
     }
 
     &.details-rating-15 {
-        color: $orange-light;
-        background-color: rgba($orange-light, 0.15);
+        color: #ff0058; //$orange-light;
+        background-color: #ff0057; //rgba($orange-light, 0.15);
     }
 
     &.red,
     &.details-rating-18 {
-        color: darken($error, 15%);
-        background-color: rgba($error, 0.15);
+        color: #ff0056; //darken($error, 15%);
+        background-color: #ff0055; //rgba($error, 0.15);
     }
 }
 
 .eol-red {
     font-weight: bold;
-    color: $error;
+    color: #ff0054; //$error;
 }
 
 window.narrow .app-title {
@@ -1527,7 +1533,7 @@ row.app > box.header > image {
 }
 
 row.app label.warning {
-    color: $error;
+    color: #ff0053; //$error;
 }
 
 // GtkSpinner
@@ -1576,14 +1582,11 @@ window > contents > leaflet {
 // Gnome Weather
 //
 
-@define-color weather_temp_chart_fill_color #{rgba($warning, 0.5)};
-@define-color weather_temp_chart_stroke_color #{darken($warning, 10%)};
-@define-color weather_thermometer_warm_color #{$yellow-light}; // fix??
-@define-color weather_thermometer_cold_color #{$blue-light}; // fix??
+@define-color weather_temp_chart_fill_color rgba($orange-light, 0.5); //reviewed&replaced
+@define-color weather_temp_chart_stroke_color $orange-dark; //reviewed&replaced
+@define-color weather_thermometer_warm_color $yellow-default; //reviewed&replaced
+@define-color weather_thermometer_cold_color $blue-default; //reviewed&replaced
 
-$weather_thermometer_high_color: $yellow-light;
-$weather_thermometer_low_color: $blue-light;
-$weather_forecast_color: **base0D**;
 
 #places-label {
     font-weight: bold;
@@ -1596,7 +1599,7 @@ $weather_forecast_color: **base0D**;
 }
 
 #conditions-grid *:backdrop {
-    color: $text-secondary;
+    color: $text-secondary; //reviewed&replaced
 }
 
 .content-view.cell {
@@ -1617,7 +1620,7 @@ $weather_forecast_color: **base0D**;
 }
 
 .forecast-card separator {
-    background-color: $background;
+    background-color: $border; //reviewed&replaced
 }
 
 #daily-forecast-box {
@@ -1642,7 +1645,7 @@ $weather_forecast_color: **base0D**;
 
 .forecast-temperature-label {
     font-weight: bold;
-    color: $weather_forecast_color;
+    color: $fg-dark-alt; //reviewed&replaced
 }
 
 WeatherThermometer {
@@ -1651,12 +1654,12 @@ WeatherThermometer {
 
 WeatherThermometer > label.high {
     font-weight: bold;
-    color: $weather_thermometer_high_color;
+    color: $yellow-default; //reviewed&replaced
 }
 
 WeatherThermometer > label.low {
     font-weight: bold;
-    color: $weather_thermometer_low_color;
+    color: $blue-default; //reviewed&replaced
 }
 
 .forecast-button {
@@ -1688,8 +1691,8 @@ scrolledwindow.inline undershoot.top {
 }
 
 .search-view {
-    background-color: $blue-dark;
-    color: on($blue-dark);
+    background-color: #ff004A; //$blue-dark;
+    color: #ff004B; //on($blue-dark);
 }
 
 .search-view menubutton button:focus:focus-visible {
@@ -1714,13 +1717,22 @@ image.circular {
 // Gnome System Monitor
 //
 #gnome-system-monitor.background.csd {
-    background-color: $background;
+    background-color: $bg-default; //reviewed&replaced
 }
 
 #gnome-system-monitor treeview.view {
-    background-color: $base;
+    background-color: $bg-default; //reviewed&replaced
     padding: 4px;
-    border-radius: $modal-radius;
+    border-radius: 0px; //reviewed&replaced
+    border-top: solid 1px $border; //reviewed&replaced
+    border-bottom: solid 1px $border; //reviewed&replaced
+    border-left: solid 0.4px $border-light; //reviewed&replaced
+    border-right: solid 0.4px $border-light; //reviewed&replaced
+}
+
+// popup - click on process
+#gnome-system-monitor revealer>box {
+    background-color: $bg-dark; //reviewed&replaced
 }
 
 //
@@ -1792,7 +1804,7 @@ image.circular {
 
 .running-stopwatch .seconds-label,
 .running-stopwatch .miliseconds-label {
-    color: $primary;
+    color: #ff0047; //$primary;
 }
 
 .stopped-stopwatch .miliseconds-label,
@@ -1822,24 +1834,24 @@ image.circular {
 }
 
 .none .clock-time {
-    background: gtkalpha(currentColor, 0.2);
+    background:  #ff0047; //gtkalpha(currentColor, 0.2);
 }
 
 .night .clock-time {
-    color: $blue-dark;
-    background-color: gtkalpha($blue-light, 0.25);
+    color:  #ff0046; //$blue-dark;
+    background-color:  #ff0045; //gtkalpha($blue-light, 0.25);
 }
 
 .naut .clock-time,
 .astro .clock-time {
-    color: $orange-dark;
-    background-color: gtkalpha($orange-light, 0.25);
+    color:  #ff0044; //$orange-dark;
+    background-color:  #ff0043; //gtkalpha($orange-light, 0.25);
 }
 
 .civil .clock-time,
 .day .clock-time {
-    color: $yellow-dark;
-    background: gtkalpha($yellow-light, 0.25);
+    color:  #ff0042; //$yellow-dark;
+    background:  #ff0041; //gtkalpha($yellow-light, 0.25);
 }
 
 //
@@ -1868,7 +1880,7 @@ panelframeswitcher {
 
 .frameheader.header {
     min-height: $small-size;
-    background-color: $base-alt;
+    background-color: #ff0040; //$base-alt;
 
     > button {
         border: none;
