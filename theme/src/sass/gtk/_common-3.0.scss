@@ -1508,8 +1508,8 @@ searchbar > revealer > box {
 
 .titlebar {
     transition: all $duration $ease-out;
-    background-color: #ffff12; //$titlebar;
-    color: #ffff13; //$titlebar-text;
+    background-color: $bg-dark; //reviewed&replaced
+    color: $text; //reviewed&replaced
     border-radius: $window-radius $window-radius 0 0;
     border: none;
 
@@ -1518,11 +1518,11 @@ searchbar > revealer > box {
     }
 
     &:disabled {
-        color: #ffff13; //$titlebar-text-disabled;
+        color: #ff0000;
     }
 
     &:backdrop {
-        color: #ffff14; //$titlebar-text-secondary;
+        color: $text-disabled; //reviewed&replaced
 
         &:disabled {
             color: #ffff15; //$titlebar-text-secondary-disabled;
@@ -1530,7 +1530,7 @@ searchbar > revealer > box {
     }
 
     .csd &:backdrop {
-        background-color: #ffff16; //$titlebar-backdrop;
+        background-color: $bg-dark-inactive; //reviewed&replaced
     }
 
     .title {
@@ -1546,24 +1546,24 @@ searchbar > revealer > box {
     .subtitle,
     .dim-label {
         transition: color $duration $ease-out;
-        color: #ffff17; //$titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:backdrop {
-            color: #ffff18; //$titlebar-text-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
     }
 
     // Don't draw titlebar above titlebar
     .titlebar,
     headerbar {
-        background-color: #ffff19; //transparent;
+        background-color: #ff0019; //transparent;
         box-shadow: none;
     }
 
     // separator between headerbars
     + separator,
     + separator.sidebar {
-        background-color: #ffff1A; //$titlebar;
+        background-color: #00ff00; //$titlebar;
         background-image: none;
         transition: all $duration $ease-out;
         box-shadow: inset 0 1px highlight($titlebar);
@@ -1706,17 +1706,18 @@ searchbar > revealer > box {
         border-radius: 0;
     }
 
+    //can be found in firefox
     &.default-decoration {
         min-height: $small-size;
         padding: $space-size $space-size * 2;
         border-radius: $window-radius $window-radius 0 0;
         border: none;
-        background-color: #ffff31; //$titlebar;
+        background-color: $bg-dark; //reviewed&replaced
         background-image: none;
         box-shadow: inset 0 1px highlight($titlebar);
 
         &:backdrop {
-            background-color: #ffff32; //$titlebar-backdrop;
+            background-color: $bg-dark-inactive; //reviewed&replaced
         }
 
         .tiled &,
@@ -1736,7 +1737,7 @@ searchbar > revealer > box {
             &.maximize,
             &.close {
                 &:active {
-                    color: on($titlebar-indicator);
+                    color: #00ff02; //on($titlebar-indicator);
                     background-image: none;
                     animation: none;
                     box-shadow: none;
@@ -1770,7 +1771,7 @@ headerbar {
     padding: 0 $space-size;
 
     box.vertical & {
-        background-color: #ffff34; //$titlebar;
+        background-color: $bg-dark; //reviewed&replaced
     }
 
     // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
@@ -1792,7 +1793,7 @@ headerbar {
     separator.sidebar {
         margin-top: $large-size / 4;
         margin-bottom: $large-size / 4;
-        background-color: #ffff35; //transparent;
+        background-color: transparent; //reviewed&replaced
     }
 
     switch {
@@ -1814,7 +1815,7 @@ headerbar {
 
     &.windowhandle {
         viewswitcher {
-            background-color: #ffff36; //$titlebar-fill;
+            background-color: #00ff00; //$titlebar-fill;
             border-radius: 0 0 $corner-radius $corner-radius;
 
             button:not(.titlebutton):not(.suggested-action):not(
@@ -1999,7 +2000,7 @@ treeview.view {
         // progress bar in treeviews
         border: none;
         box-shadow: none;
-        background-color: #ffff0C; //$primary;
+        background-color: #ff00ff; //$primary;
         background-image: none;
         border-radius: $circular-radius;
         color: #ffff0B; //on($primary);
@@ -2069,7 +2070,7 @@ treeview.view {
 
             &,
             &:disabled {
-                background-color: #ffff04; //$base;
+                background-color: $bg-default; //reviewed&replaced
             }
 
             &:last-child {
