@@ -30,3 +30,4 @@ Originaly forked from [Tokyonight-GTK-Theme](https://github.com/Fausto-Korpsvart
 * text highlits use darker fg for dark theme
 * gnome-system-monitor - add color change on process hover
 * objects with "tobechecked" need to be moved/edited
+* firefox - unfocused tabs bg (currently transparent)

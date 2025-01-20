@@ -161,9 +161,9 @@ $overlay-selected:                      gtkalpha(currentColor, 0.06);
 
 // Text and derivative colors
 $text:                                  $fg-default; 			//reviewed&replaced
-$text-secondary:                        rgba($fg-default, 0.7); //reviewed&replaced
-$text-disabled:                         rgba($fg-dark, 0.3);    //reviewed&replaced
-$text-secondary-disabled:               rgba($fg-dark, 0.2);    //reviewed&replaced
+$text-secondary:                        $fg-dark;               //reviewed&replaced
+$text-disabled:                         $fg-default-inactive;   //reviewed&replaced
+$text-secondary-disabled:               $fg-dark-inactive;      //reviewed&replaced
 $track:                                 on($background, track);
 $track-disabled:                        on($background, track-disabled);
 $divider:                               on($background, divider);

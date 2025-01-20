@@ -53,6 +53,10 @@ $fg-light: **base01**;
 $fg-default: **base00**;
 $fg-dark: **base02**;
 $fg-dark-alt: **base03**;
+$fg-light-inactive: rgba($fg-light, 0.6);
+$fg-default-inactive: rgba($fg-default, 0.6);
+$fg-dark-inactive: rgba($fg-dark, 0.6);
+$fg-dark-alt-inactive: rgba($fg-dark-alt, 0.6);
 
 
 
@@ -69,9 +73,10 @@ $bg-light: **base05**;
 $bg-default: **base04**;
 $bg-dark: **base06**;
 $bg-dark-alt: **base07**;
+$bg-light-inactive: rgba($bg-light, 0.7);
 $bg-default-inactive: rgba($bg-default, 0.7);
 $bg-dark-inactive: rgba($bg-dark, 0.7);
-
+$bg-dark-alt-inactive: rgba($bg-dark-alt, 0.7);
 
 
 $bg-050: **base05**;

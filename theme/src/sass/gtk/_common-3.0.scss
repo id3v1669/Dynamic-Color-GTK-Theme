@@ -1602,7 +1602,7 @@ searchbar > revealer > box {
 
     stackswitcher {
         // reset
-        background-color: #ffff20; //on($titlebar, fill);
+        background-color: $bg-default; //reviewed&replaced
 
         &:checked {
             background-color: #ffff21; //$titlebar-indicator;
@@ -1942,7 +1942,7 @@ treeview.view {
 
     &.separator {
         min-height: $space-size;
-        color: #ffff11; //$divider;
+        color: rgba($fg-dark, 0.3); //$divider;
     }
 
     // FIXME: box-shadow, background-color and background-image are not available here.
@@ -1987,7 +1987,7 @@ treeview.view {
 
             &:hover,
             &:active {
-                color: #ffff0E; //on($indicator);
+                color: $text; //on($indicator);
             }
 
             &:disabled {
@@ -2106,13 +2106,13 @@ menubar,
 .menubar {
     -gtkwidget-window-dragging: true;
     padding: 0;
-    background-color: $titlebar;
-    color: $titlebar-text;
+    background-color: $bg-dark; //reviewed&replaced
+    color: #00ff02; //$titlebar-text;
     // box-shadow: inset 0 -1px $border;
 
     &:backdrop {
-        color: $titlebar-text-secondary;
-        background-color: $titlebar-backdrop;
+        color: #00ff03; //$titlebar-text-secondary;
+        background-color: $bg-dark-inactive; //reviewed&replaced
     }
 
     .csd & {
@@ -2123,26 +2123,26 @@ menubar,
         transition: none;
         min-height: 20px;
         padding: 4px 8px;
-        color: $titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
         border-radius: $menuitem-radius;
 
         &:hover {
             // Seems like it :hover even with keyboard focus
             transition: none;
-            background-color: $overlay-checked;
-            color: $titlebar-text;
+            background-color: $bg-light; //reviewed&replaced
+            color: $text; //reviewed&replaced
         }
 
         &:backdrop {
-            color: $titlebar-text-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #00ff09; //$titlebar-text-secondary-disabled;
         }
 
         label:disabled {
-            color: inherit;
+            color: #00ff0A; //inherit;
         } // to inherit the above color
 
         // > window.background.csd.popup > decoration,
@@ -2161,7 +2161,7 @@ menubar,
 // Needed to make the border-radius of menus work
 // otherwise the background bleeds out of the menu edges
 .background.popup {
-    background-color: transparent;
+    background-color: transparent; //reviewed&replaced
 }
 
 // .menu,
@@ -2169,7 +2169,7 @@ menubar,
 menu {
     margin: $space-size; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
     padding: $space-size;
-    background-color: $menu;
+    background-color: $bg-default; //reviewed&replaced
     background-clip: border-box;
     border-radius: $menu-radius;
     border: 1px solid $primary;
@@ -2184,39 +2184,39 @@ menu {
         min-height: 20px;
         min-width: 40px;
         padding: 4px 8px;
-        color: $text;
+        color: $text; //reviewed&replaced
         font: initial;
         text-shadow: none;
         border-radius: $menuitem-radius;
 
         &:hover {
             transition: none;
-            background-color: $fill; // fix??
-            color: $primary;
+            background-color: $bg-light; //reviewed&replaced
+            color: $accent-default; //reviewed&replaced
 
             accelerator {
-                color: $primary;
+                color: $accent-default; //reviewed&replaced
             }
 
             &:disabled accelerator {
-                color: on($primary, secondary-disabled);
+                color: #00ff11; //on($primary, secondary-disabled);
             }
         }
 
         &:active {
-            background-color: $overlay-active;
+            background-color: #00ff12; //$overlay-active;
         }
 
         &:disabled {
-            color: $text-disabled;
+            color: #00ff13; //$text-disabled;
         }
 
         accelerator {
-            color: $text-secondary;
+            color: $text-secondary; //reviewed&replaced
         }
 
         &:disabled accelerator {
-            color: $text-secondary-disabled;
+            color: #00ff15; //$text-secondary-disabled;
         }
 
         // submenu indicators
@@ -2240,13 +2240,13 @@ menu {
         label {
             &:dir(rtl),
             &:dir(ltr) {
-                color: inherit;
+                color: inherit; //reviewed&replaced
             }
         }
     }
 
     .view:selected {
-        background-color: mix($text, $card, 10%);
+        background-color: #00ff17; //mix($text, $card, 10%);
     }
 
     // overflow arrows
@@ -2254,8 +2254,8 @@ menu {
         min-height: 16px;
         min-width: 16px;
         padding: 4px;
-        background-color: $menu;
-        color: $text-secondary;
+        background-color: #00ff18; //$menu;
+        color: #00ff19; //$text-secondary;
 
         &.top {
             margin-top: 0;
@@ -2274,20 +2274,20 @@ menu {
 
         &:hover {
             background-image: image($overlay-hover);
-            color: $text;
+            color: #00ff1A; //$text;
         }
 
         &:disabled {
-            border-color: transparent;
-            background-color: transparent;
-            color: transparent;
+            border-color: #00ff1B; //transparent;
+            background-color: #00ff1C; //transparent;
+            color: #00ff1D; //transparent;
             // color: $text-secondary-disabled;
         }
     }
 
     separator {
         margin: $space-size / 2 0;
-        background-color: transparent;
+        background-color: #00ff1E; //transparent;
     }
 }
 
@@ -2297,7 +2297,7 @@ menu {
 popover.background {
     transition: $transition-shadow;
     padding: 0;
-    background-color: $menu;
+    background-color: $bg-dark-alt; //reviewed&replaced
     border-radius: $menu-radius;
 
     &,
@@ -2334,11 +2334,11 @@ popover.background {
     > toolbar {
         border-style: none;
         box-shadow: none;
-        background-color: transparent;
+        background-color: #00ff20; //transparent;
     }
 
     > scrolledwindow > viewport.frame > list {
-        background-color: transparent;
+        background-color: #00ff21; //transparent;
         padding: $space-size;
 
         > row {
@@ -2350,7 +2350,7 @@ popover.background {
     // FIXME: Use the popover color instead of transparent as a workaround for .view
     .view:not(:selected),
     toolbar {
-        background-color: $menu;
+        background-color: $bg-default; //reviewed&replaced
     }
 
     button,
@@ -2386,7 +2386,7 @@ popover.background {
 
     separator {
         margin: $space-size / 2 0;
-        background-color: transparent;
+        background-color: #00ff23; //transparent;
     }
 
     list separator {
@@ -2400,7 +2400,7 @@ modelbutton.flat,
     min-height: $menuitem-size;
     padding: 0 8px;
     border-radius: $menuitem-radius;
-    color: $text;
+    color: $text; //reviewed&replaced
 
     @extend %button-flat-simple;
 
@@ -2434,26 +2434,26 @@ modelbutton.flat arrow {
     border: none;
     outline: none;
     background-clip: padding-box;
-    color: $white; // fix??
+    color: $text; //reviewed&replaced
     font-weight: 500;
     border-radius: $modal-radius;
 
     &:hover {
-        background-color: on($indicator, divider);
-        color: $primary;
+        background-color: rgba($bg-light, 0.5); //reviewed&replaced
+        color: $text-secondary; //reviewed&replaced
     }
 
     &:disabled {
-        color: on($indicator, secondary-disabled);
+        color: #00ff28; //on($indicator, secondary-disabled);
     }
 
     &:checked {
         transition: $transition;
-        background-color: $base;
-        color: $primary;
+        background-color: $bg-light; //reviewed&replaced
+        color: $accent-default; //reviewed&replaced
 
         &:disabled {
-            color: $text-disabled;
+            color: #00ff2B; //$text-disabled;
         }
     }
 }
@@ -2489,10 +2489,10 @@ modelbutton.flat arrow {
 }
 
 notebook {
-    background-color: $fill; // fix??
+    background-color: $bg-default; //reviewed&replaced
 
     window.background > & {
-        background-color: transparent;
+        background-color: #00ff2D; //transparent;
     }
 
     &.frame {
@@ -2521,7 +2521,7 @@ notebook {
 
     > header {
         border: none;
-        background-color: $fill; // fix??
+        background-color: $bg-default; //reviewed&replaced
         padding: $space-size / 2;
         margin: $space-size / 2;
         border-radius: $modal-radius + $space-size / 2;
@@ -2532,15 +2532,15 @@ notebook {
             min-height: 16px;
             min-width: 16px;
             border-radius: $modal-radius;
-            color: on($indicator, secondary);
+            color: #00ff2F; //on($indicator, secondary);
 
             &:hover,
             &:active {
-                color: on($indicator);
+                color: #00ff30; //on($indicator);
             }
 
             &:disabled {
-                color: on($indicator, secondary-disabled);
+                color: #00ff31; //on($indicator, secondary-disabled);
             }
         }
 
@@ -2578,8 +2578,8 @@ notebook {
                 padding: $space-size 12px;
 
                 &:drop(active) {
-                    background-color: $divider;
-                    color: $text;
+                    background-color: #00ff32; //$divider;
+                    color: #00ff33; //$text;
                 }
             }
 
@@ -2661,7 +2661,7 @@ notebook {
 
     > stack:not(:only-child) {
         // the :not(:only-child) is for "hidden" notebooks
-        background-color: transparent;
+        background-color: transparent; //reviewed&replaced
         border-radius: $corner-radius;
     }
 }
@@ -2679,7 +2679,7 @@ scrollbar {
     }
 
     transition: $transition;
-    background-color: $base;
+    background-color: #00ff35; //$base;
 
     // scrollbar border
     &.top {
@@ -2703,18 +2703,18 @@ scrollbar {
         border: 4px solid transparent;
         border-radius: $circular-radius;
         background-clip: padding-box;
-        background-color: $text-disabled;
+        background-color: $text-disabled; //reviewed&replaced
 
         &:hover {
-            background-color: $text-secondary;
+            background-color: $text-secondary; //reviewed&replaced
         }
 
         &:active {
-            background-color: $text;
+            background-color: $text; //reviewed&replaced
         }
 
         &:disabled {
-            background-color: $text-secondary-disabled;
+            background-color: $text-secondary-disabled; //reviewed&replaced
         }
     }
 
