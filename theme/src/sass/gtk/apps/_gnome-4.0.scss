@@ -108,11 +108,11 @@
 
                 &:hover {
                     background-color: #ff0009; //$titlebar-fill;
-                    color: $titlebar-text;
+                    color: #ffADff; //$titlebar-text;
                 }
 
                 &:disabled {
-                    color: $titlebar-text-secondary-disabled;
+                    color: #02ffff; //$titlebar-text-secondary-disabled;
                 }
 
                 &:checked,
@@ -127,15 +127,15 @@
                 }
 
                 button.tab-close-button {
-                    color: $titlebar-text;
+                    color: #ffAEff; //$titlebar-text;
 
                     &:hover,
                     &:active {
-                        color: $titlebar-text;
+                        color: #ffAFff; //$titlebar-text;
                     }
 
                     &:disabled {
-                        color: $titlebar-text;
+                        color: #ffB0ff; //$titlebar-text;
                     }
                 }
             }
@@ -266,7 +266,7 @@ window.dialog {
 
 .display-container {
     &.card {
-        background-color: #ff0016; //$card;
+        background-color: $bg-default; //reviewed&replaced
     }
 
     .small &.card {
@@ -298,14 +298,14 @@ window.dialog {
 
 leaflet {
     button.number-button {
-        background-color: #ff0017; //rgba($text, 0.1);
+        background-color: lighten($bg-default, 7%); //reviewed&replaced
 
         &:hover {
-            background-color: #ff0018; //rgba($text, 0.2);
+            background-color: lighten($bg-default, 5%); //reviewed&replaced
         }
 
         &:active {
-            background-color: #ff0019; //rgba($text, 0.3);
+            background-color: lighten($bg-default, 10%); //reviewed&replaced
         }
     }
 }
@@ -1804,7 +1804,7 @@ image.circular {
 
 .running-stopwatch .seconds-label,
 .running-stopwatch .miliseconds-label {
-    color: #ff0047; //$primary;
+    color: $accent-dark; //reviewed&replaced
 }
 
 .stopped-stopwatch .miliseconds-label,

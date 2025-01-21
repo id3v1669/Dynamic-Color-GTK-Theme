@@ -108,7 +108,7 @@
             background-image $ripple-fade-out-opacity-duration $ease-out;
         outline: none;
         box-shadow: inset 0 0 0 9999px transparent;
-        background-color: $button;
+        background-color: $bg-button-clickable; //reviewed&replaced
         background-image: radial-gradient(
             circle,
             transparent 10%,

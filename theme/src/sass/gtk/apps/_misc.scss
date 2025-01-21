@@ -104,7 +104,8 @@ window.background > box.vertical > scrolledwindow > widget toolbar {
  * Chromium *
  ************/
 window.background.chromium {
-    background-color: $chromium-tabs;
+  //didn't work for chrome or chromium, but works for electron
+    background-color: $bg-dark; //reviewed&replaced
 
     // FIXME: There is no way to change the color of the toolbar buttons
     // toolbar button { color: $text-secondary; }
@@ -268,11 +269,11 @@ tooltip.background.chromium {
 
             &:hover,
             &:active {
-                color: $bg-050;
+                color: #ff00ff; //$bg-050;
             }
 
             &:disabled {
-                color: rgba($bg-150, 0.5);
+                color: #ff01ff; //rgba($bg-150, 0.5);
             }
         }
     }
@@ -290,11 +291,11 @@ tooltip.background.chromium {
             color: $titlebar-text-secondary;
 
             &:hover {
-                color: $titlebar-text;
+                color: #ffB1ff; //$titlebar-text;
             }
 
             &:disabled {
-                color: $titlebar-text-secondary-disabled;
+                color: #01ffff; //$titlebar-text-secondary-disabled;
             }
         }
 
@@ -422,7 +423,7 @@ scrolledwindow#DialogNotebook {
 
 #InKscapeCanvas {
     // Not use ?
-    background-color: $card;
+    background-color: #ff09ff; //$card;
     border-radius: $corner-radius;
 }
 
@@ -493,7 +494,7 @@ window.background.csd {
       border: none;
   
       .close-button {
-        background: shade($titlebutton-close, 0.4);
+        background: shade($red-default, 0.4); //reviewed&replaced
         color: $text;
         text-shadow: none;
         padding: 0;
@@ -508,7 +509,7 @@ window.background.csd {
   
         &:hover {
           box-shadow: none;
-          background: shade($titlebutton-close, 0.6);
+          background: shade($red-default, 0.6); //reviewed&replaced
           transition: $transition-hover;
           border: none;
         }
@@ -790,8 +791,8 @@ window.background.csd {
     background: $bg-100; // fix??
   }
 
-  $mpris-album-art-overlay: rgba($bg-400, 0.55); // fix??
-$mpris-button-hover: rgba($bg-400, 0.5); // fix??
+  $mpris-album-art-overlay: #ff83ff; //rgba($bg-400, 0.55); // fix??
+$mpris-button-hover: #ff82ff; //rgba($bg-400, 0.5); // fix??
 $mpris-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 
 .widget-mpris {

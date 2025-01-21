@@ -53,7 +53,7 @@ textview {
 
     text {
         // background-color: $card;
-        background-color: $fill; // fix??
+        background-color: $bg-default; //reviewed&replaced
         selection {
             &:focus,
             & {
@@ -541,28 +541,28 @@ editablelabel > stack > text {
 
     &:checked,
     &:checked:hover {
-        background-color: on($indicator);
-        color: $indicator;
+        background-color: #ff48ff; //on($indicator);
+        color: #ff49ff; //$indicator;
     }
 }
 
 %flat-button-on-indicator {
-    color: on($indicator, secondary);
+    color: $text; //reviewed&replaced
 
     &:hover,
     &:active,
     &:focus:not(:hover):not(:active) &.keyboard-activating {
-        color: on($indicator);
+        color: $accent-default; //reviewed&replaced
     }
 
     &:checked,
     &:checked:hover {
-        background-color: on($indicator);
-        color: $indicator;
+        background-color: $bg-light; //reviewed&replaced
+        color: $accent-default; //reviewed&replaced
     }
 
     &:disabled {
-        color: on($indicator, secondary-disabled);
+        color: #ff4Eff; //on($indicator, secondary-disabled);
     }
 }
 
@@ -793,7 +793,7 @@ button {
     }
 
     &.card {
-        background-color: $card;
+        background-color: #ff06ff; //$card;
         background-clip: padding-box;
         font-weight: inherit;
         border: 1px solid $border;
@@ -1850,32 +1850,31 @@ searchbar > revealer > box {
     &:focus,
     &:hover,
     &:active {
-        color: $titlebar-text;
+        color: $text; //reviewed&replaced
         outline: none;
     }
 
     &:disabled {
-        color: $titlebar-text-secondary-disabled;
+        color: #06ffff; //$titlebar-text-secondary-disabled;
     }
 
     &:checked {
-        // background-color: $titlebar-indicator;
-        background-color: $primary;
-        color: on($titlebar-indicator);
+        color: $text; //reviewed&replaced
+        background-color: $accent-default; //reviewed&replaced
         outline: none;
 
         &:hover {
-            box-shadow: inset 0 0 0 1000px on($titlebar-indicator, fill);
-            color: on($titlebar-indicator);
+            box-shadow: inset 0 0 0 1000px on(#ff1Aff, fill);
+            color: $text; //reviewed&replaced
         }
 
         &:focus {
-            color: on($titlebar-indicator);
+            color: #ff1Cff; //on($titlebar-indicator);
         }
 
         &:disabled {
-            background-color: rgba($titlebar-indicator, 0.5);
-            color: on($titlebar-indicator, disabled);
+            background-color: #ff1Dff; //rgba($titlebar-indicator, 0.5);
+            color: #ff1Eff; //on($titlebar-indicator, disabled);
         }
     }
 
@@ -1889,14 +1888,14 @@ searchbar > revealer > box {
         }
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #03ffff; //$titlebar-text-secondary-disabled;
         }
 
         &:checked {
-            color: on($titlebar-indicator, secondary);
+            color: $text-disabled; //reviewed&replaced
 
             &:disabled {
-                color: on($titlebar-indicator, secondary-disabled);
+                color: #ff1Fff; //on($titlebar-indicator, secondary-disabled);
             }
         }
     }
@@ -1904,7 +1903,7 @@ searchbar > revealer > box {
 
 %titlebar-entry {
     background-color: $titlebar-fill;
-    color: $titlebar-text;
+    color: #ffA6ff; //$titlebar-text;
     border-radius: $circular-radius;
 
     &:disabled {
@@ -1917,7 +1916,7 @@ searchbar > revealer > box {
 
         &:hover,
         &:active {
-            color: $titlebar-text;
+            color: #ffA7ff; //$titlebar-text;
         }
 
         &:disabled {
@@ -1931,7 +1930,7 @@ headerbar {
         background-color $duration $ease-out,
         color $duration $ease-out;
     background-color: transparent;
-    color: $titlebar-text;
+    color: $text; //reviewed&replaced
     min-height: $large-size;
     border: none;
     box-shadow: none;
@@ -1947,7 +1946,7 @@ headerbar {
         color: $titlebar-text-secondary;
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #05ffff; //$titlebar-text-secondary-disabled;
         }
     }
 
@@ -2064,14 +2063,14 @@ headerbar {
 
     stackswitcher {
         // reset
-        background-color: on($titlebar, fill);
+        background-color: $bg-default; //reviewed&replaced
 
         &:checked {
-            background-color: $titlebar-indicator;
-            color: on($titlebar-indicator);
+            background-color: #ff20ff; //$titlebar-indicator;
+            color: #ff21ff; //on($titlebar-indicator);
 
             &:hover {
-                background-color: lighten($titlebar-indicator, 10%);
+                background-color: #ff22ff; //lighten($titlebar-indicator, 10%);
             }
         }
 
@@ -2155,7 +2154,7 @@ headerbar {
         padding: 0;
         margin: 0;
         border-radius: $window-radius $window-radius 0 0;
-        box-shadow: inset 0 1px highlight($titlebar);
+        box-shadow: inset 0 1px highlight(#ff94ff); //$titlebar);
         border: none;
         outline: none;
     }
@@ -2179,7 +2178,7 @@ window > {
 
 window.devel {
     headerbar {
-        $c: $titlebar;
+        $c: #ff89ff; //$titlebar;
             $gradient:
                 cross-fade(
                         10% - gtk-icontheme('system-run-symbolic'),
@@ -2196,17 +2195,17 @@ window.devel {
                 ),
                 linear-gradient(to top, lighten($c, 3%) 3px, lighten($c, 5%)); // fix??
 
-        background: $titlebar $gradient;
+        background: #ff9Bff $gradient;
 
         &:backdrop {
-            background:
-                $titlebar
+            background: 
+               #ff9Aff
                     cross-fade(
                         10% - gtk-icontheme('system-run-symbolic'),
                         image(transparent)
                     )
                     90% 0/256px 256px no-repeat,
-                image($titlebar); /* background-color would flash */
+                image(#ff93ff); //$titlebar); /* background-color would flash */
         }
     }
 }
@@ -2259,7 +2258,7 @@ pathbar > button {
     headerbar & {
         margin-top: $space-size;
         margin-bottom: $space-size;
-        background-color: on($titlebar, fill);
+        background-color: #ff97ff; //on($titlebar, fill);
         color: $titlebar-text-secondary;
     }
 
@@ -2457,8 +2456,8 @@ stack.view treeview.view {
 menubar {
     padding: 0;
     // box-shadow: inset 0 -1px $divider;
-    background-color: $titlebar;
-    color: $titlebar-text;
+    background-color: $bg-dark; //reviewed&replaced
+    color: #ffAAff; //$titlebar-text;
 
     &:backdrop {
         background-color: $titlebar-backdrop;
@@ -2479,11 +2478,11 @@ menubar {
             // Seems like it :hover even with keyboard focus
             transition: none;
             background-color: $overlay-checked;
-            color: $titlebar-text;
+            color: #ffA9ff; //$titlebar-text;
         }
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #04ffff; //$titlebar-text-secondary-disabled;
         }
 
         label:disabled {
@@ -2775,7 +2774,7 @@ magnifier {
     }
 
     &:disabled {
-        color: on($indicator, secondary-disabled);
+        color: #ff4fff; //on($indicator, secondary-disabled);
     }
 
     &:active {
@@ -3165,7 +3164,7 @@ tabbar {
         > separator {
             margin: 9px 0;
             min-width: 1px;
-            background-color: on($indicator, divider);
+            background-color: #ff50ff; //on($indicator, divider);
             transition: opacity 150ms ease-in-out;
 
             &.hidden {
@@ -3229,11 +3228,11 @@ tabbar {
 
         undershoot {
             &.left {
-                @include undershoot-gradient('right', $titlebar);
+                @include undershoot-gradient('right', #ff92ff); //$titlebar);
             }
 
             &.right {
-                @include undershoot-gradient('left', $titlebar);
+                @include undershoot-gradient('left', #ff91ff); //$titlebar);
             }
         }
 
@@ -3246,12 +3245,12 @@ tabbar {
         }
 
         tabbox > background {
-            background-color: $titlebar;
+            background-color: #ff88ff; //$titlebar;
         }
 
         .start-action,
         .end-action {
-            background-color: gtkalpha($titlebar, 0.6);
+            background-color: #ff98ff; //gtkalpha($titlebar, 0.6);
             border-color: $border;
         }
     }
@@ -3259,8 +3258,8 @@ tabbar {
 
 dnd tab {
     min-height: $small-size;
-    background-color: $titlebar;
-    color: $titlebar-text;
+    background-color: #ff87ff; //$titlebar;
+    color:#ffA9ff; // $titlebar-text;
 
     &.needs-attention {
         background-image: $tab_needs_attention_gradient;
@@ -3849,8 +3848,8 @@ scale {
             margin: $slider_margin;
             transition: all $duration $ease-out;
             border-radius: $circular-radius;
-            color: $primary;
-            background-color: $card;
+            color: #ff08ff; //$primary;
+            background-color: $bg-light; //reviewed&replaced
             box-shadow: inset 0 0 0 2px $primary;
 
             &:hover {
@@ -5788,7 +5787,7 @@ window {
         margin: 0;
         padding: 2px;
         border-radius: 0;
-        background-color: $titlebar;
+        background-color: #ff86ff; //$titlebar;
         border: 1px solid $solid-border;
 
         &:backdrop {
@@ -5822,15 +5821,15 @@ window {
         }
 
         &:hover {
-            color: $titlebar-text;
+            color: #ffA8ff; //$titlebar-text;
             background-color: gtkalpha(currentColor, 0.15);
             box-shadow:
                 0 1px 3px rgba(black, 0.1),
-                inset 0 1px highlight($titlebar);
+                inset 0 1px highlight(#ff90ff); //$titlebar);
         }
 
         &:active {
-            color: $titlebar-text;
+            color: #ffA7ff; //$titlebar-text;
             background-color: gtkalpha(currentColor, 0.2);
         }
 
@@ -5957,13 +5956,18 @@ stackswitcher {
             box-shadow: none;
         }
 
+        &:hover {
+            box-shadow: none;
+            background-color: $bg-light-hover; //reviewed&replaced
+        }
+
         &:checked {
-            background-color: $indicator;
-            color: on($indicator);
+            color: $text; //reviewed&replaced
+            background-color: $bg-light; //reviewed&replaced
 
             &:hover {
                 box-shadow: none;
-                background-color: lighten($indicator, 10%);
+                background-color: $bg-light-hover; //reviewed&replaced
             }
         }
     }

@@ -107,7 +107,7 @@
     }
 
     StWidget.focused .app-well-app-running-dot {
-        background-color: $indicator !important;
+        background-color: #ff77ff; //$indicator !important;
     }
 
     &:overview #dash .app-well-app-running-dot {
@@ -159,7 +159,7 @@
     }
 
     StWidget.focused .app-well-app-running-dot {
-        background-color: $indicator;
+        background-color: #ff29ff; //$indicator;
     }
 
     &.opaque #dash .dash-background {

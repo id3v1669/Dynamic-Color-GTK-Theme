@@ -60,26 +60,26 @@ $fg-dark-alt-inactive: rgba($fg-dark-alt, 0.6);
 
 
 
-$fg-100: darken(**base01**, 5%);
-$fg-150: **base00**;
 $fg-200: darken(**base00**, 5%);
 $fg-250: lighten(**base02**, 5%);
 $fg-300: **base02**;
 $fg-350: darken(**base02**, 5%);
 $fg-400: lighten(**base03**, 5%);
-$fg-450: **base03**;
+$fg-450: **base03**;                  
 
-$bg-light: **base05**;
-$bg-default: **base04**;
-$bg-dark: **base06**;
-$bg-dark-alt: **base07**;
-$bg-light-inactive: rgba($bg-light, 0.7);
-$bg-default-inactive: rgba($bg-default, 0.7);
-$bg-dark-inactive: rgba($bg-dark, 0.7);
-$bg-dark-alt-inactive: rgba($bg-dark-alt, 0.7);
+$bg-light: **base05**;                          //reviewed&replaced
+$bg-default: **base04**;                        //reviewed&replaced
+$bg-dark: **base06**;                           //reviewed&replaced
+$bg-dark-alt: **base07**;                       //reviewed&replaced
+$bg-light-inactive: rgba($bg-light, 0.7);       //reviewed&replaced
+$bg-default-inactive: rgba($bg-default, 0.7);   //reviewed&replaced
+$bg-dark-inactive: rgba($bg-dark, 0.7);         //reviewed&replaced
+$bg-dark-alt-inactive: rgba($bg-dark-alt, 0.7); //reviewed&replaced
+$bg-light-hover: rgba($bg-light, 0.5);          //reviewed&replaced
+
+$bg-button-clickable: lighten($bg-default, 3%); //reviewed&replaced
 
 
-$bg-050: **base05**;
 $bg-100: darken(**base05**, 5%);
 $bg-150: lighten(**base04**, 5%);
 $bg-200: **base04**;
@@ -87,21 +87,20 @@ $bg-250: darken(**base04**, 5%);
 $bg-300: lighten(**base06**, 5%);
 $bg-350: **base06**;
 $bg-400: lighten(**base07**, 5%);
-$bg-450: **base07**;
 
 
 @function bw($return_white: true) {
     $brightnessfg: (red($fg-light) * 299 + green($fg-light) * 587 + blue($fg-light) * 114) / 1000;
-	$brightnessbg: (red($bg-350) * 299 + green($bg-350) * 587 + blue($bg-350) * 114) / 1000;
+	$brightnessbg: (red($bg-dark) * 299 + green($bg-dark) * 587 + blue($bg-dark) * 114) / 1000;
     @if ($brightnessfg >= $brightnessbg) {
         @if $return_white {
             @return $fg-light;
         } @else {
-            @return $bg-350;
+            @return $bg-dark;
         }
     } @else {
         @if $return_white {
-            @return $bg-350;
+            @return $bg-dark;
         } @else {
             @return $fg-light;
         }

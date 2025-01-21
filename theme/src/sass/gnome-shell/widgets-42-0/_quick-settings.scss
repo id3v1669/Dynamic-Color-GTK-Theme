@@ -24,7 +24,7 @@
     max-width: 12em;
     min-height: 40px;
     border: none;
-    background-color: $button !important;
+    background-color: $bg-button-clickable !important; //reviewed&replaced
 
     &:hover {
         background-color: $divider !important;
@@ -86,7 +86,7 @@
     }
 
     .quick-toggle-arrow {
-        background-color: $button !important;
+        background-color: $bg-button-clickable !important; //reviewed&replaced
         padding: $base_padding $base_padding * 1.75;
 
         &:active {
@@ -196,7 +196,7 @@
     }
 
     .icon-button {
-        background-color: $button;
+        background-color: $bg-button-clickable; //reviewed&replaced
         color: $text;
         border-radius: $base_radius;
         @extend %button;

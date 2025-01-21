@@ -129,7 +129,7 @@
             background-size $ripple-fade-out-duration $ease-out,
             background-image $ripple-fade-out-opacity-duration $ease-out,
             outline $ripple-fade-out-duration $ease-out;
-        background-color: $button;
+        background-color: $bg-button-clickable; //reviewed&replaced
         background-image: radial-gradient(
             circle,
             transparent 10%,

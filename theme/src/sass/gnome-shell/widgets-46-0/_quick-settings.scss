@@ -31,7 +31,7 @@
 }
 
 .quick-toggle {
-    background-color: $button !important;
+    background-color: $bg-button-clickable !important; //reviewed&replaced
 
     &:hover {
         background-color: $divider !important;
@@ -116,7 +116,7 @@
     }
 
     .quick-toggle-arrow {
-        background-color: $button !important;
+        background-color: $bg-button-clickable !important; //reviewed&replaced
         padding: $base_padding $base_padding * 1.75;
         border: none !important;
         color: $text;
@@ -173,7 +173,7 @@
     }
 
     .icon-button {
-        background-color: $button !important;
+        background-color: $bg-button-clickable !important; //reviewed&replaced
         color: $primary !important;
         border-radius: $base_radius;
         padding: $base_padding * 1.5;
@@ -248,7 +248,7 @@
     }
 
     .icon-button {
-        background-color: $button;
+        background-color: $bg-button-clickable; //reviewed&replaced
         color: $primary !important;
         border-radius: $base_radius;
         @extend %button;

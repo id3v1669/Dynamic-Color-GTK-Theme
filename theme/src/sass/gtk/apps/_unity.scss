@@ -27,9 +27,9 @@ UnityDecoration {
         padding: 0 2px;
         border-style: none;
         border-radius: $window-radius $window-radius 0 0;
-        box-shadow: inset 0 1px highlight($titlebar);
-        background-color: $titlebar;
-        color: $titlebar-text;
+        box-shadow: inset 0 1px highlight(#ff8Eff); //$titlebar);
+        background-color: #ff83ff; //$titlebar;
+        color: #ffB3ff; //$titlebar-text;
 
         &:backdrop {
             background-color: $titlebar-backdrop;
@@ -48,9 +48,9 @@ UnityDecoration {
         color: $titlebar-text-secondary;
 
         &:hover {
-            box-shadow: inset 0 -2px $titlebar-indicator;
+            box-shadow: inset 0 -2px #ff23ff; //$titlebar-indicator;
             background-color: transparent;
-            color: $titlebar-text;
+            color: #ffB4ff; //$titlebar-text;
         }
     }
 }
@@ -72,7 +72,7 @@ sheet-style-dialog.unity-force-quit {
 UnityPanelWidget,
 .unity-panel {
     background-color: $panel-solid;
-    color: $titlebar-text;
+    color: #ffB4ff; //$titlebar-text;
 
     &:backdrop {
         color: $titlebar-text-secondary;
@@ -90,9 +90,9 @@ UnityPanelWidget,
 
 .unity-panel.menubar.menuitem:hover,
 .unity-panel.menubar .menuitem *:hover {
-    box-shadow: inset 0 -2px $titlebar-indicator;
+    box-shadow: inset 0 -2px #ff24ff; //$titlebar-indicator;
     background-color: transparent;
-    color: $titlebar-text;
+    color: #ffA0ff; //$titlebar-text;
 }
 
 .menu IdoPlaybackMenuItem.menuitem:active {

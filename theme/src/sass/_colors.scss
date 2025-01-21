@@ -100,8 +100,6 @@
 // Basic colors
 $primary:                               $accent-default;
 $drop_target_color:                     $orange-dark;
-$indicator:                             mix($primary, $fg-150, 0%);
-$titlebar-indicator:                    $primary;
 $inverse-indicator:                     mix($primary, $white, 0%);
 $applet-primary:                        $primary;
 
@@ -109,7 +107,6 @@ $background:                            $bg-400;
 $surface:                               $bg-300;
 $base:                                  $bg-200;
 $base-alt:                              $bg-100;
-$card:                                  $bg-050;
 $menu:                                  $bg-250;
 
 $bg-main:                               $bg-200;
@@ -120,18 +117,14 @@ $osd:                                   mix($primary, $bg-400, 0%);
 $scrim:                                 mix($primary, $bg-300, 0%);
 $scrim-alt:                             mix($primary, $bg-200, 0%);
 $scrim-inverse:                         rgba($white, 0.1);
-$titlebar:                              $bg-400;
+//$titlebar:                              $bg-400;
 $titlebar-backdrop:                     $bg-400;
-$titlebar-indicator:                    $fg-150;
 $popover:                               $bg-300;
 $panel-solid:                           $bg-400; // for Unity panel which doesn't allow translucent colors
 $panel:                                 rgba($panel-solid, $panel_opacity);
 
-$button:                                on($background, secondary-fill);
-$entry:                                 on($background, secondary-fill);
 
-// Misc colors
-$chromium-tabs:                         $bg-200;
+$entry:                                 on($background, secondary-fill);
 
 $link:                                  $teal-default;
 $link-visited:                          $purple-default;
@@ -160,23 +153,19 @@ $overlay-checked:                       gtkalpha(currentColor, 0.10);
 $overlay-selected:                      gtkalpha(currentColor, 0.06);
 
 // Text and derivative colors
-$text:                                  $fg-default; 			//reviewed&replaced
-$text-secondary:                        $fg-dark;               //reviewed&replaced
-$text-disabled:                         $fg-default-inactive;   //reviewed&replaced
-$text-secondary-disabled:               $fg-dark-inactive;      //reviewed&replaced
 $track:                                 on($background, track);
 $track-disabled:                        on($background, track-disabled);
 $divider:                               on($background, divider);
 $fill:                                  on($background, fill);
 
-$titlebar-text:                         on($titlebar);
-$titlebar-text-secondary:               on($titlebar, secondary);
-$titlebar-text-disabled:                on($titlebar, disabled);
-$titlebar-text-secondary-disabled:      on($titlebar, secondary-disabled);
-$titlebar-track:                        on($titlebar, track);
-$titlebar-track-disabled:               on($titlebar, track-disabled);
-$titlebar-divider:                      on($titlebar, divider);
-$titlebar-fill:                         on($titlebar, fill);
+$titlebar-text:                         $fg-default;
+$titlebar-text-secondary:               $fg-default;
+$titlebar-text-disabled:                $fg-default;
+$titlebar-text-secondary-disabled:      $fg-default;
+$titlebar-track:                        $fg-default;
+$titlebar-track-disabled:               $fg-default;
+$titlebar-divider:                      $fg-default;
+$titlebar-fill:                         $fg-default;
 
 $panel-text:                            on($panel);
 $panel-text-secondary:                  on($panel, secondary);
@@ -187,13 +176,15 @@ $panel-track-disabled:                  on($panel, track-disabled);
 $panel-divider:                         on($panel, divider);
 $panel-fill:                            on($panel, fill);
 
-
-// Titlebutton colors
-$titlebutton-close:                      $red-default;
-$titlebutton-max:                        $green-default;
-$titlebutton-min:                        $yellow-default;
-
 $accent-color:                          $accent-default;
 
 // workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors
 $placeholder_text_color:                mix($white, $base, percentage(0.7));
+
+
+
+
+$text:                                  $fg-default; 			//reviewed&replaced
+$text-secondary:                        $fg-dark;               //reviewed&replaced
+$text-disabled:                         $fg-default-inactive;   //reviewed&replaced
+$text-secondary-disabled:               $fg-dark-inactive;      //reviewed&replaced

@@ -53,8 +53,8 @@
 }
 
 %selected_items_indicator {
-    color: on($indicator);
-    background-color: $indicator;
+    color: $text; //reviewed&replaced
+    background-color: $bg-light; //reviewed&replaced
 }
 
 %linked {
@@ -326,33 +326,33 @@ spinner {
  ****************/
 
 %entry-on-indicator {
-    background-color: on($indicator, fill);
-    color: on($indicator);
+    background-color: #ff2Eff; //on($indicator, fill);
+    color: #ff2Dff; //on($indicator);
 
     &:focus {
-        color: on($indicator);
+        color: #ff2Eff; //on($indicator);
     }
 
     &:drop(active) {
-        color: on($indicator);
+        color: #ff2Fff; //on($indicator);
     }
 
     &:disabled {
-        background-color: on($indicator, fill);
-        color: on($indicator, disabled);
+        background-color: #ff30ff; //on($indicator, fill);
+        color: #ff31ff; //on($indicator, disabled);
     }
 
     image {
-        color: on($indicator, secondary);
+        color: #ff32ff; //on($indicator, secondary);
 
         &:disabled {
-            color: on($indicator, disabled);
+            color: #ff33ff; //on($indicator, disabled);
         }
     }
 
     &:hover image,
     &:focus image {
-        color: on($indicator);
+        color: #ff34ff; //on($indicator);
     }
 }
 
@@ -610,28 +610,28 @@ treeview entry {
 
     &:checked,
     &:checked:hover {
-        background-color: on($indicator);
-        color: $indicator;
+        background-color: #ff35ff; //on($indicator);
+        color: #ff36ff; //$indicator;
     }
 }
 
 %flat-button-on-indicator {
-    color: on($indicator, secondary);
+    color: $text-secondary; //reviewed&replaced
 
     &:hover,
     &:active,
     &:focus {
-        color: on($indicator);
+        color: $text; //reviewed&replaced
     }
 
     &:checked,
     &:checked:hover {
-        background-color: on($indicator);
-        color: $indicator;
+        background-color: #ff39ff; //on($indicator);
+        color: #ff3Aff; //$indicator;
     }
 
     &:disabled {
-        color: on($indicator, secondary-disabled);
+        color: #ff3Bff; //on($indicator, secondary-disabled);
     }
 }
 
@@ -1431,77 +1431,77 @@ searchbar > revealer > box {
     &:checked {
         // background-color: $titlebar-indicator;
         background-color: $primary;
-        color: on($titlebar-indicator);
+        color: $text; //reviewed&replaced
 
         &:hover {
-            box-shadow: inset 0 0 0 9999px on($titlebar-indicator, fill);
-            color: on($titlebar-indicator);
+            box-shadow: inset 0 0 0 9999px on(#ff11ff, fill);
+            color: #ff12ff; //on($titlebar-indicator);
         }
 
         &:focus {
-            color: on($titlebar-indicator);
+            color: #ff13ff; //on($titlebar-indicator);
             box-shadow: none;
         }
 
         &:disabled {
-            background-color: rgba($titlebar-indicator, 0.5);
-            color: on($titlebar-indicator, disabled);
+            background-color: #ff14ff; //rgba($titlebar-indicator, 0.5);
+            color: #ff15ff; //on($titlebar-indicator, disabled);
         }
     }
 
     &:focus,
     &:hover,
     &:active {
-        color: $titlebar-text;
+        color: $text; //reviewed&replaced
     }
 
     &:disabled {
-        color: $titlebar-text-secondary-disabled;
+        color: #0Affff; //$titlebar-text-secondary-disabled;
     }
 
     &:backdrop {
-        color: $titlebar-text-disabled;
+        color: #09ffff; //$titlebar-text-disabled;
 
         &:focus,
         &:hover,
         &:active {
-            color: $titlebar-text-secondary;
+            color: #08ffff; //$titlebar-text-secondary;
         }
 
         &:disabled {
-            color: $titlebar-text-secondary-disabled;
+            color: #07ffff; //$titlebar-text-secondary-disabled;
         }
 
         &:checked {
-            color: on($titlebar-indicator, secondary);
+            color: #ff16ff; //on($titlebar-indicator, secondary);
 
             &:disabled {
-                color: on($titlebar-indicator, secondary-disabled);
+                color: #ff17ff; //on($titlebar-indicator, secondary-disabled);
             }
         }
     }
 }
 
 %titlebar-entry {
-    background-color: $titlebar-fill;
-    color: $titlebar-text;
+    background-color: #0Bffff; //$titlebar-fill;
+    color: #ffA2ff; //$titlebar-text;
     border-radius: $circular-radius;
 
     &:disabled {
-        background-color: $titlebar-fill;
-        color: $titlebar-text-disabled;
+        background-color: #0Cffff; //$titlebar-fill;
+        color: #0Dffff; //$titlebar-text-disabled;
     }
 
     image {
-        color: $titlebar-text-secondary;
+        color: #0Effff; //$titlebar-text-secondary;
 
         &:hover,
         &:active {
-            color: $titlebar-text;
+            color: #ffA3ff; //$titlebar-text;
         }
 
         &:disabled {
-            color: $titlebar-text-disabled;
+            color: #0Fffff; //$titlebar-text-disabled;
         }
     }
 }
@@ -1514,7 +1514,7 @@ searchbar > revealer > box {
     border: none;
 
     @if $outline == 'false' {
-        box-shadow: inset 0 1px highlight($titlebar);
+        box-shadow: inset 0 1px highlight(#ff8Dff); //$titlebar);
     }
 
     &:disabled {
@@ -1566,7 +1566,7 @@ searchbar > revealer > box {
         background-color: #00ff00; //$titlebar;
         background-image: none;
         transition: all $duration $ease-out;
-        box-shadow: inset 0 1px highlight($titlebar);
+        box-shadow: inset 0 1px highlight(#ff90ff); //$titlebar);
 
         &:backdrop {
             background-color: #ffff1B; //$titlebar-backdrop;
@@ -1714,7 +1714,7 @@ searchbar > revealer > box {
         border: none;
         background-color: $bg-dark; //reviewed&replaced
         background-image: none;
-        box-shadow: inset 0 1px highlight($titlebar);
+        box-shadow: inset 0 1px highlight(#ff96ff); //$titlebar);
 
         &:backdrop {
             background-color: $bg-dark-inactive; //reviewed&replaced
@@ -1983,11 +1983,11 @@ treeview.view {
         }
 
         &:selected {
-            color: #ffff0F; //on($indicator, secondary);
+            color: $text-secondary; //reviewed&replaced
 
             &:hover,
             &:active {
-                color: $text; //on($indicator);
+                color: $text; //reviewed&replaced
             }
 
             &:disabled {
@@ -2208,7 +2208,7 @@ menu {
         }
 
         &:disabled {
-            color: #00ff13; //$text-disabled;
+            color: $text-disabled; //reviewed&replaced
         }
 
         accelerator {
@@ -2287,7 +2287,7 @@ menu {
 
     separator {
         margin: $space-size / 2 0;
-        background-color: #00ff1E; //transparent;
+        background-color: $border; //reviewed&replaced
     }
 }
 
@@ -2439,7 +2439,7 @@ modelbutton.flat arrow {
     border-radius: $modal-radius;
 
     &:hover {
-        background-color: rgba($bg-light, 0.5); //reviewed&replaced
+        background-color: $bg-light-hover; //reviewed&replaced
         color: $text-secondary; //reviewed&replaced
     }
 
@@ -2679,7 +2679,7 @@ scrollbar {
     }
 
     transition: $transition;
-    background-color: #00ff35; //$base;
+    background-color: $bg-default; //reviewed&replaced
 
     // scrollbar border
     &.top {
@@ -2905,20 +2905,20 @@ radiobutton.text-button {
 
 %check-and-radio-on-indicator {
     &:not(:checked):not(:indeterminate) {
-        background-color: on($indicator, divider);
+        background-color: #ff3Cff; //on($indicator, divider);
 
         &:hover {
-            box-shadow: 0 0 0 6px on($indicator, fill);
-            background-color: rgba(on($indicator), 0.15);
+            box-shadow: 0 0 0 6px on(#ff3Dff, fill);
+            background-color: #ff3Dff; //rgba(on($indicator), 0.15);
         }
 
         &:active {
-            box-shadow: 0 0 0 6px on($indicator, divider);
-            background-color: rgba(on($indicator), 0.2);
+            box-shadow: 0 0 0 6px #ff3Eff; //on($indicator, divider);
+            background-color: #ff3fff; //rgba(on($indicator), 0.2);
         }
 
         &:disabled {
-            background-color: on($indicator, fill);
+            background-color: #ff40ff; //on($indicator, fill);
         }
     }
 }
@@ -3119,7 +3119,7 @@ treeview.view {
         }
 
         &:selected:not(:disabled):not(:checked):not(:indeterminate) {
-            background-color: on($indicator, divider);
+            background-color: #ff41ff; //on($indicator, divider);
         }
 
         &:checked,
@@ -3248,8 +3248,8 @@ scale {
         margin: $slider_margin;
         transition: all $duration $ease-out;
         border-radius: $circular-radius;
-        color: $primary;
-        background-color: $card;
+        color: #ff04ff; //$primary;
+        background-color: $bg-light; //reviewed&replaced
         box-shadow: inset 0 0 0 2px $primary;
 
         &:hover {
@@ -3569,15 +3569,15 @@ actionbar > revealer > box {
     }
 
     stackswitcher {
-        background-color: on($indicator, fill);
+        background-color: $bg-light; //on($indicator, fill);
 
         &.linked:not(.vertical)
             > button:not(.suggested-action):not(.destructive-action) {
-            color: on($indicator, secondary);
+            color: #ff43ff; //on($indicator, secondary);
 
             &:hover,
             &:active {
-                color: on($indicator);
+                color: #ff44ff; //on($indicator);
             }
 
             &:checked {
@@ -4198,7 +4198,7 @@ placessidebar.sidebar {
         }
 
         &:disabled {
-            color: on($indicator, secondary-disabled);
+            color: #ff45ff; //on($indicator, secondary-disabled);
         }
 
         image.sidebar-icon {
@@ -4761,7 +4761,7 @@ decoration {
         padding: 2px;
         border-radius: 0;
         box-shadow: none;
-        background-color: $titlebar;
+        background-color: #ff8Aff; //$titlebar;
         
         border: 1px solid $solid-border;
 
@@ -4787,15 +4787,15 @@ decoration {
         background-color: gtkalpha(currentColor, 0.1);
 
         &:hover {
-            color: $titlebar-text;
+            color: #ffA3ff; //$titlebar-text;
             background-color: gtkalpha(currentColor, 0.15);
             box-shadow:
                 0 1px 3px rgba(black, 0.1),
-                inset 0 1px highlight($titlebar);
+                inset 0 1px highlight(#ff95ff); //$titlebar);
         }
 
         &:active {
-            color: $titlebar-text;
+            color: #ffA4ff; //$titlebar-text;
             background-color: gtkalpha(currentColor, 0.2);
         }
 
@@ -4888,13 +4888,18 @@ stackswitcher {
             box-shadow: none;
         }
 
+        &:hover {
+            box-shadow: none;
+            background-color: $bg-light-hover; //reviewed&replaced
+        }
+
         &:checked {
-            background-color: $indicator;
-            color: on($indicator);
+            background-color: $bg-light; //reviewed&replaced
+            color: $text; //reviewed&replaced
 
             &:hover {
                 box-shadow: none;
-                background-color: lighten($indicator, 10%);
+                background-color: $bg-light-hover; //reviewed&replaced
             }
         }
     }

@@ -11,7 +11,7 @@
     color: $text;
 
     @if $outline == 'true' {
-        border: 2px solid $indicator;
+        border: 2px solid #ff26ff; //$indicator;
     }
 
     & > #Toolbar {
@@ -50,7 +50,7 @@
         &:selected {
             border-color: transparent;
             background-color: $divider;
-            box-shadow: inset 0 -2px 0px $indicator;
+            box-shadow: inset 0 -2px 0px #ff27ff; //$indicator;
             color: $text;
             text-shadow: none;
         }

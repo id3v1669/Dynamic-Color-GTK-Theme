@@ -237,7 +237,7 @@ $nautilus: #ff0000; //$base-alt;
         margin-bottom: 0;
 
         &.current-dir {
-            color: $titlebar-text;
+            color: #ffACff; //$titlebar-text;
 
             &:hover,
             &:active {
@@ -471,7 +471,7 @@ window.org-gnome-gedit {
     } @else {
         box-shadow:
             $shadow-z5,
-            0 0 0 2px $indicator;
+            0 0 0 2px #ff56ff; //$indicator;
     }
 
     .linked:not(.vertical) > entry {
@@ -543,28 +543,28 @@ frame.gedit-map-frame > border {
 
 %sidebar_scrollbar {
     slider {
-        background-color: on($indicator, disabled);
+        background-color: #ff57ff; //on($indicator, disabled);
 
         &:hover {
-            background-color: on($indicator, secondary);
+            background-color: #ff58ff; //on($indicator, secondary);
         }
 
         &:active {
-            background-color: on($indicator);
+            background-color: #ff59ff; //on($indicator);
         }
 
         &:disabled {
-            background-color: on($indicator, secondary-disabled);
+            background-color: #ff5Aff; //on($indicator, secondary-disabled);
         }
     }
 
     &.overlay-indicator {
         &:not(.dragging):not(.hovering) {
             button {
-                background-color: on($indicator, disabled);
+                background-color: #ff5Bff; //on($indicator, disabled);
 
                 &:disabled {
-                    background-color: on($indicator, secondary-disabled);
+                    background-color: #ff5Cff; //on($indicator, secondary-disabled);
                 }
             }
         }
@@ -1897,8 +1897,8 @@ window.background {
             list {
                 border-radius: $corner-radius;
                 margin: 0 $space-size $space-size;
-                background-color: $indicator;
-                color: on($indicator);
+                background-color: #ff5Dff; //$indicator;
+                color: #ff5Eff; //on($indicator);
 
                 button.flat {
                     @extend %flat-button-on-indicator;
@@ -1909,7 +1909,7 @@ window.background {
                     &:hover,
                     &:active,
                     &:selected {
-                        color: on($indicator);
+                        color: #ff5Fff; //on($indicator);
                     }
                 }
             }
@@ -2142,7 +2142,7 @@ preferencesgroup,
     > leaflet > leaflet > separator.sidebar {
             // left
             // border-right: none;
-            background-color: $titlebar;
+            background-color: #ff85ff; //$titlebar;
             transition:
                 background-color $duration $ease-out,
                 color $duration $ease-out,
@@ -2352,7 +2352,7 @@ window.background.csd.unified {
 
     // ...and add it on the window itself
     > decoration-overlay {
-        box-shadow: inset 0 1px highlight($titlebar);
+        box-shadow: inset 0 1px highlight(#ff8Fff); //$titlebar);
     }
 
     &,

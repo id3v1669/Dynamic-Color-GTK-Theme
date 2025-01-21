@@ -414,14 +414,14 @@ overlay-split-view {
 
 // Sidebar
 %sidebar_style {
-    background-color: $bg-450; // fix??
+    background-color: $bg-dark; //reviewed&replaced
 
     color: on($background);
     border-radius: 0;
     margin: 0;
 
     .dim-label {
-        color: on($indicator, disabled);
+        color: $text-secondary-disabled; //on($indicator, disabled);
     }
 }
 
@@ -432,7 +432,7 @@ overlay-split-view {
     margin: 0;
 
     .dim-label {
-        color: on($indicator, disabled);
+        color: #ff61ff; //on($indicator, disabled);
     }
 }
 
@@ -458,10 +458,10 @@ overlay-split-view {
     &.overlay-indicator {
         &:not(.dragging):not(.hovering) {
             button {
-                background-color: on($indicator, disabled);
+                background-color: #ff62ff; //on($indicator, disabled);
 
                 &:disabled {
-                    background-color: on($indicator, secondary-disabled);
+                    background-color: #ff63ff; //on($indicator, secondary-disabled);
                 }
             }
         }
@@ -488,7 +488,7 @@ overlay-split-view {
     }
 
     > row {
-        color: on($indicator, secondary);
+        color: #ff64ff; //on($indicator, secondary);
         border-radius: $modal-radius;
         color: $text;
         padding: 7px 0;
@@ -514,34 +514,34 @@ overlay-split-view {
 }
 
 %sidebar_entry {
-    background-color: on($indicator, fill); // fix??
-    color: on($indicator, secondary);
+    background-color: #ff65ff; //on($indicator, fill); // fix??
+    color: #ff66ff; //on($indicator, secondary);
     border-radius: $corner-radius - $space-size;
 
     &:focus-within {
-        color: on($indicator);
+        color: #ff67ff; //on($indicator);
     }
 
     &:drop(active),
     &:hover:not(:focus-within) {
-        color: on($indicator);
+        color: #ff68ff; //on($indicator);
     }
 
     &:disabled {
-        color: on($indicator, secondary-disabled);
+        color: #ff69ff; //on($indicator, secondary-disabled);
     }
 
     image {
         // icons inside the entry
-        color: on($indicator, secondary);
+        color: #ff6Aff; //on($indicator, secondary);
 
         &:hover,
         &:active {
-            color: on($indicator);
+            color: #ff6Bff; //on($indicator);
         }
 
         &:disabled {
-            color: on($indicator, secondary-disabled);
+            color: #ff6Cff; //on($indicator, secondary-disabled);
         }
     }
 }

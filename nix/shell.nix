@@ -23,13 +23,14 @@ pkgs.mkShell {
     # testing
     # swaynotificationcenter
     # gnome-themes-extra
-    # geary
-    # totem
-    # evince
-    # gedit
-    # gnome-terminal
-    # lollypop
+    #geary
+    totem
+    evince
+    gedit
+    gnome-terminal
+    lollypop
     # gnome-calendar
     # gnome-system-monitor
   ];
+  #gsettings set org.gnome.desktop.interface gtk-theme "Dynamic-Color-GTK-Theme"
 }

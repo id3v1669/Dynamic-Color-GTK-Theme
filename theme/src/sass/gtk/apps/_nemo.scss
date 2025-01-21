@@ -9,7 +9,7 @@
 
 .nemo-window {
     .primary-toolbar {
-        background-color: $titlebar;
+        background-color: #ff84ff; //$titlebar;
         border-bottom: 1px solid $divider;
 
         // FIXME: workaround for wrong size allocation of Nemo
@@ -37,11 +37,11 @@
             &:hover,
             &:active,
             &:checked {
-                color: $titlebar-text;
+                color: #ffB2ff; //$titlebar-text;
             }
 
             &:disabled {
-                color: $titlebar-text-secondary-disabled;
+                color: #00ffff; //$titlebar-text-secondary-disabled;
             }
 
             &:backdrop {
