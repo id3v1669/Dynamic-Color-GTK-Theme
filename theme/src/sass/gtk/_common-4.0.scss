@@ -1819,8 +1819,8 @@ searchbar > revealer > box {
  ***************/
 
 %titlebar-button {
-    color: $titlebar-text-secondary;
-    background-color: $titlebar-fill;
+    color: $text-secondary; //reviewed&replaced
+    background-color: $bg-button-clickable; //reviewed&replaced
     border-radius: $circular-radius;
     border: none;
     outline: none;
@@ -1844,7 +1844,7 @@ searchbar > revealer > box {
     }
 
     &:hover {
-        background-color: $titlebar-divider;
+        background-color: $bg-button-clickable-hover; //reviewed&replaced
     }
 
     &:focus,
@@ -1855,7 +1855,7 @@ searchbar > revealer > box {
     }
 
     &:disabled {
-        color: #06ffff; //$titlebar-text-secondary-disabled;
+        color: $text-secondary-disabled; //reviewed&replaced
     }
 
     &:checked {
@@ -1864,7 +1864,7 @@ searchbar > revealer > box {
         outline: none;
 
         &:hover {
-            box-shadow: inset 0 0 0 1000px on(#ff1Aff, fill);
+            box-shadow: inset 0 0 0 1000px on($text, fill);
             color: $text; //reviewed&replaced
         }
 
@@ -1879,16 +1879,16 @@ searchbar > revealer > box {
     }
 
     &:backdrop {
-        color: $titlebar-text-disabled;
+        color: $text-disabled; //reviewed&replaced
 
         &:focus,
         &:hover,
         &:active {
-            color: $titlebar-text-secondary;
+            color: #23ffff; //$titlebar-text-secondary;
         }
 
         &:disabled {
-            color: #03ffff; //$titlebar-text-secondary-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
 
         &:checked {
@@ -1902,25 +1902,25 @@ searchbar > revealer > box {
 }
 
 %titlebar-entry {
-    background-color: $titlebar-fill;
-    color: #ffA6ff; //$titlebar-text;
+    background-color: $bg-light; //reviewed&replaced
+    color: $text; //reviewed&replaced
     border-radius: $circular-radius;
 
     &:disabled {
-        background-color: $titlebar-fill;
-        color: $titlebar-text-disabled;
+        background-color: #ff0091; //$titlebar-fill;
+        color: $text-disabled; //reviewed&replaced
     }
 
     image {
-        color: $titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:hover,
         &:active {
-            color: #ffA7ff; //$titlebar-text;
+            color: $text; //reviewed&replaced
         }
 
         &:disabled {
-            color: $titlebar-text-disabled;
+            color: $text-disabled; //reviewed&replaced
         }
     }
 }
@@ -1938,12 +1938,12 @@ headerbar {
     margin: 0;
 
     &:disabled {
-        color: $titlebar-text-disabled;
+        color: #20ffff; //$titlebar-text-disabled;
     }
 
     &:backdrop {
         background-color: transparent;
-        color: $titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:disabled {
             color: #05ffff; //$titlebar-text-secondary-disabled;
@@ -1970,10 +1970,10 @@ headerbar {
     .subtitle,
     .dim-label {
         transition: color $duration $ease-out;
-        color: $titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:backdrop {
-            color: $titlebar-text-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
     }
 
@@ -1985,7 +1985,7 @@ headerbar {
 
     // The separator for split headerbars
     headerbar + separator {
-        background-color: $titlebar-divider;
+        background-color: #26ffff; //$titlebar-divider;
     }
 
     > windowhandle > box {
@@ -2026,14 +2026,14 @@ headerbar {
     button.suggested-action,
     button.destructive-action {
         &:disabled {
-            background-color: $titlebar-fill;
-            color: $titlebar-text-disabled;
+            background-color: #2Affff; //$titlebar-fill;
+            color: #29ffff; //$titlebar-text-disabled;
             opacity: 1;
         }
     }
 
     splitbutton {
-        background-color: $titlebar-fill;
+        background-color: $bg-default; //reviewed&replaced
         border-radius: $circular-radius;
 
         button:not(.suggested-action):not(.destructive-action) {
@@ -2089,8 +2089,8 @@ headerbar {
         button.suggested-action,
         button.destructive-action {
             &:disabled {
-                background-color: $titlebar-fill;
-                color: $titlebar-text-disabled;
+                background-color: #27ffff; //$titlebar-fill;
+                color: #28ffff; //$titlebar-text-disabled;
             }
         }
 
@@ -2111,7 +2111,7 @@ headerbar {
     separator:not(.sidebar) {
         // margin-top: $large-size / 4;
         // margin-bottom: $large-size / 4;
-        background-color: $titlebar-divider;
+        background-color: $border; //reviewed&replaced
     }
 
     switch {
@@ -2259,7 +2259,7 @@ pathbar > button {
         margin-top: $space-size;
         margin-bottom: $space-size;
         background-color: #ff97ff; //on($titlebar, fill);
-        color: $titlebar-text-secondary;
+        color: #38ffff; //$titlebar-text-secondary;
     }
 
     > button {
@@ -2460,8 +2460,8 @@ menubar {
     color: #ffAAff; //$titlebar-text;
 
     &:backdrop {
-        background-color: $titlebar-backdrop;
-        color: $titlebar-text-secondary;
+        background-color: $bg-dark-inactive; //$titlebar-backdrop;
+        color: $text-secondary-disabled; //$titlebar-text-secondary;
     }
 
     .csd & {
@@ -2472,13 +2472,13 @@ menubar {
         transition: $transition;
         min-height: 20px;
         padding: $space-size - 2px $space-size + 2px;
-        color: $titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:selected {
             // Seems like it :hover even with keyboard focus
             transition: none;
             background-color: $overlay-checked;
-            color: #ffA9ff; //$titlebar-text;
+            color: $text; //reviewed&replaced
         }
 
         &:disabled {
@@ -5811,8 +5811,8 @@ window {
     &.minimize,
     &.maximize,
     &.close {
-        color: $titlebar-text-secondary;
-        background-color: gtkalpha(currentColor, 0.1);
+        color: $text-secondary; //reviewed&replaced
+        background-color: $bg-button-clickable; //reviewed&replaced;
 
         image {
             padding: 0;
@@ -5821,16 +5821,16 @@ window {
         }
 
         &:hover {
-            color: #ffA8ff; //$titlebar-text;
-            background-color: gtkalpha(currentColor, 0.15);
+            color: $text; //reviewed&replaced
+            background-color: $bg-button-clickable-hover; //reviewed&replaced
             box-shadow:
                 0 1px 3px rgba(black, 0.1),
                 inset 0 1px highlight(#ff90ff); //$titlebar);
         }
 
         &:active {
-            color: #ffA7ff; //$titlebar-text;
-            background-color: gtkalpha(currentColor, 0.2);
+            color: $text; //reviewed&replaced
+            background-color: $bg-button-clickable; //reviewed&replaced
         }
 
         &:backdrop {

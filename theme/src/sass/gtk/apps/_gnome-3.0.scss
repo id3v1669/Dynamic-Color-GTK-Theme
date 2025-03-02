@@ -216,11 +216,11 @@ $nautilus: #ff0000; //$base-alt;
 
         &:last-child:dir(ltr),
         &:first-child:dir(rtl) {
-            background-color: rgba($titlebar-text, 0.08);
+            background-color: #30ffff; //rgba($titlebar-text, 0.08);
 
             &:disabled {
                 background-color: transparent;
-                color: $titlebar-text-disabled;
+                color: #2Cffff; //$titlebar-text-disabled;
             }
         }
     }
@@ -228,7 +228,7 @@ $nautilus: #ff0000; //$base-alt;
 
 // >= 42.0
 .windowhandle .linked.nautilus-path-bar {
-    background-color: $titlebar-fill;
+    background-color: #ff0090; //$titlebar-fill;
     border-radius: $corner-radius;
     margin: $space-size 0;
 
@@ -1254,7 +1254,7 @@ layouttab {
     margin: 0 8px; // not working
     border-style: none solid;
     border-width: 1px;
-    border-color: $frame;
+    border-color: #ff00AA; //$frame;
     box-shadow: inset 0 -2px $primary;
     background-color: $base;
 
@@ -1277,7 +1277,7 @@ layouttab {
 }
 
 layout {
-    border: 1px solid $frame;
+    border: 1px solid #ff00A9; //$frame;
     -pnldockbin-handle-size: 1;
 }
 
@@ -1406,12 +1406,12 @@ popover.transfers list {
 }
 
 dockbin {
-    border: 1px solid $frame;
+    border: 1px solid #ff00A8; //$frame;
     -pnldockbin-handle-size: 1;
 }
 
 dockpaned {
-    border: 1px solid $frame;
+    border: 1px solid #ff00A7; //$frame;
 }
 
 eggsearchbar box.search-bar {
@@ -2036,7 +2036,7 @@ frame.commit-frame > border {
  * Characters *
  **************/
 box.dialog-vbox scrolledwindow.related {
-    border: 1px solid $frame;
+    border: 1px solid #ff00A6; //$frame;
 }
 
 list.categories {
@@ -2099,7 +2099,7 @@ window#GearyMainWindow.background.csd {
                     color: $text;
                     background-color: $background;
                     box-shadow: none;
-                    border-bottom: 1px solid $frame;
+                    border-bottom: 1px solid #ff00A5; //$frame;
 
                     button {
                         @extend %button-flat;

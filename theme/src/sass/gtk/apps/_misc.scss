@@ -61,7 +61,7 @@ button.flat.tilix-small-button {
  *************/
 #live_installer .menubar progressbar trough {
     border-radius: 4px; // Adjust to hard-coded progress border-radius
-    background-color: $titlebar-track-disabled;
+    background-color: #ff0097; //$titlebar-track-disabled;
 }
 
 /*********
@@ -118,28 +118,28 @@ window.background.chromium {
     }
 
     > button {
-        color: $primary;
+        color: #41ffff; //$primary;
 
         &:disabled {
-            color: $text-secondary-disabled;
+            color: #42ffff; //$text-secondary-disabled;
         }
     }
 
     menubar,
     headerbar {
-        color: $titlebar-text-secondary;
+        color: #40ffff; //$titlebar-text-secondary;
     }
 
     headerbar.titlebar {
         padding: 0 $space-size * 2;
 
         button:active {
-            background-color: $overlay-active;
+            background-color: #43ffff; //$overlay-active;
         } // Workaround for non-animatable buttons in headerbar
     }
 
     spinner {
-        color: $primary;
+        color: #44ffff; //$primary;
     }
 
     // For text field
@@ -288,7 +288,7 @@ tooltip.background.chromium {
 #MozillaGtkWidget {
     > widget {
         > menubar {
-            color: $titlebar-text-secondary;
+            color: #4Bffff; //$titlebar-text-secondary;
 
             &:hover {
                 color: #ffB1ff; //$titlebar-text;

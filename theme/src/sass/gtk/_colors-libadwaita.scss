@@ -136,7 +136,7 @@ $dark_5: **base07**;
 
 // Header bar, search bar, tab bar
 @define-color headerbar_bg_color #ff90ff; //#{$titlebar};
-@define-color headerbar_fg_color #{$titlebar-text};
+@define-color headerbar_fg_color #32ffff; //#{$titlebar-text};
 @define-color headerbar_border_color #{$border};
 @define-color headerbar_backdrop_color #{$titlebar-backdrop};
 @define-color headerbar_shade_color #{$border};

@@ -304,7 +304,7 @@
     box-shadow: none; //
 }
 
-@mixin undershoot($p, $c: $frame, $neighbor: false, $br: 0px) {
+@mixin undershoot($p, $c: #ff00AC, $neighbor: false, $br: 0px) {
     //
     // undershoot
     //

@@ -18,11 +18,6 @@ $blue-light: **base19**;
 $blue-default: **base17**;
 $blue-dark: **base18**;
 
-// Teal
-$teal-light: mix(**base17**, **base11**,60%);
-$teal-default: darken(mix(**base17**, **base11**,60%), 10%);
-$teal-dark: lighten(mix(**base17**, **base11**,60%), 10%);
-
 // Cyan
 $cyan-light: **base16**;
 $cyan-default: **base14**;
@@ -47,6 +42,7 @@ $orange-dark: **base0C**;
 $accent-light: **accent02**;
 $accent-default: **accent00**;
 $accent-dark: **accent01**;
+$accent-backdrop: rgba($accent-dark, 0.6);
 
 
 $fg-light: **base01**;
@@ -67,17 +63,19 @@ $fg-350: darken(**base02**, 5%);
 $fg-400: lighten(**base03**, 5%);
 $fg-450: **base03**;                  
 
-$bg-light: **base05**;                          //reviewed&replaced
-$bg-default: **base04**;                        //reviewed&replaced
-$bg-dark: **base06**;                           //reviewed&replaced
-$bg-dark-alt: **base07**;                       //reviewed&replaced
-$bg-light-inactive: rgba($bg-light, 0.7);       //reviewed&replaced
-$bg-default-inactive: rgba($bg-default, 0.7);   //reviewed&replaced
-$bg-dark-inactive: rgba($bg-dark, 0.7);         //reviewed&replaced
-$bg-dark-alt-inactive: rgba($bg-dark-alt, 0.7); //reviewed&replaced
-$bg-light-hover: rgba($bg-light, 0.5);          //reviewed&replaced
+$bg-light: **base05**;                                       //reviewed&replaced
+$bg-default: **base04**;                                     //reviewed&replaced
+$bg-dark: **base06**;                                        //reviewed&replaced
+$bg-dark-alt: **base07**;                                    //reviewed&replaced
+$bg-light-inactive: rgba($bg-light, 0.7);                    //reviewed&replaced
+$bg-default-inactive: rgba($bg-default, 0.7);                //reviewed&replaced
+$bg-dark-inactive: rgba($bg-dark, 0.7);                      //reviewed&replaced
+$bg-dark-alt-inactive: rgba($bg-dark-alt, 0.7);              //reviewed&replaced
+$bg-light-hover: rgba($bg-light, 0.5);                       //reviewed&replaced
+$bg-default-hover: rgba($bg-default, 0.5);                   //reviewed&replaced
 
-$bg-button-clickable: lighten($bg-default, 3%); //reviewed&replaced
+$bg-button-clickable: lighten($bg-default, 3%);              //reviewed&replaced
+$bg-button-clickable-hover: rgba($bg-button-clickable, 0.5); //reviewed&replaced
 
 
 $bg-100: darken(**base05**, 5%);

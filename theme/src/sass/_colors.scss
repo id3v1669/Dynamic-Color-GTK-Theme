@@ -126,8 +126,7 @@ $panel:                                 rgba($panel-solid, $panel_opacity);
 
 $entry:                                 on($background, secondary-fill);
 
-$link:                                  $teal-default;
-$link-visited:                          $purple-default;
+
 
 $warning:                               $yellow-default;
 $error:                                 $red-default;
@@ -138,7 +137,7 @@ $destructive:                           $error;
 
 $assets-color:                          $primary;
 
-$frame:                                 rgba($black, 0.20);
+
 $window-border:                         rgba($black, 0.75);
 $solid-border:                          mix(white, $base, 12%);
 $border-alt:                            rgba($black, 0.16); // darker border color for Chrome and Firefox
@@ -157,15 +156,6 @@ $track:                                 on($background, track);
 $track-disabled:                        on($background, track-disabled);
 $divider:                               on($background, divider);
 $fill:                                  on($background, fill);
-
-$titlebar-text:                         $fg-default;
-$titlebar-text-secondary:               $fg-default;
-$titlebar-text-disabled:                $fg-default;
-$titlebar-text-secondary-disabled:      $fg-default;
-$titlebar-track:                        $fg-default;
-$titlebar-track-disabled:               $fg-default;
-$titlebar-divider:                      $fg-default;
-$titlebar-fill:                         $fg-default;
 
 $panel-text:                            on($panel);
 $panel-text-secondary:                  on($panel, secondary);
@@ -188,3 +178,6 @@ $text:                                  $fg-default; 			//reviewed&replaced
 $text-secondary:                        $fg-dark;               //reviewed&replaced
 $text-disabled:                         $fg-default-inactive;   //reviewed&replaced
 $text-secondary-disabled:               $fg-dark-inactive;      //reviewed&replaced
+
+$link:                                  $blue-dark;				//reviewed&replaced
+$link-visited:                          $purple-dark;			//reviewed&replaced

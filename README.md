@@ -31,3 +31,4 @@ Originaly forked from [Tokyonight-GTK-Theme](https://github.com/Fausto-Korpsvart
 * gnome-system-monitor - add color change on process hover
 * objects with "tobechecked" need to be moved/edited
 * firefox - unfocused tabs bg (currently transparent)
+* piper - unfocused about title bg (currently transparent)

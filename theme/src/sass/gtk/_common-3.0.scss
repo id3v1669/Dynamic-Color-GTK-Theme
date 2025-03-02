@@ -610,7 +610,7 @@ treeview entry {
 
     &:checked,
     &:checked:hover {
-        background-color: #ff35ff; //on($indicator);
+        background-color: $bg-light; //reviewed&replaced
         color: #ff36ff; //$indicator;
     }
 }
@@ -1402,8 +1402,8 @@ searchbar > revealer > box {
  ***************/
 
 %titlebar-button {
-    color: $titlebar-text-secondary;
-    background-color: $titlebar-fill;
+    color: $text-secondary; //reviewed&replaced
+    background-color: $bg-button-clickable; //reviewed&replaced
     border-radius: $circular-radius;
 
     .linked > & {
@@ -1425,17 +1425,17 @@ searchbar > revealer > box {
     }
 
     &:hover {
-        box-shadow: inset 0 0 0 9999px $titlebar-divider;
+        background-color: $bg-button-clickable-hover; //reviewed&replaced
     }
 
     &:checked {
         // background-color: $titlebar-indicator;
-        background-color: $primary;
         color: $text; //reviewed&replaced
+        background-color: $accent-default; //reviewed&replaced
 
         &:hover {
-            box-shadow: inset 0 0 0 9999px on(#ff11ff, fill);
-            color: #ff12ff; //on($titlebar-indicator);
+            box-shadow: inset 0 0 0 9999px $text; //reviewed&replaced
+            color: $text; //reviewed&replaced
         }
 
         &:focus {
@@ -1456,11 +1456,11 @@ searchbar > revealer > box {
     }
 
     &:disabled {
-        color: #0Affff; //$titlebar-text-secondary-disabled;
+        color: $text-secondary-disabled; //reviewed&replaced
     }
 
     &:backdrop {
-        color: #09ffff; //$titlebar-text-disabled;
+        color: $text-disabled; //reviewed&replaced
 
         &:focus,
         &:hover,
@@ -1469,11 +1469,12 @@ searchbar > revealer > box {
         }
 
         &:disabled {
-            color: #07ffff; //$titlebar-text-secondary-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
 
         &:checked {
-            color: #ff16ff; //on($titlebar-indicator, secondary);
+            color: $text-secondary; //reviewed&replaced
+            background-color: $accent-backdrop; //reviewed&replaced
 
             &:disabled {
                 color: #ff17ff; //on($titlebar-indicator, secondary-disabled);
@@ -1483,25 +1484,25 @@ searchbar > revealer > box {
 }
 
 %titlebar-entry {
-    background-color: #0Bffff; //$titlebar-fill;
-    color: #ffA2ff; //$titlebar-text;
+    background-color: $bg-default; //reviewed&replaced
+    color: $text; //reviewed&replaced
     border-radius: $circular-radius;
 
     &:disabled {
-        background-color: #0Cffff; //$titlebar-fill;
-        color: #0Dffff; //$titlebar-text-disabled;
+        background-color: $bg-default-inactive; //reviewed&replaced
+        color: $text-disabled; //reviewed&replaced
     }
 
     image {
-        color: #0Effff; //$titlebar-text-secondary;
+        color: $text-secondary; //reviewed&replaced
 
         &:hover,
         &:active {
-            color: #ffA3ff; //$titlebar-text;
+            color: $text; //reviewed&replaced
         }
 
         &:disabled {
-            color: #0Fffff; //$titlebar-text-disabled;
+            color: $text-disabled; //reviewed&replaced
         }
     }
 }
@@ -1556,7 +1557,7 @@ searchbar > revealer > box {
     // Don't draw titlebar above titlebar
     .titlebar,
     headerbar {
-        background-color: #ff0019; //transparent;
+        background-color: transparent; //reviewed&replaced
         box-shadow: none;
     }
 
@@ -1595,8 +1596,8 @@ searchbar > revealer > box {
     button.suggested-action,
     button.destructive-action {
         &:disabled {
-            background-color: #ffff1E; //$titlebar-fill;
-            color: #ffff1F; //$titlebar-text-disabled;
+            background-color: $bg-button-clickable; //reviewed&replaced
+            color: $text-disabled; //reviewed&replaced;
         }
     }
 
@@ -2107,7 +2108,7 @@ menubar,
     -gtkwidget-window-dragging: true;
     padding: 0;
     background-color: $bg-dark; //reviewed&replaced
-    color: #00ff02; //$titlebar-text;
+    color: $text-secondary; //reviewed&replaced
     // box-shadow: inset 0 -1px $border;
 
     &:backdrop {
@@ -2138,12 +2139,12 @@ menubar,
         }
 
         &:disabled {
-            color: #00ff09; //$titlebar-text-secondary-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
 
         label:disabled {
-            color: #00ff0A; //inherit;
-        } // to inherit the above color
+            color: $text-secondary-disabled; //reviewed&replaced
+        }
 
         // > window.background.csd.popup > decoration,
         // > window.background.csd.popup > menu {
@@ -2216,7 +2217,7 @@ menu {
         }
 
         &:disabled accelerator {
-            color: #00ff15; //$text-secondary-disabled;
+            color: $text-secondary-disabled; //reviewed&replaced
         }
 
         // submenu indicators
@@ -2254,8 +2255,8 @@ menu {
         min-height: 16px;
         min-width: 16px;
         padding: 4px;
-        background-color: #00ff18; //$menu;
-        color: #00ff19; //$text-secondary;
+        background-color: $bg-default-inactive; //reviewed&replaced
+        color: $text-secondary; //reviewed&replaced
 
         &.top {
             margin-top: 0;
@@ -2274,14 +2275,13 @@ menu {
 
         &:hover {
             background-image: image($overlay-hover);
-            color: #00ff1A; //$text;
+            color: $text; //reviewed&replaced
         }
 
         &:disabled {
-            border-color: #00ff1B; //transparent;
-            background-color: #00ff1C; //transparent;
-            color: #00ff1D; //transparent;
-            // color: $text-secondary-disabled;
+            border-color: transparent; //reviewed&replaced
+            background-color: transparent; //reviewed&replaced
+            color: transparent; //reviewed&replaced
         }
     }
 
@@ -3569,7 +3569,7 @@ actionbar > revealer > box {
     }
 
     stackswitcher {
-        background-color: $bg-light; //on($indicator, fill);
+        background-color: transparent; //reviewed might need change(gtk3 widgets page2)
 
         &.linked:not(.vertical)
             > button:not(.suggested-action):not(.destructive-action) {
@@ -4783,20 +4783,20 @@ decoration {
     &.minimize,
     &.maximize,
     &.close {
-        color: $titlebar-text-secondary;
-        background-color: gtkalpha(currentColor, 0.1);
+        color: $text-secondary; //reviewed&replaced
+        background-color: $bg-button-clickable; //reviewed&replaced;
 
         &:hover {
-            color: #ffA3ff; //$titlebar-text;
-            background-color: gtkalpha(currentColor, 0.15);
+            color: $text; //reviewed&replaced
+            background-color: $bg-button-clickable-hover; //reviewed&replaced
             box-shadow:
                 0 1px 3px rgba(black, 0.1),
                 inset 0 1px highlight(#ff95ff); //$titlebar);
         }
 
         &:active {
-            color: #ffA4ff; //$titlebar-text;
-            background-color: gtkalpha(currentColor, 0.2);
+            color: $text; //reviewed&replaced
+            background-color: $bg-button-clickable; //reviewed&replaced
         }
 
         &:backdrop {

@@ -9,7 +9,7 @@
 
 .nemo-window {
     .primary-toolbar {
-        background-color: #ff84ff; //$titlebar;
+        background-color: $bg-dark; //$titlebar;
         border-bottom: 1px solid $divider;
 
         // FIXME: workaround for wrong size allocation of Nemo
@@ -32,20 +32,20 @@
         button.text-button {
             padding-left: 8px;
             padding-right: 8px;
-            color: $titlebar-text-secondary;
+            color: $text-secondary; //reviewed&replaced
 
             &:hover,
             &:active,
             &:checked {
-                color: #ffB2ff; //$titlebar-text;
+                color: $accent-default; //reviewed&replaced;
             }
 
             &:disabled {
-                color: #00ffff; //$titlebar-text-secondary-disabled;
+                color: $text-secondary-disabled; //reviewed&replaced;
             }
 
             &:backdrop {
-                color: $titlebar-text-disabled;
+                color: $text-disabled; //reviewed&replaced;
             }
         }
 

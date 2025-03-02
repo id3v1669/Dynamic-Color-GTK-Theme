@@ -409,7 +409,7 @@ flap,
 leaflet,
 navigation-view,
 overlay-split-view {
-    @include transition-shadows($frame);
+    @include transition-shadows(#ff00A4); //$frame);
 }
 
 // Sidebar
@@ -481,7 +481,7 @@ overlay-split-view {
 %sidebar_list {
     padding: 6px 0 6px 6px;
     background: none;
-    color: $titlebar-text-secondary;
+    color: #3Effff; //$titlebar-text-secondary;
 
     > separator {
         background-color: transparent;
@@ -638,7 +638,7 @@ overlay-split-view {
     .navigation-sidebar {
         padding: $space-size - 4 $space-size - 2; //only vertical padding. horizontal row size would clip
         background: none;
-        color: $titlebar-text-secondary;
+        color: #3Fffff; //$titlebar-text-secondary;
     }
 
     &:dir(ltr),
