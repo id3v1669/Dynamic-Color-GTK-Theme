@@ -1,7 +1,7 @@
 // Rubberband for select-area screenshots
 .select-area-rubberband {
-    background-color: transparentize($primary, 0.7);
-    border: 1px solid $primary;
+    background-color: transparentize($accent-default, 0.7);
+    border: 1px solid $accent-default;
     border-radius: $base_radius;
 }
 
@@ -32,7 +32,7 @@
     }
 
     &.user-avatar {
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 }
 

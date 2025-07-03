@@ -34,7 +34,7 @@
         font-weight: normal;
 
         @if $outline == 'true' {
-            border: 2px solid $primary;
+            border: 2px solid $accent-default;
         }
     }
 
@@ -76,14 +76,14 @@
         &:focus,
         &:hover,
         &.selected {
-            color: $primary !important;
+            color: $accent-default !important;
             background-color: $divider !important;
             transition-duration: 0;
         }
 
         &:active,
         &.selected:active {
-            color: $primary !important;
+            color: $accent-default !important;
             background-color: $track !important;
         }
 

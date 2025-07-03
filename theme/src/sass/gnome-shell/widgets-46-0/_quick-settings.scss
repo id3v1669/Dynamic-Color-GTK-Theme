@@ -42,16 +42,16 @@
     }
 
     &:checked {
-        background-color: rgba($primary, 0.95) !important;
+        background-color: rgba($accent-default, 0.95) !important;
         color: $black; // fix??
 
         &:hover {
-            background-color: mix($text, $primary, 40%) !important;
+            background-color: mix($text, $accent-default, 40%) !important;
             color: $black; // fix??
         }
 
         &:active {
-            background-color: mix($text, $primary, 20%) !important;
+            background-color: mix($text, $accent-default, 20%) !important;
             color: $black; // fix??
         }
     }
@@ -131,16 +131,16 @@
         }
 
         &:checked {
-            background-color: rgba($primary, 0.75) !important;
+            background-color: rgba($accent-default, 0.75) !important;
             color: $black; // fix??
 
             &:hover {
-                background-color: mix($text, $primary, 40%) !important;
+                background-color: mix($text, $accent-default, 40%) !important;
                 color: $black; // fix??
             }
 
             &:active {
-                background-color: mix($text, $primary, 20%) !important;
+                background-color: mix($text, $accent-default, 20%) !important;
                 color: $black; // fix??
             }
         }
@@ -174,7 +174,7 @@
 
     .icon-button {
         background-color: $bg-button-clickable !important; //reviewed&replaced
-        color: $primary !important;
+        color: $accent-default !important;
         border-radius: $base_radius;
         padding: $base_padding * 1.5;
 
@@ -201,7 +201,7 @@
         &:focus,
         &:hover,
         &.selected {
-            color: $primary !important;
+            color: $accent-default !important;
             background-color: rgba($text, 0.1) !important;
         }
 
@@ -227,8 +227,8 @@
             background-color: on($popover, divider) !important;
 
             &.active {
-                background-color: $primary !important;
-                color: on($primary);
+                background-color: $accent-default !important;
+                color: on($accent-default);
             }
         }
 
@@ -249,7 +249,7 @@
 
     .icon-button {
         background-color: $bg-button-clickable; //reviewed&replaced
-        color: $primary !important;
+        color: $accent-default !important;
         border-radius: $base_radius;
         @extend %button;
 
@@ -260,7 +260,7 @@
     }
 
     & .power-item {
-        color: $primary !important;
+        color: $accent-default !important;
         min-height: 0;
         min-width: 0;
 

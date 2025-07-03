@@ -2,6 +2,7 @@
 // Nautilus
 //
 
+
 .nautilus-window {
     //main bg when shrinked
     &.view {
@@ -18,6 +19,7 @@
             transition: none;
         }
     }
+
 
     popover label.dim-label {
         color: $text;
@@ -107,7 +109,7 @@
                 color: #3Dffff; //$titlebar-text-secondary;
 
                 &:hover {
-                    background-color: #ff0009; //$titlebar-fill;
+                    background-color: $light-shade; //reviewed&replaced
                     color: #ffADff; //$titlebar-text;
                 }
 
@@ -118,7 +120,7 @@
                 &:checked,
                 &:selected {
                     background-color: $fill; // fix??
-                    color: #ff0004; //$primary;
+                    color: $accent-default;
                     box-shadow: none;
 
                     &:disabled {
@@ -149,13 +151,13 @@
         margin: $space-size;
         border-style: none;
         border-radius: $modal-radius;
-        background-color: $bg-dark; //$background;
-        color: $accent-default; //$primary;
+        background-color: $bg-dark; //reviewed&replaced
+        color: $accent-default;
         box-shadow: $shadow-z3;
 
         button {
             margin: (32px - $small-size) / 2;
-            color: on(#ff000D); //$primary);
+            color: on($accent-default);
 
             @extend %small-button;
         }
@@ -348,7 +350,7 @@ calendar-view {
     @extend %content_style;
 
     &:selected {
-        color: #ff0003; //$primary;
+        color: $accent-default;
         font-weight: bold;
     }
 }
@@ -362,7 +364,7 @@ label.header {
 
 calendar-view.current,
 weekgrid.current {
-    background-color: #ff0035; //gtkalpha($primary, 0.3);
+    background-color: gtkalpha($accent-default, 0.3);
 }
 
 popover.events {
@@ -550,15 +552,15 @@ datechooser {
             font-weight: bold;
 
             dot {
-                background-color: #ff008C; //on($primary);
+                background-color: on($accent-default);
             }
         }
 
         &.today {
-            color: #ff008B; //$primary;
+            color: $accent-default;
 
             dot {
-                background-color: #ff008A; //$primary;
+                background-color: $accent-default;
             }
         }
 
@@ -666,14 +668,14 @@ monthcell {
 
         &:hover {
             background-color: gtkalpha($accent-dark, 0.3); //reviewed&replaced
-            color: #ff007F; //$primary;
+            color: $accent-default;
         }
 
         &:selected {
-            background-color: #ff007E; //gtkalpha($primary, 0.25);
+            background-color: #ff007E; //gtkalpha($accent-default, 0.25);
 
             &:hover {
-                background-color: #ff007D; //gtkalpha($primary, 0.35);
+                background-color: #ff007D; //gtkalpha($accent-default, 0.35);
             }
         }
     }
@@ -758,13 +760,13 @@ menubutton stack > box {
 .tweak-titlebar-left {
     @extend %sidebar_style;
     
-    box-shadow: inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($bg-default);
     border-top-left-radius: $window-radius;
 
     &:backdrop {
         @extend %sidebar_style;
         
-        box-shadow: inset 0 1px highlight($background);
+        box-shadow: inset 0 1px highlight($bg-default);
         border-top-left-radius: $window-radius;
     }
 }
@@ -828,9 +830,9 @@ leaflet.unfolded .contacts-contact-list {
 
 .installed-overlay-box {
     font-size: smaller;
-    background-color: #ff0079; //$primary;
+    background-color: $accent-default;
     border-radius: 0;
-    color: #ff007A; //on($primary);
+    color: #ff007A; //on($accent-default);
     text-shadow: 0 1px 0 rgba(black, 0.2);
 }
 
@@ -1124,12 +1126,12 @@ flowboxchild.card:not(.category-tile) {
 }
 
 .card.info {
-    background-color: #ff0069; //mix($primary, $background, 0.7);
+    background-color: mix($accent-default, $bg-default, 0.7);
     color: $text;
 }
 
 .card.warning {
-    background-color: #ff0068; //mix($warning, $background, 0.7);
+    background-color: mix($yellow-default, $bg-default, 0.7);
     color: $text;
 }
 
@@ -1158,8 +1160,8 @@ flowboxchild.card:not(.category-tile) {
 .install-progress {
     background-image: linear-gradient(
         to top,
-        $primary 2px,
-        gtkalpha($primary, 0) 2px
+        $accent-default 2px,
+        gtkalpha($accent-default, 0) 2px
     );
     background-repeat: no-repeat;
     background-position: 0 bottom;
@@ -1572,8 +1574,8 @@ window > contents > leaflet {
             to bottom,
             transparent,
             transparent $large-size,
-            $background $large-size,
-            $background
+            $bg-default $large-size,
+            $bg-default
         );
     }
 }
@@ -1953,7 +1955,7 @@ panelstatusbar {
         }
 
         &:checked > stylevariantpreview > .wallpaper {
-            outline-color: $primary;
+            outline-color: $accent-default;
         }
     }
 }

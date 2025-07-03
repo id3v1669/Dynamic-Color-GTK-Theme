@@ -14,7 +14,7 @@
 
     @if $float == 'true' {
         margin: 5px 10px 1px;
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
         border-radius: $circular_radius;
     }
 
@@ -61,7 +61,7 @@
         }
 
         &:hover {
-            color: $primary;
+            color: $accent-default;
             background-color: transparent;
             box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 6%);
 
@@ -75,7 +75,7 @@
                 color: $panel-text-secondary;
 
                 .clock {
-                    color: $primary;
+                    color: $accent-default;
                     box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 6%);
 
                     @if $float == 'true' {
@@ -92,7 +92,7 @@
         &:checked {
             &,
             &:hover {
-                color: $primary;
+                color: $accent-default;
                 background-color: transparent;
                 box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 12%);
             }
@@ -102,7 +102,7 @@
                 color: $panel-text-secondary;
 
                 .clock {
-                    color: $primary;
+                    color: $accent-default;
                     box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 12%);
                 }
             }

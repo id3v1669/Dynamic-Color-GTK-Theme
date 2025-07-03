@@ -105,13 +105,13 @@ $nautilus: #ff0000; //$base-alt;
         margin: $space-size;
         border: none;
         border-radius: $corner-radius;
-        background-color: #ff001E; //$primary;
-        color: #ff001F; //on($primary);
+        background-color: $accent-default;
+        color: on($accent-default);
         box-shadow: $shadow-z3;
 
         button {
             margin: (32px - $small-size) / 2;
-            color: #ff0020; //on($primary);
+            color: on($accent-default);
 
             @extend %small-button;
         }
@@ -162,13 +162,13 @@ $nautilus: #ff0000; //$base-alt;
     } // reset the margin
 
     &.width-maximized {
-        background-color: #ff0022; //$titlebar-fill;
+        background-color: $light-shade; //reviewed&replaced
     }
 
     // workaround for 3.30.1
     &.background.frame {
         border-style: none;
-        background-color: #ff0023; //$titlebar-fill;
+        background-color: $light-shade; //reviewed&replaced
     }
 
     // for 3.30
@@ -228,7 +228,7 @@ $nautilus: #ff0000; //$base-alt;
 
 // >= 42.0
 .windowhandle .linked.nautilus-path-bar {
-    background-color: #ff0090; //$titlebar-fill;
+    background-color: $light-shade; //reviewed&replaced
     border-radius: $corner-radius;
     margin: $space-size 0;
 
@@ -258,8 +258,8 @@ $nautilus: #ff0000; //$base-alt;
     }
 
     &.used {
-        background-color: $primary;
-        color: $primary;
+        background-color: $accent-default;
+        color: $accent-default;
     }
 
     &.free {
@@ -535,7 +535,7 @@ frame.gedit-map-frame > border {
 // the sidebar
 
 %sidebar_style {
-    background-color: $background;
+    background-color: $bg-dark; //reviewed&replaced;
     color: $white; // fix??
     border-radius: $corner-radius;
     // margin: $space-size;
@@ -604,7 +604,7 @@ frame.gedit-map-frame > border {
             &,
             label,
             image {
-                color: $primary;
+                color: $accent-default;
             }
 
             &:hover,
@@ -1204,8 +1204,8 @@ window.background > box > .sidebar-paned {
         background: none;
 
         > row.activatable:selected {
-            background-color: $primary;
-            color: on($primary);
+            background-color: $accent-default;
+            color: on($accent-default);
 
             // > widget > box.horizontal > label {
             //   color: $text; // not use !
@@ -1215,13 +1215,13 @@ window.background > box > .sidebar-paned {
 }
 
 stack.view.polari-entry-area {
-    background-color: $background;
+    background-color: $bg-default;
     border-top: 1px solid $divider;
     border-bottom-right-radius: $window-radius;
 }
 
 stack:disabled.view.polari-entry-area {
-    background-image: image($background);
+    background-image: image($bg-default);
 }
 
 /***********
@@ -1238,7 +1238,7 @@ stack:disabled.view.polari-entry-area {
 // The following makes the layout stack header look similar to a tab bar.
 layouttabbar {
     border-bottom: 1px solid $divider;
-    background-color: $background;
+    background-color: $bg-default;
 
     button {
         @extend %button-flat;
@@ -1254,8 +1254,8 @@ layouttab {
     margin: 0 8px; // not working
     border-style: none solid;
     border-width: 1px;
-    border-color: #ff00AA; //$frame;
-    box-shadow: inset 0 -2px $primary;
+    border-color: $shade;
+    box-shadow: inset 0 -2px $accent-default;
     background-color: $base;
 
     separator.vertical {
@@ -1277,7 +1277,7 @@ layouttab {
 }
 
 layout {
-    border: 1px solid #ff00A9; //$frame;
+    border: 1px solid $shade;
     -pnldockbin-handle-size: 1;
 }
 
@@ -1406,24 +1406,24 @@ popover.transfers list {
 }
 
 dockbin {
-    border: 1px solid #ff00A8; //$frame;
+    border: 1px solid $shade;
     -pnldockbin-handle-size: 1;
 }
 
 dockpaned {
-    border: 1px solid #ff00A7; //$frame;
+    border: 1px solid $shade;
 }
 
 eggsearchbar box.search-bar {
     padding: 0 8px;
     border-bottom: 1px solid $divider;
-    background-color: $background;
+    background-color: $bg-default;
 }
 
 docktabstrip {
     padding: 0 8px;
     border-bottom: 1px solid $divider;
-    background-color: $background;
+    background-color: $bg-default;
 }
 
 docktab {
@@ -1440,7 +1440,7 @@ docktab {
     border-color: transparent; //
 
     box-shadow: inset 0 -2px transparent;
-    background-image: radial-gradient(circle, $primary 10%, transparent 0%);
+    background-image: radial-gradient(circle, $accent-default 10%, transparent 0%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0% 0%;
@@ -1459,7 +1459,7 @@ docktab {
             background-size $ripple-fade-in-duration $ease-out,
             background-image $ripple-fade-in-duration +
                 $ripple-fade-out-duration $ease-out;
-        box-shadow: inset 0 -2px $primary;
+        box-shadow: inset 0 -2px $accent-default;
         background-color: transparent;
         background-image: radial-gradient(
             circle,
@@ -1472,7 +1472,7 @@ docktab {
 }
 
 dockoverlayedge {
-    background-color: $background;
+    background-color: $bg-default;
 
     docktabstrip {
         padding: 0;
@@ -1480,16 +1480,16 @@ dockoverlayedge {
     }
 
     &.left-edge docktab:checked {
-        box-shadow: inset -2px 0 $primary;
+        box-shadow: inset -2px 0 $accent-default;
     }
 
     &.right-edge docktab:checked {
-        box-shadow: inset 2px 0 $primary;
+        box-shadow: inset 2px 0 $accent-default;
     }
 }
 
 pillbox {
-    background-color: $background;
+    background-color: $bg-default;
     border-radius: $corner-radius;
 }
 
@@ -1574,7 +1574,7 @@ idelayoutstackheader {
 // utilities stack switcher
 ideeditorutilities > dzldockpaned > box > stackswitcher {
     padding: 8px 0;
-    background-color: $background;
+    background-color: $bg-default;
 
     &:dir(ltr) {
         border-right: 1px solid $divider;
@@ -1592,7 +1592,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher {
         &:active {
             background-image: radial-gradient(
                 circle,
-                rgba($primary, 0.7) 10%,
+                rgba($accent-default, 0.7) 10%,
                 transparent 0%
             );
         }
@@ -1606,7 +1606,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher {
             margin-right: -1px;
 
             &:checked {
-                box-shadow: inset -2px 0 $primary;
+                box-shadow: inset -2px 0 $accent-default;
             }
         }
 
@@ -1614,7 +1614,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher {
             margin-left: -1px;
 
             &:checked {
-                box-shadow: inset 2px 0 $primary;
+                box-shadow: inset 2px 0 $accent-default;
             }
         }
     }
@@ -1655,8 +1655,8 @@ GdMainIconView.content-view {
     margin: 8px;
     border-radius: $circular-radius;
     box-shadow: $shadow-z4;
-    background-color: $primary;
-    color: on($primary);
+    background-color: $accent-default;
+    color: on($accent-default);
     font-weight: bold;
 }
 
@@ -1740,10 +1740,10 @@ overlay grid.horizontal > revealer > scrolledwindow.frame {
 
 .side-panel .view:selected {
     // background-color: mix(@theme_fg_color, @theme_bg_color, 0.5);
-    background-image: image($primary);
+    background-image: image($accent-default);
 
     &:hover {
-        background-image: image(mix(on($primary), $primary, percentage(0.08)));
+        background-image: image(mix(on($accent-default), $accent-default, percentage(0.08)));
     }
 }
 
@@ -1851,7 +1851,7 @@ window.background.csd {
         > box.vertical {
             > scrolledwindow {
                 border-radius: 0 0 0 $window-radius;
-                background-color: $background;
+                background-color: $bg-default;
             }
         }
     }
@@ -1925,7 +1925,7 @@ window.background {
 
 // gnome-console
 .terminal-window {
-    background-color: $background;
+    background-color: $bg-default;
 
     tabbar {
         tabbox {
@@ -2036,7 +2036,7 @@ frame.commit-frame > border {
  * Characters *
  **************/
 box.dialog-vbox scrolledwindow.related {
-    border: 1px solid #ff00A6; //$frame;
+    border: 1px solid $shade;
 }
 
 list.categories {
@@ -2097,9 +2097,9 @@ window#GearyMainWindow.background.csd {
 
                 headerbar {
                     color: $text;
-                    background-color: $background;
+                    background-color: $bg-default;
                     box-shadow: none;
-                    border-bottom: 1px solid #ff00A5; //$frame;
+                    border-bottom: 1px solid $shade;
 
                     button {
                         @extend %button-flat;
@@ -2173,8 +2173,8 @@ preferencesgroup,
                 &:selected,
                 &:active {
                     border-radius: $corner-radius;
-                    background-color: $primary;
-                    color: on($primary);
+                    background-color: $accent-default;
+                    color: on($accent-default);
                 }
             }
         }
@@ -2343,7 +2343,7 @@ dialog.background.csd {
 //
 
 window.background.csd.unified {
-    background-color: $background;
+    background-color: $bg-default;
 
     // Remove the sheen on headerbar...
     headerbar {

@@ -98,12 +98,10 @@
 }
 
 // Basic colors
-$primary:                               $accent-default;
 $drop_target_color:                     $orange-dark;
-$inverse-indicator:                     mix($primary, $white, 0%);
-$applet-primary:                        $primary;
+$inverse-indicator:                     mix($accent-default, $white, 0%);
+$applet-primary:                        $accent-default;
 
-$background:                            $bg-400;
 $surface:                               $bg-300;
 $base:                                  $bg-200;
 $base-alt:                              $bg-100;
@@ -113,9 +111,9 @@ $bg-main:                               $bg-200;
 $bg-dark:                               $bg-350;
 
 $tooltip:                               rgba(darken($bg-400, 3%), 0.9);
-$osd:                                   mix($primary, $bg-400, 0%);
-$scrim:                                 mix($primary, $bg-300, 0%);
-$scrim-alt:                             mix($primary, $bg-200, 0%);
+$osd:                                   mix($accent-default, $bg-400, 0%);
+$scrim:                                 mix($accent-default, $bg-300, 0%);
+$scrim-alt:                             mix($accent-default, $bg-200, 0%);
 $scrim-inverse:                         rgba($white, 0.1);
 //$titlebar:                              $bg-400;
 $titlebar-backdrop:                     $bg-400;
@@ -124,7 +122,7 @@ $panel-solid:                           $bg-400; // for Unity panel which doesn'
 $panel:                                 rgba($panel-solid, $panel_opacity);
 
 
-$entry:                                 on($background, secondary-fill);
+$entry:                                 on($bg-default, secondary-fill);
 
 
 
@@ -135,7 +133,7 @@ $success:                               $green-default;
 $suggested:                             $accent-default;
 $destructive:                           $error;
 
-$assets-color:                          $primary;
+$assets-color:                          $accent-default;
 
 
 $window-border:                         rgba($black, 0.75);
@@ -152,10 +150,10 @@ $overlay-checked:                       gtkalpha(currentColor, 0.10);
 $overlay-selected:                      gtkalpha(currentColor, 0.06);
 
 // Text and derivative colors
-$track:                                 on($background, track);
-$track-disabled:                        on($background, track-disabled);
-$divider:                               on($background, divider);
-$fill:                                  on($background, fill);
+$track:                                 on($bg-default, track);
+$track-disabled:                        on($bg-default, track-disabled);
+$divider:                               on($bg-default, divider);
+$fill:                                  on($bg-default, fill);
 
 $panel-text:                            on($panel);
 $panel-text-secondary:                  on($panel, secondary);
@@ -172,7 +170,8 @@ $accent-color:                          $accent-default;
 $placeholder_text_color:                mix($white, $base, percentage(0.7));
 
 
-
+$light-shade: 							rgba($black, 0.04); 	//reviewed&replaced
+$shade:                           		rgba($black, 0.3); 		//reviewed&replaced
 
 $text:                                  $fg-default; 			//reviewed&replaced
 $text-secondary:                        $fg-dark;               //reviewed&replaced

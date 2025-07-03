@@ -30,7 +30,7 @@
     outline-offset: -4px;
     -gtk-outline-radius: $corner-radius;
 
-    -gtk-secondary-caret-color: $primary;
+    -gtk-secondary-caret-color: $accent-default;
 
     &:focus {
         outline-color: $overlay-checked;
@@ -43,13 +43,13 @@
 }
 
 %selected_items_color {
-    color: $primary;
-    background-color: rgba($primary, 0.2);
+    color: $accent-default;
+    background-color: rgba($accent-default, 0.2);
 }
 
 %selected_items_primary {
-    color: on($primary);
-    background-color: $primary;
+    color: on($accent-default);
+    background-color: $accent-default;
 }
 
 %selected_items_indicator {
@@ -97,7 +97,7 @@
  * Base States *
  ***************/
 .background {
-    background-color: $background;
+    background-color: $bg-default;
     color: $text;
 
     &.csd {
@@ -117,27 +117,27 @@
 }
 
 .gtkstyle-fallback {
-    background-color: $background;
+    background-color: $bg-default;
     color: $text;
 
     &:hover {
-        background-color: darken($background, 5%);
+        background-color: darken($bg-default, 5%);
         color: $text;
     }
 
     &:active {
-        background-color: darken($background, 10%);
+        background-color: darken($bg-default, 10%);
         color: $text;
     }
 
     &:disabled {
-        background-color: $background;
+        background-color: $bg-default;
         color: $text-disabled;
     }
 
     &:selected {
-        background-color: $primary;
-        color: on($primary);
+        background-color: $accent-default;
+        color: on($accent-default);
     }
 }
 
@@ -146,7 +146,7 @@
     color: $text;
 
     &:hover {
-        color: $primary;
+        color: $accent-default;
         box-shadow: inset 0 0 0 9999px gtkalpha(currentColor, 0.2);
     }
 
@@ -204,8 +204,8 @@ iconview {
 
 .rubberband,
 rubberband {
-    border: 1px solid $primary;
-    background-color: rgba($primary, 0.3);
+    border: 1px solid $accent-default;
+    background-color: rgba($accent-default, 0.3);
 }
 
 flowbox {
@@ -445,7 +445,7 @@ entry {
 
     progress {
         margin: 2px -8px;
-        border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $accent-default;
         background-color: transparent;
     }
 
@@ -569,7 +569,7 @@ treeview entry {
             0,
             center center,
             0.001,
-            to($primary),
+            to($accent-default),
             to(transparent)
         );
     }
@@ -581,7 +581,7 @@ treeview entry {
             0,
             center center,
             0.5,
-            to($primary),
+            to($accent-default),
             to(transparent)
         );
     }
@@ -1241,7 +1241,7 @@ button.combo:only-child {
 toolbar {
     -gtkwidget-window-dragging: true;
     padding: 2px 3px;
-    background-color: $background;
+    background-color: $bg-default;
 
     button {
         @extend %button-flat;
@@ -1389,7 +1389,7 @@ searchbar > revealer > box,
 .location-bar {
     padding: $space-size;
     border: none;
-    background-color: $background;
+    background-color: $bg-default;
 }
 
 searchbar > revealer > box {
@@ -1507,6 +1507,10 @@ searchbar > revealer > box {
     }
 }
 
+.border-red {
+    border-color: $red-default;
+}
+
 .titlebar {
     transition: all $duration $ease-out;
     background-color: $bg-dark; //reviewed&replaced
@@ -1578,10 +1582,10 @@ searchbar > revealer > box {
     &.selection-mode + separator.sidebar,
     .selection-mode & + separator,
     .selection-mode & + separator.sidebar {
-        background-color: #ffff1C; //$primary;
+        background-color: $accent-default;
 
         &:backdrop {
-            background-color: #ffff1D; //$primary;
+            background-color: $accent-default;
         }
     }
 
@@ -1635,48 +1639,48 @@ searchbar > revealer > box {
             background-color 0.1ms $ripple-fade-in-duration,
             color $duration $ease-out;
         animation: ripple-on-headerbar $ripple-fade-in-duration $ease-out;
-        background-color: #ffff24; //$primary;
-        color: #ffff25; //on($primary);
-        box-shadow: inset 0 1px highlight($primary);
+        background-color: $accent-default;
+        color: #ffff25; //on($accent-default);
+        box-shadow: inset 0 1px highlight($accent-default);
 
         &:backdrop {
-            color: #ffff26; //on($primary, secondary);
-            background-color: #ffff27; //lighten($primary, 6%);
+            color: #ffff26; //on($accent-default, secondary);
+            background-color: #ffff27; //lighten($accent-default, 6%);
         }
 
         .subtitle:link {
-            color: #ffff28; //on($primary);
+            color: #ffff28; //on($accent-default);
         }
 
         button:not(.suggested-action):not(.destructive-action) {
-            color: #ffff28; //on($primary);
+            color: #ffff28; //on($accent-default);
 
             &:disabled {
-                color: #ffff2A; //on($primary, disabled);
+                color: #ffff2A; //on($accent-default, disabled);
             }
 
             &:checked {
-                color: #ffff2B; //on($primary);
+                color: #ffff2B; //on($accent-default);
 
                 &:disabled {
-                    color: #ffff2C; //on($primary, disabled);
+                    color: #ffff2C; //on($accent-default, disabled);
                 }
             }
 
             &:backdrop {
                 &:not(.titlebutton) {
-                    color: #ffff2D; //on($primary, secondary);
+                    color: #ffff2D; //on($accent-default, secondary);
                 }
 
                 &:disabled {
-                    color: #ffff2E; //on($primary, secondary-disabled);
+                    color: #ffff2E; //on($accent-default, secondary-disabled);
                 }
 
                 &:checked {
-                    color: #ffff2F; //on($primary, secondary);
+                    color: #ffff2F; //on($accent-default, secondary);
 
                     &:disabled {
-                        color: #ffff30; //on($primary, secondary-disabled);
+                        color: #ffff30; //on($accent-default, secondary-disabled);
                     }
                 }
             }
@@ -1816,7 +1820,7 @@ headerbar {
 
     &.windowhandle {
         viewswitcher {
-            background-color: #00ff00; //$titlebar-fill;
+            background-color: $light-shade;
             border-radius: 0 0 $corner-radius $corner-radius;
 
             button:not(.titlebutton):not(.suggested-action):not(
@@ -2001,20 +2005,20 @@ treeview.view {
         // progress bar in treeviews
         border: none;
         box-shadow: none;
-        background-color: #ff00ff; //$primary;
+        background-color: $accent-default;
         background-image: none;
         border-radius: $circular-radius;
-        color: #ffff0B; //on($primary);
+        color: #ffff0B; //on($accent-default);
 
         &:selected,
         &:selected:hover,
         &:selected:focus {
             box-shadow: none;
-            background-color: #ffff0A; //mix($text, $primary, 15%);
-            color: #ffff09; //on($primary);
+            background-color: #ffff0A; //mix($text, $accent-default, 15%);
+            color: #ffff09; //on($accent-default);
 
             &:backdrop {
-                color: #ffff08; //on($primary);
+                color: #ffff08; //on($accent-default);
             }
         }
 
@@ -2092,11 +2096,11 @@ treeview.view {
         box-shadow: none;
         background-color: #ffff02; //$base;
         background-clip: border-box;
-        color: #ffff03; //$primary;
+        color: $accent-default;
     }
 
     acceleditor > label {
-        background-color: #ffff01; //$primary;
+        background-color: $accent-default;
     } // see tests/testaccel to test
 }
 
@@ -2173,7 +2177,7 @@ menu {
     background-color: $bg-default; //reviewed&replaced
     background-clip: border-box;
     border-radius: $menu-radius;
-    border: 1px solid $primary;
+    border: 1px solid $accent-default;
 
     .csd & {
         border: none;
@@ -2200,7 +2204,7 @@ menu {
             }
 
             &:disabled accelerator {
-                color: #00ff11; //on($primary, secondary-disabled);
+                color: #00ff11; //on($accent-default, secondary-disabled);
             }
         }
 
@@ -2307,12 +2311,12 @@ popover.background {
         @if $outline == 'false' {
             box-shadow:
             $shadow-z16,
-            inset 0 1px highlight($background),
+            inset 0 1px highlight($bg-default),
             0 0 36px transparent;
         } @else {
             box-shadow:
             $shadow-z16,
-            0 0 0 2px $primary,
+            0 0 0 2px $accent-default,
             0 0 36px transparent;
         }
 
@@ -2381,7 +2385,7 @@ popover.background {
         padding: 0 8px;
         border-radius: $menuitem-radius;
 
-        // &:checked { color: $primary; }
+        // &:checked { color: $accent-default; }
     }
 
     separator {
@@ -3119,7 +3123,7 @@ treeview.view {
         }
 
         &:selected:not(:disabled):not(:checked):not(:indeterminate) {
-            background-color: #ff41ff; //on($indicator, divider);
+            background-color: $bg-light; //reviewed&replaced
         }
 
         &:checked,
@@ -3223,10 +3227,10 @@ scale {
     // the colored part of the backing bit
     highlight {
         transition: background-image $duration $ease-out;
-        background-image: image($primary);
+        background-image: image($accent-default);
 
         &:disabled {
-            background-color: $background;
+            background-color: $bg-default;
             background-image: image($text-secondary-disabled);
         }
     }
@@ -3248,19 +3252,19 @@ scale {
         margin: $slider_margin;
         transition: all $duration $ease-out;
         border-radius: $circular-radius;
-        color: #ff04ff; //$primary;
+        color: $accent-default;
         background-color: $bg-light; //reviewed&replaced
-        box-shadow: inset 0 0 0 2px $primary;
+        box-shadow: inset 0 0 0 2px $accent-default;
 
         &:hover {
             box-shadow:
-                inset 0 0 0 2px $primary,
+                inset 0 0 0 2px $accent-default,
                 0 0 0 8px $divider;
         }
 
         &:active {
             box-shadow:
-                inset 0 0 0 4px $primary,
+                inset 0 0 0 4px $accent-default,
                 0 0 0 8px $divider;
         }
 
@@ -3282,7 +3286,7 @@ scale {
             margin: -(24px - $trough_size) / 2;
             background-color: transparent;
             box-shadow: none;
-            color: $primary;
+            color: $accent-default;
 
             &:hover {
                 box-shadow: 0 0 0 4px $divider;
@@ -3295,7 +3299,7 @@ scale {
             }
 
             &:disabled {
-                color: mix($primary, $background, 50%);
+                color: mix($accent-default, $bg-default, 50%);
             }
         }
     }
@@ -3403,7 +3407,7 @@ progressbar {
 
     progress {
         border-radius: $corner-radius;
-        background-color: $primary;
+        background-color: $accent-default;
     }
 
     &.osd {
@@ -3417,7 +3421,7 @@ progressbar {
         }
 
         progress {
-            background-color: $primary;
+            background-color: $accent-default;
         }
     }
 
@@ -3472,7 +3476,7 @@ levelbar {
 
         &.high,
         &:not(.empty) {
-            background-color: $primary;
+            background-color: $accent-default;
         }
 
         &.full {
@@ -3542,7 +3546,7 @@ actionbar > revealer > box {
     padding: $space-size;
     border: none;
     color: $text;
-    background-color: $background;
+    background-color: $bg-default;
     border-radius: 0 0 $corner-radius $corner-radius;
 
     button {
@@ -3559,11 +3563,11 @@ actionbar > revealer > box {
 
             &:hover,
             &:active {
-                color: $primary;
+                color: $accent-default;
             }
 
             &:disabled {
-                color: $primary;
+                color: $accent-default;
             }
         }
     }
@@ -3845,7 +3849,7 @@ row {
         &.text-button:not(.suggested-action):not(.destructive-action):not(
                 :disabled
             ) {
-            color: $primary;
+            color: $accent-default;
         }
     }
 
@@ -4118,13 +4122,13 @@ stacksidebar.sidebar {
         border-radius: $corner-radius - $space-size;
 
         &:selected {
-            background-color: $primary;
-            color: on($primary);
+            background-color: $accent-default;
+            color: on($accent-default);
             font-weight: 500;
 
             label,
             image {
-                color: on($primary);
+                color: on($accent-default);
             }
         }
 
@@ -4180,7 +4184,7 @@ placessidebar.sidebar {
         &:hover,
         &:active {
             background-color: $fill; // fix??
-            color: $primary;
+            color: $accent-default;
         }
 
         // Using margins/padding directly in the SidebarRow
@@ -4190,7 +4194,7 @@ placessidebar.sidebar {
         }
 
         &:selected {
-            color: $primary;
+            color: $accent-default;
             background-color: $fill; // fix??
             font-weight: 500;
 
@@ -4233,10 +4237,10 @@ placessidebar.sidebar {
         }
 
         &.sidebar-new-bookmark-row {
-            color: $primary;
+            color: $accent-default;
 
             image.sidebar-icon {
-                color: $primary;
+                color: $accent-default;
             }
         }
 
@@ -4285,7 +4289,7 @@ paned {
         &.wide {
             min-width: 6px;
             min-height: 6px;
-            background-color: $background;
+            background-color: $bg-default;
             background-image: image($border), image($border);
             background-size:
                 1px 1px,
@@ -4353,7 +4357,7 @@ infobar {
                 &.text-button:not(:disabled):not(.suggested-action):not(
                         .destructive-action
                     ) {
-                    color: $primary;
+                    color: $accent-default;
                 }
             }
         }
@@ -4363,12 +4367,12 @@ infobar {
     &.question {
         & > revealer > box,
         &:backdrop > revealer > box {
-            background-color: $primary;
+            background-color: $accent-default;
 
             &,
             link:link,
             flowboxchild {
-                color: on($primary);
+                color: on($accent-default);
             }
 
             button {
@@ -4378,13 +4382,13 @@ infobar {
                 &:active,
                 &:checked,
                 &.text-button:not(:disabled) {
-                    color: on($primary);
+                    color: on($accent-default);
                 }
             }
         }
 
         &:hover > revealer > box {
-            background-color: darken($primary, 5%); // fix??
+            background-color: darken($accent-default, 5%); // fix??
         }
     }
 
@@ -4547,7 +4551,7 @@ colorswatch {
         transition: $transition-shadow;
 
         &:hover {
-            box-shadow: 0 0 0 2px $primary;
+            box-shadow: 0 0 0 2px $accent-default;
         }
     }
 
@@ -4614,7 +4618,7 @@ colorchooser .popover.osd {
  ********/
 // content view (grid/list)
 .content-view {
-    background-color: $background;
+    background-color: $bg-default;
 
     // &:hover { -gtk-icon-effect: highlight; }
 
@@ -4649,7 +4653,7 @@ decoration {
     } @else {
         box-shadow:
             $shadow-z16,
-            0 0 0 2px $primary,
+            0 0 0 2px $accent-default,
             0 0 36px transparent;
     }
 
@@ -4703,7 +4707,7 @@ decoration {
             border-radius: $window-radius $window-radius 0 0;
             box-shadow:
                 0 3px 3px rgba(0, 0, 0, 0.16),
-                0 0 0 2px $primary;
+                0 0 0 2px $accent-default;
         } @else {
             border: none;
             border-radius: $window-radius $window-radius 0 0;
@@ -4742,7 +4746,7 @@ decoration {
         } @else {
             box-shadow:
                 $shadow-z4,
-                0 0 0 2px $primary;
+                0 0 0 2px $accent-default;
         }
     }
 
@@ -4820,7 +4824,7 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
  **********************/
 // touch selection handlebars for the Popover.osd above
 cursor-handle {
-    color: $primary;
+    color: $accent-default;
     -gtk-icon-source: -gtk-recolor(url('assets/cursor-handle-symbolic.svg'));
 
     &.top:dir(ltr),
@@ -4863,7 +4867,7 @@ cursor-handle {
 
 :not(decoration):not(window):drop(active) {
     // FIXME needs to be done widget by widget, this wildcard should really die
-    caret-color: $primary;
+    caret-color: $accent-default;
 }
 
 stackswitcher {
@@ -4941,7 +4945,7 @@ button.emoji-section {
 
     &:checked {
         // background-color: transparent;
-        color: $primary;
+        color: $accent-default;
     }
 
     &:not(:last-child) {

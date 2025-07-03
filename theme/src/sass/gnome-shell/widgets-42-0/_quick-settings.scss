@@ -35,17 +35,17 @@
     }
 
     &:checked {
-        background-color: $primary !important;
-        color: on($primary);
+        background-color: $accent-default !important;
+        color: on($accent-default);
 
         &:hover {
-            background-color: mix($text, $primary, 6%) !important;
-            color: on($primary);
+            background-color: mix($text, $accent-default, 6%) !important;
+            color: on($accent-default);
         }
 
         &:active {
-            background-color: mix($text, $primary, 15%) !important;
-            color: on($primary);
+            background-color: mix($text, $accent-default, 15%) !important;
+            color: on($accent-default);
         }
     }
 
@@ -175,8 +175,8 @@
             background-color: on($popover, divider) !important;
 
             &.active {
-                background-color: $primary !important;
-                color: on($primary);
+                background-color: $accent-default !important;
+                color: on($accent-default);
             }
         }
 

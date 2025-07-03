@@ -94,7 +94,7 @@
         @extend %button-flat;
 
         &:not(:disabled) {
-            color: $primary;
+            color: $accent-default;
         }
     }
 }

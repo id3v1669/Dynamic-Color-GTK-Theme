@@ -33,18 +33,18 @@
 }
 
 %default_button {
-    @include button(normal, $bc: $primary, $tc: on($primary));
+    @include button(normal, $bc: $accent-default, $tc: on($accent-default));
     &:focus {
-        @include button(focus, $bc: $primary, $tc: on($primary));
+        @include button(focus, $bc: $accent-default, $tc: on($accent-default));
     }
     &:hover {
-        @include button(hover, $bc: $primary, $tc: on($primary));
+        @include button(hover, $bc: $accent-default, $tc: on($accent-default));
     }
     &:insensitive {
-        @include button(insensitive, $bc: $primary, $tc: on($primary));
+        @include button(insensitive, $bc: $accent-default, $tc: on($accent-default));
     }
     &:active {
-        @include button(active, $bc: $primary, $tc: on($primary));
+        @include button(active, $bc: $accent-default, $tc: on($accent-default));
     }
 }
 

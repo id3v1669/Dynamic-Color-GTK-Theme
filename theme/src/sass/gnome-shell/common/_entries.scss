@@ -8,8 +8,8 @@ StEntry,
     border-radius: $base_radius;
     color: $text;
     caret-color: $text;
-    selection-background-color: $primary;
-    selected-color: on($primary);
+    selection-background-color: $accent-default;
+    selected-color: on($accent-default);
 
     @include entry(normal);
     &:hover {

@@ -79,18 +79,18 @@ $default_key_bg_color: **base05**; // fix??
 
     &.enter-key {
         // enter key is suggested-action
-        color: on($primary);
-        background-color: $primary;
+        color: on($accent-default);
+        background-color: $accent-default;
 
         &:focus,
         &:hover {
-            color: on($primary);
-            background-color: lighten($primary, 5%);
+            color: on($accent-default);
+            background-color: lighten($accent-default, 5%);
         }
         &:checked,
         &:active {
-            color: on($primary);
-            background-color: darken($primary, 10%);
+            color: on($accent-default);
+            background-color: darken($accent-default, 10%);
         }
     }
 
@@ -100,7 +100,7 @@ $default_key_bg_color: **base05**; // fix??
         &:hover,
         &:checked,
         &:active {
-            color: $primary;
+            color: $accent-default;
         }
     }
 
@@ -134,7 +134,7 @@ $default_key_bg_color: **base05**; // fix??
 .emoji-panel {
     .keyboard-key:latched {
         border: none;
-        background-color: $primary;
+        background-color: $accent-default;
     }
 }
 

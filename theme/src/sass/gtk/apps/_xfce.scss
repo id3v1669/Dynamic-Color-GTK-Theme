@@ -53,7 +53,7 @@ wnck-pager {
     }
 
     &:selected {
-        background-color: $primary;
+        background-color: $accent-default;
     }
 }
 
@@ -110,7 +110,7 @@ window#whiskermenu-window {
         } @else {
             box-shadow:
                 $shadow-z4,
-                0 0 0 2px $primary;
+                0 0 0 2px $accent-default;
         }
     }
 
@@ -172,7 +172,7 @@ window#whiskermenu-window {
         border: none;
         box-shadow: none;
     } @else {
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 
     buttonbox {
@@ -192,7 +192,7 @@ dialog.xfsm-logout-dialog {
         border: none;
         box-shadow: none;
     } @else {
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 }
 

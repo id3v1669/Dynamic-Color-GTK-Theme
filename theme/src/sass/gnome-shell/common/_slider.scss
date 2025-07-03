@@ -1,6 +1,6 @@
 /* Slider */
 
-$slide_active_color: $primary;
+$slide_active_color: $accent-default;
 $slide_size: if($compact == 'false', 7px, 6px);
 
 .slider {
@@ -9,13 +9,13 @@ $slide_size: if($compact == 'false', 7px, 6px);
 
     -slider-height: 2px;
     -slider-background-color: $track; //background of the trough
-    -slider-border-color: $primary; //trough border color
+    -slider-border-color: $accent-default; //trough border color
     -slider-active-background-color: $slide_active_color; //active trough fill
-    -slider-active-border-color: $primary; //active trough border
+    -slider-active-border-color: $accent-default; //active trough border
     -slider-border-width: 2px;
     -slider-handle-radius: $slide_size;
     -slider-handle-border-width: 2px;
-    -slider-handle-border-color: $primary;
+    -slider-handle-border-color: $accent-default;
 
     // barlevels are for >= 3.29.90
     -barlevel-height: 15px;

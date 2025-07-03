@@ -17,7 +17,7 @@ $notification_banner_width: 34em;
     border-radius: $menu_radius;
 
     @if $float == 'true' {
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 
     &:hover,

@@ -110,12 +110,12 @@ $app_icon_spacing: 6px;
 
     &:active {
         color: on(black);
-        background-color: darken($primary, 3%);
+        background-color: darken($accent-default, 3%);
     }
 
     &:checked {
-        color: on($primary);
-        background-color: $primary;
+        color: on($accent-default);
+        background-color: $accent-default;
         box-shadow: none;
     }
 

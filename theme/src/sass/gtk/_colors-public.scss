@@ -13,19 +13,19 @@
 @define-color theme_text_color #{"" + $text};
 
 /* widget base background color */
-@define-color theme_bg_color #{"" + $background};
+@define-color theme_bg_color #{"" + $bg-default};
 
 /* text widgets and the like base background color */
 @define-color theme_base_color #{"" + $base};
 
 /* base background color of selections */
-@define-color theme_selected_bg_color #{"" + $primary};
+@define-color theme_selected_bg_color #{"" + $accent-default};
 
 /* text/foreground color of selections */
-@define-color theme_selected_fg_color #{"" + on($primary)};
+@define-color theme_selected_fg_color #{"" + on($accent-default)};
 
 /* base background color of insensitive widgets */
-@define-color insensitive_bg_color #{"" + $background};
+@define-color insensitive_bg_color #{"" + $bg-default};
 
 /* text foreground color of insensitive widgets */
 @define-color insensitive_fg_color #{"" + $text-disabled};
@@ -40,16 +40,16 @@
 @define-color theme_unfocused_text_color #{"" + $text};
 
 /* widget base background color on backdrop windows */
-@define-color theme_unfocused_bg_color #{"" + $background};
+@define-color theme_unfocused_bg_color #{"" + $bg-default};
 
 /* text widgets and the like base background color on backdrop windows */
 @define-color theme_unfocused_base_color #{"" + $base};
 
 /* base background color of selections on backdrop windows */
-@define-color theme_unfocused_selected_bg_color #{"" + $primary};
+@define-color theme_unfocused_selected_bg_color #{"" + $accent-default};
 
 /* text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color #{"" + on($primary)};
+@define-color theme_unfocused_selected_fg_color #{"" + on($accent-default)};
 
 /* insensitive color on backdrop windows */
 @define-color unfocused_insensitive_color #{"" + $text-disabled};
@@ -82,8 +82,8 @@ $windows-border: mix(black, $base, 80%); // fix??
 
 
 
-@define-color wm_button_focused_bg #ff0Aff; //#{"" + $titlebar-fill};
-@define-color wm_button_unfocused_bg #ff0Bff; //#{"" + $titlebar-fill};
+@define-color wm_button_focused_bg #{"" + $light-shade};
+@define-color wm_button_unfocused_bg #{"" + $light-shade};
 @define-color wm_button_hover_fg #ff0Cff; //#{"" + on($titlebar-indicator)};
 @define-color wm_button_active_fg #ff0Dff; //#{"" + on($titlebar-indicator)};
 @define-color wm_button_hover_bg #ff0AEf; //#{"" + $titlebar-indicator};
@@ -101,9 +101,9 @@ $windows-border: mix(black, $base, 80%); // fix??
 // unfocused window 'dot(s)'
 @define-color budgie_tasklist_indicator_color #{"" + on($panel, track)};
 // focused window 'line'
-@define-color budgie_tasklist_indicator_color_active #{"" + $primary};
+@define-color budgie_tasklist_indicator_color_active #{"" + $accent-default};
 // group-ed and unfocused window 'line(s)'
-@define-color budgie_tasklist_indicator_color_active_window #{"" + mix($primary, $panel, 54%)};
+@define-color budgie_tasklist_indicator_color_active_window #{"" + mix($accent-default, $panel, 54%)};
 // attention 'dot'
 // FIXME: we can't fill whole widget backgrounds with our suggestion colour
 //        because of lacking specific style-class on 'needs_attention' state,

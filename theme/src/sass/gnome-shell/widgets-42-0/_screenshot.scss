@@ -161,7 +161,7 @@ $screenshot_ui_button_red: $error;
 
 .screenshot-ui-area-selector-handle {
     border-radius: $circular_radius;
-    background-color: $primary;
+    background-color: $accent-default;
     box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
     width: 24px;
     height: 24px;
@@ -199,18 +199,18 @@ $screenshot_ui_button_red: $error;
 .screenshot-ui-window-selector-window {
     &:hover {
         .screenshot-ui-window-selector-window-border {
-            border-color: darken($primary, 15%);
+            border-color: darken($accent-default, 15%);
         }
     }
     &:checked {
         .screenshot-ui-window-selector-window-border {
-            border-color: $primary;
-            background-color: transparentize($primary, 0.8);
+            border-color: $accent-default;
+            background-color: transparentize($accent-default, 0.8);
         }
 
         .screenshot-ui-window-selector-check {
-            color: on($primary);
-            background-color: $primary;
+            color: on($accent-default);
+            background-color: $accent-default;
         }
     }
 }

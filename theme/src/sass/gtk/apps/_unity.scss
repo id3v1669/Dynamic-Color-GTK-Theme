@@ -17,7 +17,7 @@ UnityDecoration {
     -unitydecoration-inactive-shadow-radius: 6px;
 
     -unitydecoration-glow-size: 8px;
-    -unitydecoration-glow-color: $primary;
+    -unitydecoration-glow-color: $accent-default;
 
     -unitydecoration-title-indent: 4px;
     -unitydecoration-title-fade: 32px;
@@ -65,7 +65,7 @@ UnityDecoration {
 }
 
 sheet-style-dialog.unity-force-quit {
-    // background-color: $background;
+    // background-color: $bg-default;
 }
 
 // Panel Style
@@ -98,5 +98,5 @@ UnityPanelWidget,
 .menu IdoPlaybackMenuItem.menuitem:active {
     -gtk-icon-source: -gtk-icontheme('process-working-symbolic');
     animation: spin 1s linear infinite;
-    color: $primary;
+    color: $accent-default;
 }

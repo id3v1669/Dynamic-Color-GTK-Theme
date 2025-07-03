@@ -70,8 +70,8 @@
 .lg-dialog {
     StEntry {
         min-height: 22px;
-        selection-background-color: $primary;
-        selected-color: on($primary);
+        selection-background-color: $accent-default;
+        selected-color: on($accent-default);
     }
 
     .shell-link {

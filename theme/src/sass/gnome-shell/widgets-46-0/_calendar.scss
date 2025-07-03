@@ -228,17 +228,17 @@
         }
 
         &:active {
-            background-color: darken($primary, 5%);
-            color: on($primary) !important;
+            background-color: darken($accent-default, 5%);
+            color: on($accent-default) !important;
         }
 
         &:selected {
-            background-color: $primary;
+            background-color: $accent-default;
             color: $black !important; // fix??
 
             &:hover,
             &:focus {
-                background-color: lighten($primary, 8%);
+                background-color: lighten($accent-default, 8%);
                 color: $black !important; // fix??
             }
         }

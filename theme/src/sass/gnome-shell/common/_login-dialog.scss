@@ -16,23 +16,23 @@
     background-color: transparent;
 
     StEntry {
-        selection-background-color: $primary;
-        selected-color: on($primary);
+        selection-background-color: $accent-default;
+        selected-color: on($accent-default);
         padding: 4px 8px;
         min-height: $item_size - $base_padding;
         border-radius: $circular_radius;
-        caret-color: on($primary);
+        caret-color: on($accent-default);
 
-        @include entry(flat-normal, $tc: on($primary));
+        @include entry(flat-normal, $tc: on($accent-default));
         &:focus {
-            @include entry(flat-focus, $tc: on($primary));
+            @include entry(flat-focus, $tc: on($accent-default));
         }
         &:insensitive {
-            @include entry(flat-insensitive, $tc: on($primary, disabled));
+            @include entry(flat-insensitive, $tc: on($accent-default, disabled));
         }
 
         StLabel.hint-text {
-            color: on($primary, disabled);
+            color: on($accent-default, disabled);
         }
     }
 
@@ -43,29 +43,29 @@
     .modal-dialog-button {
         padding: 0 16px;
         border: none;
-        @include button(flat-normal, $tc: on($primary));
+        @include button(flat-normal, $tc: on($accent-default));
         &:hover,
         &:focus {
-            @include button(flat-hover, $tc: on($primary));
+            @include button(flat-hover, $tc: on($accent-default));
         }
         &:active {
-            @include button(flat-active, $tc: on($primary));
+            @include button(flat-active, $tc: on($accent-default));
         }
         &:insensitive {
-            @include button(flat-insensitive, $tc: on($primary, disabled));
+            @include button(flat-insensitive, $tc: on($accent-default, disabled));
         }
 
         &:default {
-            @include button(normal, $tc: on($primary));
+            @include button(normal, $tc: on($accent-default));
             &:hover,
             &:focus {
-                @include button(hover, $tc: on($primary));
+                @include button(hover, $tc: on($accent-default));
             }
             &:active {
-                @include button(active, $tc: on($primary));
+                @include button(active, $tc: on($accent-default));
             }
             &:insensitive {
-                @include button(insensitive, $tc: on($primary, disabled));
+                @include button(insensitive, $tc: on($accent-default, disabled));
             }
         }
     }
@@ -148,7 +148,7 @@
         color: on(black, secondary);
     }
     &:expanded .login-dialog-user-list-item:logged-in {
-        border-right: 2px solid $primary;
+        border-right: 2px solid $accent-default;
     }
 }
 

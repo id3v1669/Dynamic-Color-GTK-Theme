@@ -86,7 +86,7 @@ stage {
         @include button(osd-hover);
     }
     &:focus {
-        color: $primary;
+        color: $accent-default;
     }
     &:active {
         @include button(osd-active);
@@ -103,8 +103,8 @@ stage {
     padding: $space-size/2 $space-size * 2;
     min-height: $small-size;
     caret-size: 1px;
-    selection-background-color: $primary;
-    selected-color: on($primary);
+    selection-background-color: $accent-default;
+    selected-color: on($accent-default);
     transition-duration: 300ms;
     border-radius: $corner-radius;
     @include entry(normal);
@@ -128,8 +128,8 @@ stage {
     padding: $space-size / 2 $space-size * 2;
     caret-size: 1px;
     caret-color: on($tooltip);
-    selection-background-color: $primary;
-    selected-color: on($primary);
+    selection-background-color: $accent-default;
+    selected-color: on($accent-default);
     transition-duration: 300ms;
     border-radius: $corner-radius;
 
@@ -171,16 +171,16 @@ StScrollBar {
     StButton#vhandle,
     StButton#hhandle {
         border-radius: $circular-radius;
-        background-color: mix($text, $background, 40%);
+        background-color: mix($text, $bg-default, 40%);
         border: 0px solid;
         margin: 0px;
 
         &:hover {
-            background-color: mix($text, $background, 30%);
+            background-color: mix($text, $bg-default, 30%);
         }
 
         &:active {
-            background-color: $primary;
+            background-color: $accent-default;
         }
     }
 }
@@ -201,7 +201,7 @@ StScrollBar {
     -slider-height: 4px;
     -slider-background-color: $divider; //background of the trough
     -slider-border-color: transparent; //trough border color
-    -slider-active-background-color: $primary; //active trough fill
+    -slider-active-background-color: $accent-default; //active trough fill
     -slider-active-border-color: transparent; //active trough border
     -slider-border-width: 0;
     -slider-handle-radius: 4px;
@@ -214,7 +214,7 @@ StScrollBar {
 
     // .popup-menu-item:active & {
     //   -slider-background-color: transparentize(black, 0.8);
-    //   -slider-active-background-color: on($primary);
+    //   -slider-active-background-color: on($accent-default);
     // }
 }
 
@@ -342,7 +342,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
     box-shadow: none;
 
     // @if $outline == 'true' {
-    //     border: 2px solid $primary;
+    //     border: 2px solid $accent-default;
     // }
 
     &-arrow {
@@ -377,7 +377,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
         box-shadow: 0 5px 12px rgba(black, 0.35);
 
         @if $outline == 'true' {
-            border: 2px solid $primary;
+            border: 2px solid $accent-default;
             background-clip: border-box;
         }
     }
@@ -432,7 +432,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
     padding: $space-size;
 
     @if $outline == 'true' {
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 }
 
@@ -628,9 +628,9 @@ $sub_menu_bg: mix($text, $popover, 10%);
     -cinnamon-caption-spacing: 4px;
 
     &#selected {
-        background-color: $primary;
-        color: on($primary);
-        border: 1px solid $primary;
+        background-color: $accent-default;
+        color: on($accent-default);
+        border: 1px solid $accent-default;
         spacing: 25px;
     }
 }
@@ -645,13 +645,13 @@ $sub_menu_bg: mix($text, $popover, 10%);
     @include entry(osd);
 
     &:focus {
-        border: 1px solid $primary;
-        background-color: $primary;
-        color: on($primary);
+        border: 1px solid $accent-default;
+        background-color: $accent-default;
+        color: on($accent-default);
         font-style: italic;
         transition-duration: 300;
-        selection-background-color: on($primary);
-        selected-color: $primary;
+        selection-background-color: on($accent-default);
+        selected-color: $accent-default;
     }
 }
 
@@ -661,7 +661,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
     border-radius: 0;
 
     &#active {
-        border: 4px solid $primary;
+        border: 4px solid $accent-default;
         background-color: **base07**;
         border-radius: 0;
     }
@@ -932,8 +932,8 @@ $sub_menu_bg: mix($text, $popover, 10%);
 .calendar-today:focus,
 .calendar-today:hover {
     font-weight: bold;
-    color: on($primary);
-    background-color: $primary;
+    color: on($accent-default);
+    background-color: $accent-default;
     border-width: 0;
 }
 
@@ -1215,13 +1215,13 @@ $sub_menu_bg: mix($text, $popover, 10%);
 
         &:outlined {
             padding: 8px;
-            border: 1px solid $primary;
+            border: 1px solid $accent-default;
         }
 
         &:selected {
-            color: on($primary);
-            background-color: $primary;
-            border: 0px solid $primary;
+            color: on($accent-default);
+            background-color: $accent-default;
+            border: 0px solid $accent-default;
         }
     }
 
@@ -1356,8 +1356,8 @@ $sub_menu_bg: mix($text, $popover, 10%);
         padding: $space-size / 2 $space-size * 2;
         border-radius: $corner-radius;
         caret-color: on($tooltip);
-        selected-color: on($primary);
-        selection-background-color: $primary;
+        selected-color: on($accent-default);
+        selection-background-color: $accent-default;
         @include entry(osd);
 
         &:focus {
@@ -1739,12 +1739,12 @@ $sub_menu_bg: mix($text, $popover, 10%);
         height: 4px;
         background-color: rgba(black, 0.35);
         border-radius: $corner-radius;
-        color: $primary;
+        color: $accent-default;
     }
 
     .level-bar {
         border-radius: $corner-radius;
-        background-color: $primary;
+        background-color: $accent-default;
     }
 }
 
@@ -1916,7 +1916,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
         box-shadow: 0 5px 12px rgba(black, 0.35);
 
         @if $outline == 'true' {
-            border: 2px solid $primary;
+            border: 2px solid $accent-default;
         }
 
         .item-box {
@@ -1947,7 +1947,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
     &-number-label {
         z-index: 120;
         text-shadow: none;
-        color: on($primary);
+        color: on($accent-default);
         padding: 0;
     }
 
@@ -1957,7 +1957,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
 
     &-badge {
         border-radius: 256px;
-        background-color: $primary;
+        background-color: $accent-default;
     }
 
     &-item-box {
@@ -2178,9 +2178,9 @@ $sub_menu_bg: mix($text, $popover, 10%);
         border: 0px solid darken($tooltip, 8%);
         border-bottom: 1px;
         -slider-height: 0.5em;
-        -slider-background-color: darken($background, 5%);
+        -slider-background-color: darken($bg-default, 5%);
         -slider-border-color: rgba(0, 0, 0, 0);
-        -slider-active-background-color: $primary;
+        -slider-active-background-color: $accent-default;
         -slider-active-border-color: rgba(0, 0, 0, 0);
         -slider-border-width: 0px;
         -slider-handle-radius: 0px;
@@ -2211,10 +2211,10 @@ $sub_menu_bg: mix($text, $popover, 10%);
 
     &:outlined,
     &:outlined:hover {
-        color: $primary;
+        color: $accent-default;
     }
     &:hover {
-        color: lighten($primary, 10%);
+        color: lighten($accent-default, 10%);
     }
 }
 
@@ -2231,7 +2231,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
 }
 
 .workspace-graph .workspace:active {
-    border: 1px solid $primary;
+    border: 1px solid $accent-default;
     background-gradient-direction: none;
 }
 
@@ -2432,8 +2432,8 @@ $sub_menu_bg: mix($text, $popover, 10%);
         padding-bottom: 6px;
     }
     &-drag-placeholder {
-        border: 2px solid $primary;
-        background-color: transparentize($primary, 0.7);
+        border: 2px solid $accent-default;
+        background-color: transparentize($accent-default, 0.7);
     }
 }
 
@@ -2471,8 +2471,8 @@ $sub_menu_bg: mix($text, $popover, 10%);
 .tile-preview.snap,
 .tile-hud,
 .tile-hud.snap {
-    background-color: transparentize($primary, 0.7);
-    border: 1px solid $primary;
+    background-color: transparentize($accent-default, 0.7);
+    border: 1px solid $accent-default;
 }
 
 //

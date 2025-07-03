@@ -40,7 +40,7 @@ link_gtk4_flag=true                        # default link gtk4 flag is true
 autoconfirm_flag=false                     # default autoconfirm flag is false
 allowed_gs_versions=("3-28" "40-0" "42-0" "44-0" "46-0")
 custom_gs_version=false
-gs_version="47-0"                          # default gnome-shell version
+gs_version="48-0"                          # default gnome-shell version
 
 sassc_opt="-M -t expanded"
 dependencies=("sassc" "optipng" "inkscape")
@@ -139,7 +139,9 @@ verify_gs_version() {
     elif [[ "$(command -v gnome-shell)" ]]; then
 	    echo && gnome-shell --version
 	    shell_version="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-	    if [[ "${shell_version:-}" -ge "47" ]]; then
+	    if [[ "${shell_version:-}" -ge "48" ]]; then
+	        gs_version="48-0"
+      elif [[ "${shell_version:-}" -ge "47" ]]; then
 	        gs_version="47-0"
 	    elif [[ "${shell_version:-}" -ge "46" ]]; then
 	        gs_version="46-0"

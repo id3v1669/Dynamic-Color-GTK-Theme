@@ -20,19 +20,19 @@
 
 @keyframes ripple-on-headerbar {
     from {
-        background-image: radial-gradient(circle, $primary 0%, transparent 0%);
+        background-image: radial-gradient(circle, $accent-default 0%, transparent 0%);
     }
 
     to {
         background-image: radial-gradient(
             circle,
-            $primary 100%,
+            $accent-default 100%,
             transparent 100%
         );
     }
 }
 
-@mixin entry($t, $fc: $primary) {
+@mixin entry($t, $fc: $accent-default) {
     //
     // entry
     //
@@ -46,8 +46,8 @@
             outline $ripple-fade-out-duration $ease-out,
             box-shadow $ripple-fade-out-duration $ease-out;
         box-shadow: inset 0 0 0 2px transparent;
-        background-color: if($fc == $primary, $entry, rgba($fc, 0.1));
-        color: if($fc == $primary, $text-secondary, rgba($fc, 0.75));
+        background-color: if($fc == $accent-default, $entry, rgba($fc, 0.1));
+        color: if($fc == $accent-default, $text-secondary, rgba($fc, 0.75));
         outline: 0 solid transparent;
         outline-offset: 2px;
     }
@@ -58,7 +58,7 @@
             box-shadow $ripple-fade-out-duration $ease-out;
         background-color: $overlay-hover;
         box-shadow: inset 0 0 0 2px $overlay-hover;
-        color: if($fc == $primary, $text, $fc);
+        color: if($fc == $accent-default, $text, $fc);
         outline: 0 solid transparent;
         outline-offset: 2px;
     }
@@ -66,8 +66,8 @@
     @if $t == focus {
         background-color: $overlay-focus;
         box-shadow: inset 0 0 0 2px transparent;
-        color: if($fc == $primary, $text, $fc);
-        outline: 2px solid if($fc == $primary, $track, $fc);
+        color: if($fc == $accent-default, $text, $fc);
+        outline: 2px solid if($fc == $accent-default, $track, $fc);
         outline-offset: -2px;
     }
 
@@ -76,17 +76,17 @@
             $transition,
             outline $ripple-fade-out-duration $ease-out,
             box-shadow $ripple-fade-out-duration $ease-out;
-        background-color: if($fc == $primary, $entry, rgba($fc, 0.1));
+        background-color: if($fc == $accent-default, $entry, rgba($fc, 0.1));
         box-shadow: inset 0 0 0 2px transparent;
-        color: if($fc == $primary, $text, $fc);
-        outline: 2px solid if($fc == $primary, $primary, $fc);
+        color: if($fc == $accent-default, $text, $fc);
+        outline: 2px solid if($fc == $accent-default, $accent-default, $fc);
         outline-offset: -2px;
     }
 
     @if $t == disabled {
         box-shadow: inset 0 0 0 2px transparent;
-        background-color: if($fc == $primary, $entry, rgba($fc, 0.1));
-        color: if($fc == $primary, $text-disabled, rgba($fc, 0.35));
+        background-color: if($fc == $accent-default, $entry, rgba($fc, 0.1));
+        color: if($fc == $accent-default, $text-disabled, rgba($fc, 0.35));
         outline: none;
     }
 
@@ -96,8 +96,8 @@
             box-shadow $ripple-fade-out-duration $ease-out;
         border-image: none;
         box-shadow: inset 0 0 0 2px transparent;
-        background-color: if($fc == $primary, $surface, $fc);
-        color: if($fc == $primary, $text, on($fc));
+        background-color: if($fc == $accent-default, $surface, $fc);
+        color: if($fc == $accent-default, $text, on($fc));
     }
 
     @if $t == raised-hover {
@@ -106,7 +106,7 @@
 
     @if $t == raised-focus {
         border-image: none;
-        box-shadow: inset 0 0 0 2px if($fc == $primary, $primary, $fc);
+        box-shadow: inset 0 0 0 2px if($fc == $accent-default, $accent-default, $fc);
     }
 
     @if $t == raised-disabled {
@@ -150,7 +150,7 @@
     }
 
     @if $t == focus {
-        outline: 2px solid rgba($primary, 0.35);
+        outline: 2px solid rgba($accent-default, 0.35);
         outline-offset: 0;
     }
 
@@ -179,20 +179,20 @@
     }
 
     @if $t == checked {
-        background-color: $primary;
-        color: on($primary);
+        background-color: $accent-default;
+        color: on($accent-default);
     }
 
     @if $t == checked-hover {
         outline-color: transparent;
-        background-color: lighten($primary, 5%);
-        color: on($primary);
+        background-color: lighten($accent-default, 5%);
+        color: on($accent-default);
     }
 
     @if $t == checked-disabled {
         outline-color: transparent;
-        background-color: rgba($primary, 0.35);
-        color: on($primary, disabled);
+        background-color: rgba($accent-default, 0.35);
+        color: on($accent-default, disabled);
     }
 
     @if $t == flat-normal {

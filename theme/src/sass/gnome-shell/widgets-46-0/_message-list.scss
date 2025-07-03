@@ -72,7 +72,7 @@
         border-style: solid;
 
         &:focus {
-            border-color: transparentize($primary, 0.4);
+            border-color: transparentize($accent-default, 0.4);
         }
     }
 }

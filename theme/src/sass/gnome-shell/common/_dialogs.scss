@@ -12,21 +12,21 @@
 
 %last_dialog_button {
     color: $white; // fix??
-    background-color: $primary;
+    background-color: $accent-default;
 
     &:hover {
         color: $white; // fix??
-        background-color: lighten($primary, 9%);
+        background-color: lighten($accent-default, 9%);
     }
 
     &:active {
         color: $white; // fix??
-        background-color: darken($primary, 5%);
+        background-color: darken($accent-default, 5%);
     }
 
     &:insensitive {
         color: $white; // fix??
-        background-color: rgba($primary, 0.05);
+        background-color: rgba($accent-default, 0.05);
     }
 }
 
@@ -232,8 +232,8 @@
         background-color: overlay($popover, hover);
     }
     &:active {
-        background-color: $primary;
-        color: on($primary);
+        background-color: $accent-default;
+        color: on($accent-default);
     }
 }
 

@@ -21,8 +21,8 @@
     }
 
     .notification-badge {
-        color: on($primary);
-        background-color: $primary;
+        color: on($accent-default);
+        background-color: $accent-default;
         box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
         border-radius: $circular_radius;
         margin: 2px;
@@ -98,7 +98,7 @@
         background-color: rgba($black, 0.85); // fix??
 
         @if $float == 'true' {
-            border: 2px solid $primary;
+            border: 2px solid $accent-default;
         }
     }
 
@@ -174,7 +174,7 @@
 
     &:overview #dash .dash-background {
         // overview-mode #1
-        // background-color: rgba($primary, 0.3);
+        // background-color: rgba($accent-default, 0.3);
         background-color: on(black, divider);
         border: 2px solid transparent;
     }

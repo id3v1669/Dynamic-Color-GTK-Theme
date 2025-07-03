@@ -2,12 +2,12 @@
  * Base States *
  ***************/
 .background {
-    background-color: $background;
+    background-color: $bg-default; //reviewed&replaced
     color: $text;
 }
 
 dnd {
-    color: on($background);
+    color: on($bg-default);
 }
 
 .normal-icons {
@@ -20,6 +20,11 @@ dnd {
     .aboutdialog & {
         -gtk-icon-size: 128px;
     }
+}
+
+.toggle:checked { 
+    color: $bg-dark;
+    background-color: $accent-default;
 }
 
 spinner:disabled,
@@ -36,7 +41,7 @@ treeview.expander:disabled {
     background-color: $fill;
     color: $text;
 
-    // &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
+    // &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($accent-default, 0.08); }
 
     &:disabled {
         color: $text-disabled;
@@ -50,16 +55,20 @@ treeview.expander:disabled {
 
 textview {
     // FIXME: we need to override background-color to ensure text rendering
-
+    border: 1px solid $bg-light; //reviewed&replaced
     text {
-        // background-color: $card;
-        background-color: $bg-default; //reviewed&replaced
+        background-color: $bg-dark; //fix?? was bg-default reviewed&replaced
         selection {
             &:focus,
             & {
                 @extend %selected_items_primary;
             }
         }
+    }
+
+    gutterrenderer {
+        color: $text-secondary; //reviewed&replaced
+        background-color: $bg-light; //reviewed&replaced
     }
 
     border {
@@ -77,8 +86,8 @@ iconview {
 }
 
 rubberband {
-    border: 1px solid $primary;
-    background-color: rgba($primary, 0.3);
+    border: 1px solid $accent-default;
+    background-color: rgba($accent-default, 0.3);
 }
 
 flowbox {
@@ -167,7 +176,7 @@ label {
 }
 
 .accent {
-    color: $primary;
+    color: $accent-default;
 }
 
 .success {
@@ -420,7 +429,7 @@ entry {
     > progress,
     progress > trough > progress {
         margin: 0 -4px;
-        border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $accent-default;
         background-color: transparent;
     }
 
@@ -505,15 +514,15 @@ editablelabel > stack > text {
     from {
         background-image: radial-gradient(
             farthest-side,
-            $primary 0%,
-            transparentize($primary, 1) 0%
+            $accent-default 0%,
+            transparentize($accent-default, 1) 0%
         );
     }
     to {
         background-image: radial-gradient(
             farthest-side,
-            $primary 95%,
-            transparentize($primary, 1)
+            $accent-default 95%,
+            transparentize($accent-default, 1)
         );
     }
 }
@@ -709,7 +718,7 @@ button {
     &.opaque {
         @extend %opaque_button;
 
-        background-color: mix($background, $text, 80%);
+        background-color: mix($bg-default, $text, 80%);
         color: $text;
     }
 
@@ -813,7 +822,7 @@ button {
         &:checked {
             background-image: none;
             @include button(checked);
-            border-color: $primary;
+            border-color: $accent-default;
 
             &:hover {
                 background-image: none;
@@ -1051,7 +1060,7 @@ menubutton {
     }
 
     &.opaque {
-        background-color: mix($background, $text, 80%);
+        background-color: mix($bg-default, $text, 80%);
         color: $text;
     }
 
@@ -1196,7 +1205,7 @@ splitbutton {
     }
 
     &.opaque {
-        background-color: mix($background, $text, 80%);
+        background-color: mix($bg-default, $text, 80%);
         color: $text;
     }
 
@@ -1901,13 +1910,17 @@ searchbar > revealer > box {
     }
 }
 
+.border-red {
+    border-color: $red-default;
+}
+
 %titlebar-entry {
     background-color: $bg-light; //reviewed&replaced
     color: $text; //reviewed&replaced
     border-radius: $circular-radius;
 
     &:disabled {
-        background-color: #ff0091; //$titlebar-fill;
+        background-color: $light-shade; //reviewed&replaced
         color: $text-disabled; //reviewed&replaced
     }
 
@@ -1929,7 +1942,7 @@ headerbar {
     transition:
         background-color $duration $ease-out,
         color $duration $ease-out;
-    background-color: transparent;
+    background-color: $bg-dark; //reviewed&replaced
     color: $text; //reviewed&replaced
     min-height: $large-size;
     border: none;
@@ -2026,7 +2039,7 @@ headerbar {
     button.suggested-action,
     button.destructive-action {
         &:disabled {
-            background-color: #2Affff; //$titlebar-fill;
+            background-color: $light-shade; //reviewed&replaced
             color: #29ffff; //$titlebar-text-disabled;
             opacity: 1;
         }
@@ -2089,8 +2102,8 @@ headerbar {
         button.suggested-action,
         button.destructive-action {
             &:disabled {
-                background-color: #27ffff; //$titlebar-fill;
-                color: #28ffff; //$titlebar-text-disabled;
+                background-color: $light-shade; //reviewed&replaced
+                color: $text-secondary-disabled; //reviewed&replaced
             }
         }
 
@@ -2124,15 +2137,15 @@ headerbar {
         transition:
             background-color 0.1ms $ripple-fade-in-duration,
             color $duration $ease-out;
-        background-color: $primary;
-        color: on($primary);
+        background-color: $accent-default;
+        color: on($accent-default);
 
         &:backdrop {
-            color: on($primary, secondary);
+            color: on($accent-default, secondary);
         }
 
         .subtitle:link {
-            color: on($primary);
+            color: on($accent-default);
         }
 
         button:not(.suggested-action):not(.destructive-action) {
@@ -2191,7 +2204,7 @@ window.devel {
                 linear-gradient(
                     to right,
                     transparent 65%,
-                    transparentize($primary, 0.9)
+                    transparentize($accent-default, 0.9)
                 ),
                 linear-gradient(to top, lighten($c, 3%) 3px, lighten($c, 5%)); // fix??
 
@@ -2369,7 +2382,7 @@ treeview.view {
 
     &.progressbar {
         // progress bar in treeviews
-        border-bottom: $space-size solid $primary;
+        border-bottom: $space-size solid $accent-default;
         box-shadow: none;
         background-color: transparent;
         background-image: none;
@@ -2438,11 +2451,11 @@ treeview.view {
         box-shadow: none;
         background-color: $base;
         background-clip: border-box;
-        color: $primary;
+        color: $accent-default;
     }
 
     acceleditor > label {
-        background-color: $primary;
+        background-color: $accent-default;
     } // see tests/testaccel to test
 }
 
@@ -2583,12 +2596,12 @@ popover {
         @if $outline == 'false' {
             box-shadow:
             $shadow-z16,
-            inset 0 1px highlight($background),
+            inset 0 1px highlight($bg-default),
             0 0 36px transparent;
         } @else {
             box-shadow:
                 $shadow-z16,
-                0 0 0 2px $primary,
+                0 0 0 2px $accent-default,
                 0 0 36px transparent;
         }
     }
@@ -2597,12 +2610,12 @@ popover {
         @if $outline == 'false' {
             box-shadow:
                 $shadow-z16,
-                inset 0 1px highlight($background),
+                inset 0 1px highlight($bg-default),
                 0 0 36px transparent;
         } @else {
             box-shadow:
                 $shadow-z16,
-                0 0 0 2px $primary,
+                0 0 0 2px $accent-default,
                 0 0 36px transparent;
         }
     }
@@ -2685,10 +2698,10 @@ popover {
         &:hover {
             transition: none;
             background-color: $fill;
-            color: $primary;
+            color: $accent-default;
 
             accelerator {
-                color: $primary;
+                color: $accent-default;
 
                 &:disabled {
                     color: $text-disabled;
@@ -2769,7 +2782,7 @@ magnifier {
 
     &:hover:not(:checked):not(:selected) {
         background-color: $fill;
-        color: $primary;
+        color: $accent-default;
         box-shadow: none;
     }
 
@@ -2792,7 +2805,7 @@ magnifier {
             background-image 0ms,
             background-color 0ms;
         background-color: $fill;
-        color: $primary;
+        color: $accent-default;
         box-shadow: none;
 
         &:disabled {
@@ -3022,8 +3035,8 @@ notebook {
 $tab_needs_attention_gradient: radial-gradient(
     ellipse at bottom,
     transparentize($white, 0.2),
-    gtkalpha($primary, 0.4) 10%,
-    gtkalpha($primary, 0) 30%
+    gtkalpha($accent-default, 0.4) 10%,
+    gtkalpha($accent-default, 0) 30%
 );
 
 @mixin undershoot-gradient($dir, $color) {
@@ -3037,17 +3050,17 @@ $tab_needs_attention_gradient: radial-gradient(
 @mixin need-attention-gradient($dir) {
     background: linear-gradient(
         to #{$dir},
-        gtkalpha($primary, 0.5),
-        gtkalpha($primary, 0.3) 1px,
-        gtkalpha($primary, 0) 20px
+        gtkalpha($accent-default, 0.5),
+        gtkalpha($accent-default, 0.3) 1px,
+        gtkalpha($accent-default, 0) 20px
     );
 }
 
 $tab_needs_attention_gradient: radial-gradient(
     ellipse at bottom,
     transparentize($white, 0.2),
-    gtkalpha($primary, 0.4) 10%,
-    gtkalpha($primary, 0) 30%
+    gtkalpha($accent-default, 0.4) 10%,
+    gtkalpha($accent-default, 0) 30%
 );
 
 @mixin undershoot-gradient($dir, $color) {
@@ -3061,9 +3074,9 @@ $tab_needs_attention_gradient: radial-gradient(
 @mixin need-attention-gradient($dir) {
     background: linear-gradient(
         to #{$dir},
-        gtkalpha($primary, 0.5),
-        gtkalpha($primary, 0.3) 1px,
-        gtkalpha($primary, 0) 20px
+        gtkalpha($accent-default, 0.5),
+        gtkalpha($accent-default, 0.3) 1px,
+        gtkalpha($accent-default, 0) 20px
     );
 }
 
@@ -3511,7 +3524,7 @@ switch {
         box-shadow:
             0 0 0 0 transparent,
             $shadow-z3;
-        background-color: $background;
+        background-color: $bg-default;
         border: none;
     }
 
@@ -3822,10 +3835,10 @@ scale {
         // the colored part of the backing bit
         > highlight {
             transition: background-image $duration $ease-out;
-            background-image: image($primary);
+            background-image: image($accent-default);
 
             &:disabled {
-                background-color: $background;
+                background-color: $bg-default;
                 background-image: image($text-secondary-disabled);
             }
         }
@@ -3848,19 +3861,19 @@ scale {
             margin: $slider_margin;
             transition: all $duration $ease-out;
             border-radius: $circular-radius;
-            color: #ff08ff; //$primary;
+            color: $accent-default;
             background-color: $bg-light; //reviewed&replaced
-            box-shadow: inset 0 0 0 2px $primary;
+            box-shadow: inset 0 0 0 2px $accent-default;
 
             &:hover {
                 box-shadow:
-                    inset 0 0 0 2px $primary,
+                    inset 0 0 0 2px $accent-default,
                     0 0 0 8px $divider;
             }
 
             &:active {
                 box-shadow:
-                    inset 0 0 0 4px $primary,
+                    inset 0 0 0 4px $accent-default,
                     0 0 0 8px $divider;
             }
 
@@ -3991,7 +4004,7 @@ progressbar {
 
     progress {
         border-radius: $corner-radius;
-        background-color: $primary;
+        background-color: $accent-default;
     }
 
     &.osd {
@@ -4008,7 +4021,7 @@ progressbar {
         }
 
         progress {
-            background-color: $primary;
+            background-color: $accent-default;
         }
     }
 
@@ -4066,7 +4079,7 @@ levelbar {
 
         &.high,
         &:not(.empty) {
-            background-color: $primary;
+            background-color: $accent-default;
         }
 
         &.full {
@@ -4461,7 +4474,7 @@ row {
     }
 
     button:checked &.activatable {
-        color: on($primary);
+        color: on($accent-default);
     }
 
     &:selected {
@@ -4696,7 +4709,7 @@ row.expander {
         opacity: 1;
 
         &:not(:disabled) {
-            color: $primary;
+            color: $accent-default;
         }
     }
 
@@ -4766,12 +4779,12 @@ columnview {
         }
 
         &.editing:focus-within {
-            outline: 2px solid $primary;
+            outline: 2px solid $accent-default;
         }
 
         &.editing text selection {
-            color: on($primary);
-            background-color: $primary;
+            color: on($accent-default);
+            background-color: $accent-default;
         }
     }
 }
@@ -4791,7 +4804,7 @@ columnview {
         @extend %button-flat;
 
         &.text-button:not(:disabled) {
-            color: $primary;
+            color: $accent-default;
         }
     }
 
@@ -5033,7 +5046,7 @@ window.messagedialog {
         @extend %dialog_action_button;
 
         &.suggested {
-            color: $primary;
+            color: $accent-default;
         }
 
         &.destructive {
@@ -5140,13 +5153,15 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
+    background-color: #ff0000;
     padding: $space-size - 4 $space-size - 2; //only vertical padding. horizontal row size would clip
     border-right: none;
 
     &,
     &.view,
     &.background {
-        background-color: transparent;
+        //background-color: transparent;
+        background-color: #ff0000;
         color: inherit;
     }
 
@@ -5173,7 +5188,7 @@ separator.sidebar {
             background-color: $overlay-hover;
             label,
             image {
-                color: $primary;
+                color: $accent-default;
                 font-weight: 700;
             }
 
@@ -5220,7 +5235,7 @@ filechooser {
             stack.view,
             columnview.view,
             gridview.view {
-                background-color: transparent;
+                background-color: $bg-default;
             }
 
             scrolledwindow scrollbar {
@@ -5314,10 +5329,10 @@ placessidebar {
             }
 
             &.sidebar-new-bookmark-row {
-                color: $primary;
+                color: $accent-default;
 
                 image.sidebar-icon {
-                    color: $primary;
+                    color: $accent-default;
                 }
             }
 
@@ -5364,7 +5379,7 @@ paned {
         &.wide {
             min-width: 6px;
             min-height: 6px;
-            background-color: $background;
+            background-color: $bg-default;
             background-image: image($solid-border), image($solid-border);
             background-size:
                 1px 1px,
@@ -5448,7 +5463,7 @@ infobar {
                 &.text-button:not(:disabled):not(.suggested-action):not(
                         .destructive-action
                     ) {
-                    color: $primary;
+                    color: $accent-default;
                 }
             }
         }
@@ -5629,7 +5644,7 @@ colorswatch {
 
     colorchooser &:hover {
         transition: $transition-shadow;
-        box-shadow: 0 0 0 2px $primary;
+        box-shadow: 0 0 0 2px $accent-default;
     }
 
     &#add-color-button {
@@ -5696,7 +5711,7 @@ colorchooser .popover.osd {
  ********/
 // content view (grid/list)
 .content-view {
-    background-color: $background;
+    background-color: $bg-default;
 
     // &:hover { -gtk-icon-effect: highlight; }
 
@@ -5736,12 +5751,12 @@ window {
         @if $outline == 'false' {
             box-shadow:
                 $shadow-z16,
-                inset 0 1px highlight($background),
+                inset 0 1px highlight($bg-default),
                 0 0 36px transparent;
         } @else {
             box-shadow:
                 $shadow-z16,
-                0 0 0 2px $primary,
+                0 0 0 2px $accent-default,
                 0 0 36px transparent;
         }
 
@@ -5755,7 +5770,7 @@ window {
             @if $outline == 'false' {
                 box-shadow:
                     $shadow-z4,
-                    inset 0 1px highlight($background),
+                    inset 0 1px highlight($bg-default),
                     0 0 36px transparent;
             } @else {
                 box-shadow:
@@ -5796,7 +5811,7 @@ window {
     }
 
     &.ssd {
-        box-shadow: inset 0 1px highlight($background);
+        box-shadow: inset 0 1px highlight($bg-default);
     }
 }
 
@@ -5871,13 +5886,13 @@ windowcontrols {
 }
 
 %selected_items_color {
-    color: $primary;
-    background-color: rgba($primary, 0.2);
+    color: $accent-default;
+    background-color: rgba($accent-default, 0.2);
 }
 
 %selected_items_primary {
-    color: on($primary);
-    background-color: $primary;
+    color: on($accent-default);
+    background-color: $accent-default;
 }
 
 .monospace {
@@ -5889,7 +5904,7 @@ windowcontrols {
  **********************/
 // touch selection handlebars for the Popover.osd above
 cursor-handle {
-    color: $primary;
+    color: $accent-default;
     -gtk-icon-source: -gtk-recolor(url('assets/cursor-handle-symbolic.svg'));
 
     &.insertion-cursor:dir(ltr),
@@ -5930,7 +5945,7 @@ shortcut > .keycap {
 
 :not(decoration):not(window):drop(active) {
     // FIXME needs to be done widget by widget, this wildcard should really die
-    caret-color: $primary;
+    caret-color: $accent-default;
 }
 
 stackswitcher {
@@ -6038,7 +6053,7 @@ button.emoji-section {
     border-radius: $corner-radius;
 
     &:checked {
-        color: $primary;
+        color: $accent-default;
     }
 }
 

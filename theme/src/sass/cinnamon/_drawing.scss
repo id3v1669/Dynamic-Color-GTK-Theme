@@ -23,7 +23,7 @@
     @if $t==focus {
         color: $text;
         background-color: $fill;
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 
     @if $t==insensitive {
@@ -41,7 +41,7 @@
     @if $t==osd-focus {
         color: on(black);
         background-color: on(black, fill);
-        border: 2px solid $primary;
+        border: 2px solid $accent-default;
     }
 
     @if $t==osd-insensitive {

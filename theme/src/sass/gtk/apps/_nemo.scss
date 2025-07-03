@@ -119,10 +119,10 @@
 .places-treeview {
     -nemoplacestreeview-disk-full-bg-color: mix(
         $text,
-        $background,
+        $bg-default,
         percentage(0.3)
     ); // Can't use translucent colors
-    -nemoplacestreeview-disk-full-fg-color: $primary;
+    -nemoplacestreeview-disk-full-fg-color: $accent-default;
     -nemoplacestreeview-disk-full-bar-width: 2px;
     -nemoplacestreeview-disk-full-bar-radius: 0;
     -nemoplacestreeview-disk-full-bottom-padding: 1px; // There is already hard-coded 1px bottom-padding

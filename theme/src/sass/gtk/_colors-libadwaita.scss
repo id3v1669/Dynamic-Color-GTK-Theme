@@ -104,9 +104,9 @@ $dark_5: **base07**;
 // define variables for them in _colors.scss
 
 // The main accent color and the matching text value
-@define-color accent_bg_color #{$primary};
-@define-color accent_fg_color #{on($primary)};
-@define-color accent_color #{$primary};
+@define-color accent_bg_color #{$accent-default};
+@define-color accent_fg_color #{on($accent-default)};
+@define-color accent_color #{$accent-default};
 
 // destructive-action buttons
 @define-color destructive_bg_color #{$destructive};
@@ -127,7 +127,7 @@ $dark_5: **base07**;
 @define-color error_color #{$error};
 
 // Window
-@define-color window_bg_color #{$background};
+@define-color window_bg_color #{$bg-default};
 @define-color window_fg_color #{$text};
 
 // Views - e.g. text view or tree view
