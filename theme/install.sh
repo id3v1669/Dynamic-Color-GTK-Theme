@@ -218,15 +218,18 @@ write() {
         fi
     done
 
-    # generate cinnamon thumbnails
-    #generate_pngs "$temp_dir/assets/cinnamon/thumbnail.svg"      "$temp_dir/assets/cinnamon/thumbnails" "" ""
-    # generate gtk assets
-    #generate_pngs "$temp_dir/assets/gtk/assets.svg"              "$temp_dir/assets/gtk/assets" "" ""
-    #generate_pngs "$temp_dir/assets/gtk/assets.svg"              "$temp_dir/assets/gtk/assets" "--export-dpi=192" "@2"
-    #generate_pngs "$temp_dir/assets/gtk/thumbnail.svg"           "$temp_dir/assets/gtk/thumbnails" "--export-dpi=96" ""
-    # generate gtk2 assets
-    #generate_pngs "$temp_dir/assets/gtk-2.0/assets.svg"          "$temp_dir/assets/gtk-2.0/assets" "" ""
-    #generate_pngs "$temp_dir/assets/gtk-2.0/assets-common.svg"   "$temp_dir/assets/gtk-2.0/assets-common" "" ""
+    # for dev purposes disable png generation with debug flag
+    if [[ $debug_flag == false ]]; then
+        # generate cinnamon thumbnails
+        generate_pngs "$temp_dir/assets/cinnamon/thumbnail.svg"      "$temp_dir/assets/cinnamon/thumbnails" "" ""
+        # generate gtk assets
+        generate_pngs "$temp_dir/assets/gtk/assets.svg"              "$temp_dir/assets/gtk/assets" "" ""
+        generate_pngs "$temp_dir/assets/gtk/assets.svg"              "$temp_dir/assets/gtk/assets" "--export-dpi=192" "@2"
+        generate_pngs "$temp_dir/assets/gtk/thumbnail.svg"           "$temp_dir/assets/gtk/thumbnails" "--export-dpi=96" ""
+        # generate gtk2 assets
+        generate_pngs "$temp_dir/assets/gtk-2.0/assets.svg"          "$temp_dir/assets/gtk-2.0/assets" "" ""
+        generate_pngs "$temp_dir/assets/gtk-2.0/assets-common.svg"   "$temp_dir/assets/gtk-2.0/assets-common" "" ""
+    fi
 }
 #----------------------------------------#
 

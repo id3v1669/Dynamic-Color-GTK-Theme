@@ -4202,7 +4202,7 @@ placessidebar.sidebar {
         }
 
         &:disabled {
-            color: #ff45ff; //on($indicator, secondary-disabled);
+            color: $text-disabled; // reviewed&replaced
         }
 
         image.sidebar-icon {

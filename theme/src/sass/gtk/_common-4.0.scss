@@ -5153,15 +5153,14 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
-    background-color: #ff0000;
+    background-color: $bg-dark; // reviewed&replaced
     padding: $space-size - 4 $space-size - 2; //only vertical padding. horizontal row size would clip
     border-right: none;
 
     &,
     &.view,
     &.background {
-        //background-color: transparent;
-        background-color: #ff0000;
+        background-color: transparent; // reviewed&replaced
         color: inherit;
     }
 
